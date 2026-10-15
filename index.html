@@ -10,41 +10,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-base: #faf9f6;
+            --bg-base: #fbfbfa;
             --bg-surface: #ffffff;
             --bg-card: #ffffff;
-            --bg-card-hover: #f1f5f9;
-            --border-color: #cbd5e1;
-            --border-active: #047857;
+            --bg-card-hover: #f5f3ff;
+            --border-color: #e2e8f0;
+            --border-active: #6366f1;
             --text-primary: #0f172a;
             --text-secondary: #334155;
-            --text-muted: #475569;
-            --accent-primary: #047857;
-            --accent-light: #ecfdf5;
-            --accent-glow: rgba(5, 150, 105, 0.15);
-            --header-bg: rgba(250, 249, 246, 0.94);
+            --text-muted: #64748b;
+            --accent-primary: #6366f1;
+            --accent-primary-dark: #4f46e5;
+            --accent-light: #eef2ff;
+            --accent-glow: rgba(99, 102, 241, 0.18);
+            --header-bg: rgba(251, 251, 250, 0.94);
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
             --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
             --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
         }
 
         body.dark {
-            --bg-base: #090f18;
+            --bg-base: #090d16;
             --bg-surface: #0f172a;
-            --bg-card: #131e33;
-            --bg-card-hover: #1e2c47;
-            --border-color: rgba(255, 255, 255, 0.14);
-            --border-active: #10b981;
+            --bg-card: #131b2e;
+            --bg-card-hover: #1e293b;
+            --border-color: rgba(255, 255, 255, 0.12);
+            --border-active: #818cf8;
             --text-primary: #f8fafc;
             --text-secondary: #e2e8f0;
-            --text-muted: #cbd5e1;
-            --accent-primary: #10b981;
-            --accent-light: rgba(16, 185, 129, 0.15);
-            --accent-glow: rgba(16, 185, 129, 0.25);
-            --header-bg: rgba(9, 15, 24, 0.94);
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-            --shadow-md: 0 4px 14px rgba(0,0,0,0.4);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.6);
+            --text-muted: #94a3b8;
+            --accent-primary: #818cf8;
+            --accent-primary-dark: #6366f1;
+            --accent-light: rgba(99, 102, 241, 0.15);
+            --accent-glow: rgba(99, 102, 241, 0.3);
+            --header-bg: rgba(9, 13, 22, 0.94);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+            --shadow-md: 0 4px 14px rgba(0,0,0,0.55);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.7);
         }
 
         /* Ultra-thin surgical scrollbar */
@@ -1162,16 +1164,417 @@
                 display: none;
             }
         }
+
+        /* Responsive Data Tables */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin: 18px 0 24px 0;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-surface);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            text-align: left;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .data-table th, .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background: var(--bg-surface);
+            color: var(--accent-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.74rem;
+            letter-spacing: 0.06em;
+            border-bottom: 2px solid var(--accent-primary);
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background: rgba(99, 102, 241, 0.03);
+        }
+
+        body.dark .data-table tbody tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .data-table tbody tr:hover {
+            background: rgba(99, 102, 241, 0.08);
+        }
+
+        /* Clinical Formula Callout Box */
+        .formula-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.04) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-left: 4px solid var(--accent-primary);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+
+        .formula-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
+        }
+
+        .formula-equation {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            padding: 4px 0;
+        }
+
+        /* Callout Alerts */
+        .callout-alert {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px 18px;
+            border-radius: 10px;
+            margin: 16px 0;
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
+        .callout-alert.alert-tip {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-left: 4px solid #10b981;
+            color: var(--text-primary);
+        }
+
+        .callout-alert.alert-note {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-left: 4px solid #6366f1;
+            color: var(--text-primary);
+        }
+
+        .callout-alert.alert-important {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-left: 4px solid #f59e0b;
+            color: var(--text-primary);
+        }
+
+        .content-list, .content-list-ordered {
+            padding-left: 24px;
+            margin: 10px 0 16px 0;
+        }
+
+        .content-list li, .content-list-ordered li {
+            margin-bottom: 6px;
+            line-height: 1.55;
+            color: var(--text-secondary);
+        }
+
+        .content-para {
+            margin-bottom: 12px;
+            line-height: 1.65;
+            color: var(--text-secondary);
+        }
+
+        .algorithm-block {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin: 16px 0;
+            color: var(--text-primary);
+        }
+
+        .inline-code {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--accent-primary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+        }
+
+        /* Dashboard Specific Styles matching Screenshot 1 */
+        .dash-hero-card {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%);
+            border-radius: 14px;
+            padding: 26px 30px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            color: #ffffff;
+            box-shadow: 0 6px 24px rgba(30, 27, 75, 0.35);
+            border: 1px solid rgba(167, 139, 250, 0.35);
+        }
+
+        .dash-hero-badge {
+            display: inline-block;
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.15);
+            color: #e0e7ff;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+        }
+
+        .dash-hero-title {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+        }
+
+        .dash-hero-sub {
+            font-size: 0.95rem;
+            color: #c7d2fe;
+            margin: 0 0 16px 0;
+            line-height: 1.5;
+        }
+
+        .dash-hero-meta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .dash-hero-stat {
+            font-size: 0.84rem;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 5px 14px;
+            border-radius: 9999px;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .dash-hero-image-box {
+            flex-shrink: 0;
+            width: 260px;
+            height: 140px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .dash-cheat-sheet-card {
+            background: linear-gradient(135deg, #2e1065 0%, #3b0764 100%);
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(46, 16, 101, 0.3);
+            border: 1px solid rgba(192, 132, 252, 0.35);
+            flex-wrap: wrap;
+        }
+
+        .cheat-sheet-badge-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #ffffff;
+        }
+
+        .stats-grid-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-card-label {
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .stat-card-val {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            line-height: 1.2;
+        }
+
+        .progress-banner-dash {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .progress-bar-bg-dash {
+            width: 100%;
+            height: 9px;
+            background-color: var(--border-color);
+            border-radius: 999px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar-fill-dash {
+            height: 100%;
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%);
+            border-radius: 999px;
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        .dashboard-topic-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 16px;
+        }
+
+        .dash-topic-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .dash-topic-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .dash-topic-card.completed {
+            border-color: rgba(16, 185, 129, 0.4);
+            background: rgba(16, 185, 129, 0.02);
+        }
+
+        .dash-card-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .dash-card-chapter-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .dash-card-title-text {
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.35;
+            margin-bottom: 6px;
+        }
+
+        .dash-card-source-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .dash-card-footer-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .toggle-complete-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            padding: 6px 12px;
+            border-radius: 7px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .toggle-complete-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .toggle-complete-btn.is-completed {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: #10b981;
+            color: #10b981;
+        }
     </style>
 </head>
 <body>
     <!-- Top Header -->
     <header class="navbar">
         <div class="brand" onclick="showDashboard()">
-            <div class="brand-badge">M</div>
+            <div class="brand-badge" style="background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                    <path d="M12 5v14"/>
+                </svg>
+            </div>
             <div class="brand-title">
-                <h1>GENERAL MEDICINE</h1>
-                <span>Clinical Exam Companion</span>
+                <h1>MEDICINE PRO</h1>
+                <span>BDS &amp; MBBS Clinical Monograph</span>
             </div>
         </div>
         <div class="nav-actions">
@@ -1193,6 +1596,14 @@
         <!-- Sidebar Navigation -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
+                <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+                    <button class="nav-btn nav-btn-primary" id="sidebarDashBtn" onclick="showDashboard()" style="flex: 1; justify-content: center; font-weight: 700;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg> Dashboard
+                    </button>
+                    <button class="nav-btn" onclick="openPdfModal()" style="flex: 1; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M10 13v-2a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1z"/><path d="M10 18h4"/></svg> Open PDF
+                    </button>
+                </div>
                 <div class="search-box">
                     <input type="text" id="searchInput" class="search-input" placeholder="Search conditions, signs, drugs..." oninput="onSearchInput()">
                     <span class="search-kbd">/</span>
@@ -1321,7 +1732,8 @@
         const COMPARISONS = [{"id": "comp_kwashiorkor_marasmus", "title": "Kwashiorkor vs Nutritional Marasmus", "table": [["Nutritional Deficit", "Selective Protein deficiency with preserved calories", "Total Starvation (Both Protein and Caloric deficiency)"], ["Bilateral Pitting Edema", "**Mandatory Hallmark Present**", "**Strictly Absent**"], ["Facial Appearance", "'Moon face' (edematous, puffy)", "'Old man / Monkey facies' (sunken cheeks)"], ["Subcutaneous Fat", "Preserved", "Completely absent / melted away"], ["Liver", "Hepatomegaly with massive Fatty Infiltration", "Normal liver, no fatty changes"], ["Cutaneous & Hair Signs", "'Flaky paint' dermatosis, 'Flag sign' hair", "Skin loose, dry, wrinkled; hair normal"], ["Serum Albumin", "Severely low (< 2.0 g/dL)", "Normal or slightly reduced (> 2.8 g/dL)"], ["Appetite & Mood", "Anorexic, miserable, irritable, apathetic", "Voracious ravenous appetite, alert"]]}, {"id": "comp_aml_cml", "title": "Acute Myeloid Leukemia vs Chronic Myelogenous Leukemia", "table": [["Clinical Tempo", "Sudden, rapid, acute fulminant course (weeks)", "Insidious, indolent, slow progression (years)"], ["Bone Marrow Blasts", "**Immature Myeloblasts \u2265 20%**", "**Maturing Granulocytes**; Blasts usually < 10%"], ["Cytological Sign", "**Auer Rods** in cytoplasm of myeloblasts", "All stages of granulocytes + absolute **Basophilia**"], ["Cytogenetic Marker", "Variable (t(8;21), inv(16), t(15;17))", "**Philadelphia Chromosome t(9;22)** (*BCR-ABL1*)"], ["Gingival Infiltration", "**Common & Severe** (especially M4/M5 subtypes)", "Rare in chronic phase; may occur in blast crisis"], ["First-Line Therapy", "Intensive Chemotherapy ('7+3': Cytarabine + Daunorubicin)", "Targeted Tyrosine Kinase Inhibitor (Imatinib)"]]}, {"id": "comp_nephrotic_nephritic", "title": "Nephrotic vs Nephritic Syndrome", "table": [["Primary Defect", "Podocyte injury with charge/size barrier loss", "Endocapillary inflammation with capillary necrosis"], ["24-Hour Proteinuria", "**Massive (> 3.5 g/24 hours)**", "Sub-nephrotic (usually 1 to 2 g/24 hours)"], ["Hematuria & Casts", "Absent or microscopic; **Fatty casts**", "**Gross Hematuria ('Cola-colored')** with **RBC Casts**"], ["Serum Albumin", "**Severe Hypoalbuminemia (< 2.5 g/dL)**", "Normal or mildly reduced"], ["Edema Characteristics", "**Anasarca (Severe, generalized pitting edema)**", "Mild dependent morning periorbital edema"], ["Blood Pressure", "Usually normal", "**Hypertension (Universal finding)**"]]}, {"id": "comp_janeway_osler", "title": "Janeway Lesions vs Osler's Nodes", "table": [["Pain Sensation", "**Completely Painless** (Non-tender)", "**Exquisitely Painful & Tender**"], ["Pathological Mechanism", "**Septic Micro-Emboli** producing microabscesses", "**Immune Complex Deposition** producing vasculitis"], ["Typical Location", "Palms of hands, soles of feet, thenar eminences", "Pulps (pads) of fingers and toes"], ["Lesion Appearance", "Flat, erythematous or hemorrhagic macules", "Raised, violaceous, nodular subcutaneous bumps"], ["IE Subtype Association", "Acute Staphylococcal Endocarditis", "Subacute Streptococcal Endocarditis"]]}, {"id": "comp_umn_lmn_facial", "title": "Upper vs Lower Motor Neuron Facial Paralysis", "table": [["Site of Lesion", "Above facial nucleus in pons (Motor cortex / Stroke)", "Facial nucleus in pons or CN VII trunk (Bell's palsy)"], ["Forehead Wrinkling", "**Preserved / Normal** (Bilateral cortical input)", "**Paralyzed / Absent** on affected side"], ["Eye Closure (Orbicularis)", "**Intact / Blinking preserved**", "**Impaired (Lagophthalmos)**; Bell's phenomenon (+)"], ["Distribution of Weakness", "Contralateral lower face only", "Ipsilateral entire half of face (Upper + Lower)"], ["Etiology", "Middle Cerebral Artery (MCA) Stroke, Brain Tumor", "Bell's Palsy, Trauma, Parotid Neoplasms"]]}];
         const RUBRIC = [{"section": "1. Definition & Classification", "weight": "2 Marks", "criteria": "Standard WHO/Harrison definition, clear etiological/clinical classification table with subtypes and epidemiology."}, {"section": "2. Pathogenesis & Applied Physiology", "weight": "3 Marks", "criteria": "Clear sequential hemodynamic or biochemical cascade, molecular triggers, and Layman's explanation box."}, {"section": "3. Clinical Presentation & Physical Signs", "weight": "3 Marks", "criteria": "Detailed systemic examination (Inspection, Palpation, Percussion, Auscultation) and named bedside clinical signs."}, {"section": "4. Diagnostic Workup & Criteria", "weight": "2 Marks", "criteria": "Specific criteria sets (Duke, Jones, ADA, Child-Pugh), laboratory investigations, imaging, and biopsy/culture protocols."}, {"section": "5. Comprehensive Management & Dental Precautions", "weight": "3 Marks", "criteria": "Emergency resuscitation (ABCs), first-line drug classes with generic names, exact dosages, and dental considerations (prophylaxis, bleeding cutoffs)."}, {"section": "6. Must-Draw Diagrams & Flowcharts", "weight": "2 Marks", "criteria": "Neat, labeled clinical algorithm, anatomical schematic, or biochemical flowchart."}];
 
-        let currentChapterIdx = 0;
+        let currentChapterIdx = -1;
+        let currentDashFilter = 'all';
         let activeTab = 'master';
         let currentCategory = 'All';
         let completedTopics = JSON.parse(localStorage.getItem('medicine_completed_topics') || '{}');
@@ -1660,65 +2072,164 @@
 
         function selectChapter(idx) {
             currentChapterIdx = idx;
+            const dashBtn = document.getElementById('sidebarDashBtn');
+            if (dashBtn) dashBtn.classList.remove('nav-btn-primary');
             renderSidebar();
             renderChapterView();
             toggleMobileSidebar(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showDashboard() {
             currentChapterIdx = -1;
+            const dashBtn = document.getElementById('sidebarDashBtn');
+            if (dashBtn) dashBtn.classList.add('nav-btn-primary');
             renderSidebar();
+            renderDashboard();
+            toggleMobileSidebar(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function setDashFilter(filter) {
+            currentDashFilter = filter;
             renderDashboard();
         }
 
         function renderDashboard() {
+            currentChapterIdx = -1;
             const main = document.getElementById('mainContent');
             const total = CHAPTERS.length;
             const completed = Object.keys(completedTopics).length;
             const remaining = total - completed;
             const pct = Math.round((completed / total) * 100);
 
-            main.innerHTML = `
-                <div class="dash-hero">
-                    <div>
-                        <span class="dash-badge">BDS 3RD YEAR &amp; MBBS MONOGRAPH</span>
-                        <h2 class="dash-title">General Medicine Master Exam Hub</h2>
-                        <p class="dash-subtitle">15-Mark University Essay Blueprints • Emergency Protocols • Bedside Clinical Pearls</p>
-                    </div>
-                    <button class="nav-btn nav-btn-primary" onclick="selectChapter(0)">Start Clinical Study →</button>
-                </div>
+            let notesCount = 0;
+            CHAPTERS.forEach(ch => {
+                if ((localStorage.getItem('medicine_notes_' + ch.id) || '').trim().length > 0) notesCount++;
+            });
 
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-val">${total}</div>
-                        <div class="stat-lbl">Total Topics</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-val" style="color: #10b981;">${completed}</div>
-                        <div class="stat-lbl">Completed</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-val" style="color: #f59e0b;">${remaining}</div>
-                        <div class="stat-lbl">Remaining</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-val" style="color: #0284c7;">${pct}%</div>
-                        <div class="stat-lbl">Syllabus Ready</div>
-                    </div>
-                </div>
+            const dashBtn = document.getElementById('sidebarDashBtn');
+            if (dashBtn) dashBtn.classList.add('nav-btn-primary');
+            document.querySelectorAll('.topic-item').forEach(el => el.classList.remove('active'));
 
-                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 14px;">Curriculum Systems Explorer</h3>
-                <div class="types-grid">
-                    ${CHAPTERS.map((ch, idx) => `
-                        <div class="type-card" onclick="selectChapter(${idx})" style="cursor: pointer;">
-                            <span class="type-card-badge">${ch.category}</span>
-                            <div class="type-card-title">${idx + 1}. ${ch.title}</div>
-                            <div class="type-card-stat">${ch.badge} • ${ch.reading_time}</div>
-                            <div class="type-card-summary">${ch.clinical_pearl}</div>
+            let html = `
+                <div class="dash-hero-card">
+                    <div style="flex: 1;">
+                        <span class="dash-hero-badge">BDS 3RD YEAR &amp; MBBS GENERAL MEDICINE PORTAL</span>
+                        <h1 class="dash-hero-title">General Medicine Master Exam Hub</h1>
+                        <p class="dash-hero-sub">15-Mark University Essay Blueprints • Emergency Protocols • Bedside Clinical Pearls</p>
+                        <div class="dash-hero-meta">
+                            <span class="dash-hero-stat"><strong>${total}</strong> University Topics</span>
+                            <span class="dash-hero-stat"><strong style="color: #4ade80;">${completed}</strong> Completed</span>
+                            <span class="dash-hero-stat"><strong style="color: #a78bfa;">${pct}%</strong> Syllabus Ready</span>
                         </div>
-                    `).join('')}
+                    </div>
+                    <div class="dash-hero-image-box">
+                        <svg viewBox="0 0 260 140" width="260" height="140" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="260" height="140" fill="#1e1b4b" rx="8"/>
+                            <path d="M20 70H60L75 40L95 100L115 55L130 85L145 70H240" stroke="#818cf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            <circle cx="95" cy="100" r="4" fill="#f43f5e"/>
+                            <circle cx="75" cy="40" r="4" fill="#38bdf8"/>
+                            <text x="130" y="125" fill="#c7d2fe" font-size="11" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" text-anchor="middle">HEMODYNAMICS &amp; CLINICAL ECG</text>
+                        </svg>
+                    </div>
                 </div>
+
+                <div class="dash-cheat-sheet-card">
+                    <div style="display: flex; align-items: center; gap: 16px; flex: 1;">
+                        <div class="cheat-sheet-badge-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.72rem; font-weight: 700; color: #e9d5ff; text-transform: uppercase; letter-spacing: 0.08em;">Exam Night Rapid Revision</div>
+                            <div style="font-size: 1.15rem; font-weight: 800; color: #ffffff;">Chapter 21: Master Medicine Rapid Revision Cheat Sheet</div>
+                            <div style="font-size: 0.84rem; color: #e0e7fe; margin-top: 2px;">
+                                Diagnostic criteria (Duke, Jones, ADA), emergency resuscitation dosages, chairside bleeding cutoffs &amp; antibiotic prophylaxis matrices.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="nav-btn nav-btn-primary" onclick="selectChapter(19)" style="background: #ffffff; color: #4f46e5 !important; font-weight: 700; padding: 10px 20px; font-size: 0.88rem; box-shadow: 0 4px 14px rgba(0,0,0,0.25);">
+                        Open Cheat Sheet →
+                    </button>
+                </div>
+
+                <div class="stats-grid-dashboard">
+                    <div class="stat-card-box">
+                        <div class="stat-card-label">Total University Topics</div>
+                        <div class="stat-card-val">${total}</div>
+                    </div>
+                    <div class="stat-card-box">
+                        <div class="stat-card-label">Topics Completed</div>
+                        <div class="stat-card-val" style="color: #10b981;">${completed}</div>
+                    </div>
+                    <div class="stat-card-box">
+                        <div class="stat-card-label">Topics Remaining</div>
+                        <div class="stat-card-val" style="color: #f59e0b;">${remaining}</div>
+                    </div>
+                    <div class="stat-card-box">
+                        <div class="stat-card-label">Topics with Notes</div>
+                        <div class="stat-card-val" style="color: var(--accent-primary);">${notesCount}</div>
+                    </div>
+                </div>
+
+                <div class="progress-banner-dash">
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 0.92rem;">
+                        <span>University Syllabus Completion</span>
+                        <span style="color: var(--accent-primary);">${pct}%</span>
+                    </div>
+                    <div class="progress-bar-bg-dash">
+                        <div class="progress-bar-fill-dash" style="width: ${pct}%;"></div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                    <h2 style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary);">Study Plan Topics</h2>
+                    <div class="category-scroll">
+                        <button class="filter-chip ${currentDashFilter === 'all' ? 'active' : ''}" onclick="setDashFilter('all')">All Topics (${total})</button>
+                        <button class="filter-chip ${currentDashFilter === 'pending' ? 'active' : ''}" onclick="setDashFilter('pending')">Pending (${remaining})</button>
+                        <button class="filter-chip ${currentDashFilter === 'completed' ? 'active' : ''}" onclick="setDashFilter('completed')">Completed (${completed})</button>
+                        <button class="filter-chip ${currentDashFilter === 'notes' ? 'active' : ''}" onclick="setDashFilter('notes')">Has Notes (${notesCount})</button>
+                        <button class="filter-chip" onclick="selectChapter(19)" style="background: linear-gradient(135deg, #7c3aed, #4f46e5); color: #ffffff; border: none;">⚡ Cheat Sheet</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-topic-cards-grid">
             `;
+
+            CHAPTERS.forEach((ch, idx) => {
+                const isDone = !!completedTopics[ch.id];
+                const hasNote = ((localStorage.getItem('medicine_notes_' + ch.id) || '').trim().length > 0);
+
+                if (currentDashFilter === 'completed' && !isDone) return;
+                if (currentDashFilter === 'pending' && isDone) return;
+                if (currentDashFilter === 'notes' && !hasNote) return;
+
+                html += `
+                    <div class="dash-topic-card ${isDone ? 'completed' : ''}">
+                        <div>
+                            <div class="dash-card-header-row">
+                                <span class="dash-card-chapter-tag">Chapter ${idx + 1}</span>
+                                ${hasNote ? '<span style="font-size: 0.72rem; background: rgba(99, 102, 241, 0.12); color: #818cf8; padding: 2px 7px; border-radius: 4px; font-weight: 600;">Note Saved</span>' : ''}
+                            </div>
+                            <div class="dash-card-title-text">${ch.title}</div>
+                            <div class="dash-card-source-text">${ch.category} • ${ch.reading_time}</div>
+                        </div>
+                        <div class="dash-card-footer-row">
+                            <button class="toggle-complete-btn ${isDone ? 'is-completed' : ''}" onclick="toggleTopicComplete('${ch.id}')">
+                                ${isDone ? '✓ Completed' : '○ Mark Done'}
+                            </button>
+                            <button class="nav-btn nav-btn-primary" onclick="selectChapter(${idx})" style="padding: 6px 14px; font-size: 0.8rem;">
+                                Study →
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `</div>`;
+            main.innerHTML = html;
         }
 
         function renderChapterView() {
@@ -1731,6 +2242,15 @@
             const main = document.getElementById('mainContent');
 
             main.innerHTML = `
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                    <button class="nav-btn" onclick="showDashboard()">
+                        ← Back to Dashboard
+                    </button>
+                    <div style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">
+                        Chapter ${currentChapterIdx + 1} of ${CHAPTERS.length}
+                    </div>
+                </div>
+
                 <div class="chapter-header">
                     <span class="chapter-top-badge">${ch.category} • ${ch.badge}</span>
                     <h2 class="chapter-title-display">${ch.title}</h2>
@@ -1941,16 +2461,195 @@
 
         function parseMarkdown(md) {
             if (!md) return '';
-            let html = md
-                .replace(/^### (.*$)/gim, '<h4>$1</h4>')
-                .replace(/^## (.*$)/gim, '<h3 style="font-size:1.15rem; font-weight:700; margin:18px 0 8px 0; color:var(--text-primary);">$1</h3>')
-                .replace(/^# (.*$)/gim, '<h2 style="font-size:1.3rem; font-weight:800; margin:20px 0 10px 0; color:var(--text-primary);">$1</h2>')
-                .replace(/\*\*(.*?)\*\*/gim, '<strong style="color:var(--text-primary);">$1</strong>')
-                .replace(/\*(.*?)\*/gim, '<em>$1</em>')
-                .replace(/```([\s\S]*?)```/gim, '<pre>$1</pre>')
-                .replace(/^\* (.*$)/gim, '<li>$1</li>')
-                .replace(/\n/gim, '<br>');
-            return html;
+
+            // Clean LaTeX and medical notations
+            let text = md
+                .replace(/\times(?![a-zA-Z])/g, '×')
+                .replace(/\pm(?![a-zA-Z])/g, '±')
+                .replace(/\ge(?![a-zA-Z])/g, '≥')
+                .replace(/\le(?![a-zA-Z])/g, '≤')
+                .replace(/\to(?![a-zA-Z])/g, '→')
+                .replace(/\rightarrow(?![a-zA-Z])/g, '→')
+                .replace(/\leftarrow(?![a-zA-Z])/g, '←')
+                .replace(/\uparrow(?![a-zA-Z])/g, '↑')
+                .replace(/\downarrow(?![a-zA-Z])/g, '↓')
+                .replace(/\Delta(?![a-zA-Z])/g, 'Δ')
+                .replace(/\circ(?![a-zA-Z])/g, '°')
+                .replace(/\mu(?![a-zA-Z])/g, 'µ')
+                .replace(/\alpha(?![a-zA-Z])/g, 'α')
+                .replace(/\beta(?![a-zA-Z])/g, 'β')
+                .replace(/\gamma(?![a-zA-Z])/g, 'γ')
+                .replace(/\text\{([^\}]+)\}/g, ' $1')
+                .replace(/\bHbA1[cC]\b/g, 'HbA<sub>1c</sub>')
+                .replace(/\bFiO_?2\b/g, 'FiO<sub>2</sub>')
+                .replace(/\bPaO_?2\b/g, 'PaO<sub>2</sub>')
+                .replace(/\bPaCO_?2\b/g, 'PaCO<sub>2</sub>')
+                .replace(/\bSpO_?2\b/g, 'SpO<sub>2</sub>')
+                .replace(/\bCO_?2\b/g, 'CO<sub>2</sub>')
+                .replace(/\bO_?2\b/g, 'O<sub>2</sub>')
+                .replace(/\bH_?2O\b/g, 'H<sub>2</sub>O')
+                .replace(/\bNa\^\+/g, 'Na⁺')
+                .replace(/\bK\^\+/g, 'K⁺')
+                .replace(/\bCa\^2\+/g, 'Ca²⁺');
+
+            // Format formula blocks ($$...$$)
+            text = text.replace(/\$\$([\s\S]*?)\$\$/g, (m, formula) => {
+                return `<div class="formula-card"><div class="formula-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg> CLINICAL FORMULA</div><div class="formula-equation">${formula.trim()}</div></div>`;
+            });
+
+            // Preserve code blocks
+            const codeBlocks = [];
+            text = text.replace(/```([\s\S]*?)```/g, (m, code) => {
+                const id = `__CODE_BLOCK_${codeBlocks.length}__`;
+                codeBlocks.push(`<pre class="algorithm-block"><code>${code.trim()}</code></pre>`);
+                return id;
+            });
+
+            const lines = text.split('\n');
+            const result = [];
+            let inTable = false;
+            let tableLines = [];
+            let inUl = false;
+            let inOl = false;
+
+            function closeLists() {
+                if (inUl) { result.push('</ul>'); inUl = false; }
+                if (inOl) { result.push('</ol>'); inOl = false; }
+            }
+
+            function formatInline(str) {
+                return str
+                    .replace(/\*\*(.*?)\*\*/g, '<strong style="color:var(--text-primary); font-weight:700;">$1</strong>')
+                    .replace(/(?<!\*)\*([^*]+?)\*(?!\*)/g, '<em>$1</em>')
+                    .replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>')
+                    .replace(/\$([^$]+)\$/g, '<span class="inline-math">$1</span>');
+            }
+
+            function flushTable() {
+                if (tableLines.length < 2) {
+                    tableLines = [];
+                    return;
+                }
+                const headers = tableLines[0].split('|').slice(1, -1).map(h => h.trim());
+                let startRow = 1;
+                if (tableLines.length > 1 && tableLines[1].includes('---')) {
+                    startRow = 2;
+                }
+
+                let html = '<div class="table-responsive"><table class="data-table"><thead><tr>';
+                headers.forEach(h => {
+                    html += `<th>${formatInline(h)}</th>`;
+                });
+                html += '</tr></thead><tbody>';
+
+                for (let i = startRow; i < tableLines.length; i++) {
+                    const line = tableLines[i].trim();
+                    if (!line || !line.includes('|')) continue;
+                    const cols = line.split('|').slice(1, -1).map(c => c.trim());
+                    html += '<tr>';
+                    cols.forEach(c => {
+                        html += `<td>${formatInline(c)}</td>`;
+                    });
+                    html += '</tr>';
+                }
+                html += '</tbody></table></div>';
+                result.push(html);
+                tableLines = [];
+            }
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                const trimmed = line.trim();
+
+                if (trimmed.startsWith('|') && trimmed.endsWith('|')) {
+                    closeLists();
+                    inTable = true;
+                    tableLines.push(trimmed);
+                    continue;
+                } else if (inTable) {
+                    inTable = false;
+                    flushTable();
+                }
+
+                if (!trimmed) {
+                    closeLists();
+                    continue;
+                }
+
+                if (trimmed.startsWith('#### ')) {
+                    closeLists();
+                    result.push(`<h5 class="essay-subheading" style="font-size:1.02rem; font-weight:700; margin:14px 0 6px 0; color:var(--text-primary);">${formatInline(trimmed.substring(5))}</h5>`);
+                    continue;
+                }
+                if (trimmed.startsWith('### ')) {
+                    closeLists();
+                    result.push(`<h4 class="essay-section-title" style="font-size:1.1rem; font-weight:700; margin:18px 0 8px 0; color:var(--accent-primary);">${formatInline(trimmed.substring(4))}</h4>`);
+                    continue;
+                }
+                if (trimmed.startsWith('## ')) {
+                    closeLists();
+                    result.push(`<h3 class="essay-major-title" style="font-size:1.22rem; font-weight:800; margin:22px 0 10px 0; color:var(--text-primary);">${formatInline(trimmed.substring(3))}</h3>`);
+                    continue;
+                }
+
+                if (trimmed.startsWith('> [!TIP]')) {
+                    closeLists();
+                    const tipText = formatInline(trimmed.replace('> [!TIP]', '').replace('**Clinical Pearl:**', '').trim());
+                    result.push(`<div class="callout-alert alert-tip"><div class="alert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><strong>Clinical Pearl:</strong> ${tipText}</div></div>`);
+                    continue;
+                }
+                if (trimmed.startsWith('> [!NOTE]')) {
+                    closeLists();
+                    const noteText = formatInline(trimmed.replace('> [!NOTE]', '').trim());
+                    result.push(`<div class="callout-alert alert-note"><div class="alert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div><div>${noteText}</div></div>`);
+                    continue;
+                }
+                if (trimmed.startsWith('> [!IMPORTANT]')) {
+                    closeLists();
+                    const impText = formatInline(trimmed.replace('> [!IMPORTANT]', '').trim());
+                    result.push(`<div class="callout-alert alert-important"><div class="alert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div>${impText}</div></div>`);
+                    continue;
+                }
+                if (trimmed.startsWith('> ')) {
+                    closeLists();
+                    result.push(`<blockquote class="clinical-quote" style="border-left: 3px solid var(--accent-primary); padding-left: 14px; margin: 12px 0; color: var(--text-secondary); font-style: italic;">${formatInline(trimmed.substring(2))}</blockquote>`);
+                    continue;
+                }
+
+                const olMatch = trimmed.match(/^(\d+)\.\s+(.*)$/);
+                if (olMatch) {
+                    if (inUl) { result.push('</ul>'); inUl = false; }
+                    if (!inOl) {
+                        result.push(`<ol class="content-list-ordered" start="${olMatch[1]}">`);
+                        inOl = true;
+                    }
+                    result.push(`<li>${formatInline(olMatch[2])}</li>`);
+                    continue;
+                }
+
+                if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+                    if (inOl) { result.push('</ol>'); inOl = false; }
+                    if (!inUl) {
+                        result.push('<ul class="content-list">');
+                        inUl = true;
+                    }
+                    result.push(`<li>${formatInline(trimmed.substring(2))}</li>`);
+                    continue;
+                }
+
+                closeLists();
+                result.push(`<p class="content-para">${formatInline(trimmed)}</p>`);
+            }
+
+            if (inTable) flushTable();
+            closeLists();
+
+            let finalHtml = result.join('\n');
+            codeBlocks.forEach((code, idx) => {
+                finalHtml = finalHtml.replace(`__CODE_BLOCK_${idx}__`, code);
+            });
+
+            return finalHtml;
         }
 
         function toggleTopicComplete(chId) {
