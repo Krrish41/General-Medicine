@@ -41,6 +41,10 @@
 > [!TIP]
 > **Clinical Pearl:** During the 'window period' of acute Hepatitis B infection, HBsAg is negative and anti-HBs has not yet appeared. The ONLY diagnostic marker present is IgM anti-HBc. Always order anti-HBc IgM when acute viral hepatitis is clinically suspected despite negative HBsAg.
 
+> [!NOTE]
+> **Layman's Intuition — The City Waterworks and the Infiltration Agent:**
+> Think of your liver as the central chemical purification plant of a mega-city. Hepatitis viruses are like sabotaging hackers that sneak into the plant. Intriguingly, the viruses themselves don't dynamite the machinery; instead, your body's own over-zealous security guards (killer T-cells) spot the infected factory workers (hepatocytes) and blow up the entire assembly line to contain the breach. The 'window period' is like when the intruder's original fingerprints have been wiped clean, but the city's specialized detectives haven't finished forging the permanent neutralizing handcuff antibodies yet — during this blackout, only the temporary crime-scene tape (IgM antibodies) reveals that a break-in occurred.
+
 ### Comprehensive 15-Mark Structural Monograph
 
 #### 1. Definition, Classification & Viral Taxonomy
@@ -210,6 +214,10 @@ Acute viral hepatitis evolves through four distinct clinical stages:
 > [!TIP]
 > **Clinical Pearl:** Asterixis (flapping tremor) is elicited by asking the patient to extend their arms with wrists dorsiflexed and fingers spread with eyes closed. It is NOT specific to hepatic encephalopathy; it also occurs in uremia, severe hypercapnia (CO2 narcosis), and hypomagnesemia.
 
+> [!NOTE]
+> **Layman's Intuition — The Chemical Waste Spill and the Clouded Brain:**
+> When severe liver failure strikes, it is as though the city's massive sewage treatment facility suffers a total blackout overnight. Industrial ammonia, normally detoxified into harmless urea, bypasses the shutdown plant and pours into the brain's bloodstream. The brain's star-shaped support cells (astrocytes) attempt to soak up the poison, swelling until intracranial pressure spikes dangerously like an over-inflated tire, causing erratic sleep, flapping hands, and deep coma.
+
 ### Comprehensive 15-Mark Structural Monograph
 
 #### 1. Definition, Classification & Etiology
@@ -372,6 +380,10 @@ Increased Intracranial Pressure (ICP) ──► Brainstem Herniation (Leading ca
 
 > [!TIP]
 > **Clinical Pearl:** The Serum-Ascites Albumin Gradient (SAAG) is calculated as: [Serum Albumin] - [Ascitic Fluid Albumin]. A SAAG ≥ 1.1 g/dL reliably indicates Portal Hypertension (hydrostatic transudate with > 97% accuracy), distinguishing cirrhosis or heart failure from peritoneal tuberculosis or peritoneal carcinomatosis (SAAG < 1.1 g/dL).
+
+> [!NOTE]
+> **Layman's Intuition — The Sclerotic Dam and the Bursting Overflow Pipes:**
+> Healthy liver tissue is soft and porous like a natural sponge. Cirrhosis turns that sponge into tough, scarred gristle. Blood arriving from the stomach and intestines through the portal vein hits this solid dam and cannot pass. The backed-up pressure forces blood into fragile, paper-thin detour veins around the esophagus and stomach. These veins swell like overstretched water balloons (varices) that can rupture catastrophically under ordinary coughing or food swallowing.
 
 ### Comprehensive 15-Mark Structural Monograph
 
@@ -1033,6 +1045,10 @@ Decades of recurrent low-grade inflammation cause progressive valvular fibrosis:
 
 > [!TIP]
 > **Clinical Pearl:** Janeway lesions are PAINLESS, erythematous macules on the palms and soles caused by septic emboli. In contrast, Osler's nodes are EXQUISITELY PAINFUL, tender, violaceous subcutaneous nodules on the pulps of fingers and toes caused by immune complex deposition (type III hypersensitivity). Remember: 'O' for Osler = 'O' for Ouch (Painful)! 'J' for Janeway = Just painless emboli.
+
+> [!NOTE]
+> **Layman's Intuition — Barnacles on the Damaged Propeller:**
+> Imagine a heart valve that is slightly roughened or artificial — like a pitted ship propeller. When a dental extraction releases oral bacteria (Viridans streptococci) into the bloodstream, they stick to the rough valve surface, forming slimy, infected vegetations like barnacles. These vegetations chew through valve leaflets and throw off septic emboli like shrapnel into the brain and kidneys.
 
 ### Comprehensive 15-Mark Structural Monograph
 

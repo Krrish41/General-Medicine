@@ -6,7 +6,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='32' y2='32'%3E%3Cstop offset='0%25' stop-color='%238b5cf6'/%3E%3Cstop offset='100%25' stop-color='%236d28d9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 6v20M6 16h20' stroke='%23ffffff' stroke-width='3.5' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23e9d5ff'/%3E%3C/svg%3E">
 <title>General Medicine Master Compendium - 15-Mark University Examination Monograph</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap');
 
 @page {
     size: A4;
@@ -20,104 +20,106 @@
     @bottom-left {
         content: "General Medicine Master Monograph | University Exam Preparation";
         font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: 8pt;
-        color: #94a3b8;
+        font-size: 8.5pt;
+        color: #64748b;
     }
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     color: #1e293b;
-    background-color: #ffffff;
-    font-size: 9.8pt;
-    margin: 0;
-    padding: 0;
+    background: #ffffff;
+    line-height: 1.6;
+    font-size: 9.5pt;
 }
 
 .cover-page {
     page-break-after: always;
-    min-height: 85vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px;
-    border: 3px double #059669;
-    margin: 20px;
+    padding: 40px;
+    border-left: 8px solid #059669;
+    background: #fafaf9;
 }
 
 .cover-title {
-    font-size: 26pt;
-    font-weight: 800;
-    color: #065f46;
-    letter-spacing: -0.02em;
-    margin-bottom: 12px;
-    text-transform: uppercase;
+    font-family: 'Newsreader', serif;
+    font-size: 32pt;
+    font-weight: 700;
+    color: #064e3b;
+    line-height: 1.15;
+    margin-bottom: 8px;
 }
 
 .cover-subtitle {
     font-size: 13pt;
     color: #047857;
-    margin-bottom: 30px;
     font-weight: 600;
+    margin-bottom: 24px;
 }
 
 .cover-meta {
-    font-size: 10pt;
-    color: #64748b;
+    font-size: 9.5pt;
+    color: #475569;
     line-height: 1.8;
-    border-top: 1px solid #e2e8f0;
-    padding-top: 20px;
-    max-width: 500px;
 }
 
 .chapter-container {
     page-break-before: always;
-    margin-bottom: 30px;
-}
-
-h1.chapter-title {
-    font-size: 18pt;
-    font-weight: 800;
-    color: #065f46;
-    border-bottom: 2.5px solid #10b981;
-    padding-bottom: 8px;
-    margin-top: 20px;
-    margin-bottom: 14px;
+    margin-bottom: 25px;
 }
 
 .chapter-badge {
     display: inline-block;
     background: #ecfdf5;
-    color: #047857;
+    color: #065f46;
     border: 1px solid #a7f3d0;
-    border-radius: 4px;
-    padding: 2px 8px;
-    font-size: 8pt;
+    font-size: 7.5pt;
     font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.chapter-title {
+    font-family: 'Newsreader', serif;
+    font-size: 20pt;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
     margin-bottom: 12px;
+    border-bottom: 2px solid #059669;
+    padding-bottom: 6px;
 }
 
 .pearl-box {
     background: #f0fdf4;
     border-left: 4px solid #10b981;
-    padding: 12px 16px;
-    border-radius: 0 8px 8px 0;
-    margin: 16px 0;
-    font-size: 9.5pt;
+    padding: 10px 14px;
+    margin: 14px 0;
+    font-size: 9pt;
+    color: #064e3b;
+    border-radius: 0 6px 6px 0;
 }
 
-.pearl-box strong {
-    color: #065f46;
+.layman-box {
+    background: #f8fafc;
+    border-left: 4px solid #0284c7;
+    padding: 10px 14px;
+    margin: 14px 0;
+    font-size: 8.8pt;
+    color: #0f172a;
+    border-radius: 0 6px 6px 0;
 }
 
 .section-title {
-    font-size: 12pt;
+    font-size: 11.5pt;
     font-weight: 700;
-    color: #1e293b;
+    color: #0f172a;
     margin-top: 18px;
     margin-bottom: 8px;
     border-bottom: 1px solid #e2e8f0;
@@ -178,11 +180,11 @@ li {
 </head>
 <body>
 <div class="cover-page">
-    <div style="width: 50px; height: 50px; background: #10b981; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 24pt; font-weight: 800;">M</div>
+    <div style="width: 50px; height: 50px; background: #059669; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 24pt; font-weight: 800;">M</div>
     <div class="cover-title">General Medicine</div>
     <div class="cover-subtitle">15-Mark University Examination Master Monograph</div>
     <div class="cover-meta">
-        <strong>Curriculum:</strong> BDS 3rd Year & MBBS Clinical Medicine<br>
+        <strong>Curriculum:</strong> BDS 3rd Year &amp; MBBS Clinical Medicine<br>
         <strong>Primary References:</strong> Davidson's Principles and Practice of Medicine, Harrison's Principles of Internal Medicine, Chugh Clinical Medicine<br>
         <strong>Core Inclusions:</strong> Diagnostic Criteria (Duke, Jones, ADA), Emergency Protocols, Hepatology, Hematology, Chairside Dental Safety Guidelines
     </div>
@@ -196,6 +198,10 @@ li {
             <strong>Clinical Pearl:</strong> During the 'window period' of acute Hepatitis B infection, HBsAg is negative and anti-HBs has not yet appeared. The ONLY diagnostic marker present is IgM anti-HBc. Always order anti-HBc IgM when acute viral hepatitis is clinically suspected despite negative HBsAg.
         </div>
         
+<div class="layman-box">
+                <strong style="color: #0369a1;">Layman's Intuition — The City Waterworks and the Infiltration Agent:</strong><br>
+                Think of your liver as the central chemical purification plant of a mega-city. Hepatitis viruses are like sabotaging hackers that sneak into the plant. Intriguingly, the viruses themselves don't dynamite the machinery; instead, your body's own over-zealous security guards (killer T-cells) spot the infected factory workers (hepatocytes) and blow up the entire assembly line to contain the breach. The 'window period' is like when the intruder's original fingerprints have been wiped clean, but the city's specialized detectives haven't finished forging the permanent neutralizing handcuff antibodies yet — during this blackout, only the temporary crime-scene tape (IgM antibodies) reveals that a break-in occurred.
+            </div>
 <h3 class="section-title">1. Definition, Classification & Viral Taxonomy</h3>
 <p class="content-para"><strong>Definition</strong>: Acute viral hepatitis is a systemic infection predominantly affecting the liver parenchyma, caused by hepatotropic viruses leading to hepatocellular necrosis, inflammation, and clinical jaundice.</p>
 <h4 class="sub-heading">Hepatotropic Viruses Classification</h4>
@@ -347,11 +353,12 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>What is the 'window period' in acute Hepatitis B, and which marker proves infection during it? (Answer: Time between disappearance of HBsAg and appearance of Anti-HBs; Anti-HBc IgM is the sole marker).</li>
-<li>What is the difference between HBeAg and anti-HBe? (Answer: HBeAg indicates active viral replication and high infectivity; anti-HBe indicates low viral replication and lower transmission risk).</li>
-<li>Why is Hepatitis D called a defective virus? (Answer: HDV requires the outer HBsAg envelope of HBV to assemble virions and infect hepatocytes).</li>
-<li>What is the dental post-exposure protocol following an accidental needle-stick from an HBsAg-positive patient in an unvaccinated operator? (Answer: Administer HBIG 0.06 mL/kg IM within 24 hours AND initiate the accelerated Hepatitis B vaccination series at 0, 1, and 2 months).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the 'window period' in acute Hepatitis B, and which marker proves infection during it? (Answer: Time between disappearance of HBsAg and appearance of Anti-HBs; Anti-HBc IgM is the sole marker).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the difference between HBeAg and anti-HBe? (Answer: HBeAg indicates active viral replication and high infectivity; anti-HBe indicates low viral replication and lower transmission risk).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is Hepatitis D called a defective virus? (Answer: HDV requires the outer HBsAg envelope of HBV to assemble virions and infect hepatocytes).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the dental post-exposure protocol following an accidental needle-stick from an HBsAg-positive patient in an unvaccinated operator? (Answer: Administer HBIG 0.06 mL/kg IM within 24 hours AND initiate the accelerated Hepatitis B vaccination series at 0, 1, and 2 months).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap2_acute_liver_failure">
@@ -362,6 +369,10 @@ li {
             <strong>Clinical Pearl:</strong> Asterixis (flapping tremor) is elicited by asking the patient to extend their arms with wrists dorsiflexed and fingers spread with eyes closed. It is NOT specific to hepatic encephalopathy; it also occurs in uremia, severe hypercapnia (CO2 narcosis), and hypomagnesemia.
         </div>
         
+<div class="layman-box">
+                <strong style="color: #0369a1;">Layman's Intuition — The Chemical Waste Spill and the Clouded Brain:</strong><br>
+                When severe liver failure strikes, it is as though the city's massive sewage treatment facility suffers a total blackout overnight. Industrial ammonia, normally detoxified into harmless urea, bypasses the shutdown plant and pours into the brain's bloodstream. The brain's star-shaped support cells (astrocytes) attempt to soak up the poison, swelling until intracranial pressure spikes dangerously like an over-inflated tire, causing erratic sleep, flapping hands, and deep coma.
+            </div>
 <h3 class="section-title">1. Definition, Classification & Etiology</h3>
 <p class="content-para"><strong>Definition</strong>: Acute Liver Failure (ALF) is a rapid deterioration of liver function resulting in altered mental status (hepatic encephalopathy) and coagulopathy (INR ≥ 1.5) in an individual with no prior history of liver disease or underlying cirrhosis.</p>
 <h4 class="sub-heading">O'Grady Classification of Acute Liver Failure</h4>
@@ -518,11 +529,12 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>Why is protein NOT permanently restricted in hepatic encephalopathy today? (Answer: Protein-calorie malnutrition accelerates muscle wasting; skeletal muscle is crucial for peripheral ammonia detoxification. Provide 1.2–1.5 g/kg/day of protein once acute crisis stabilizes).</li>
-<li>What is the difference between asterixis and tremors? (Answer: Asterixis is negative myoclonus—a sudden brief loss of postural tone followed by a rapid compensatory recovery flick—not a rhythmic oscillation).</li>
-<li>Why must sedatives and benzodiazepines be strictly avoided in patients with liver failure? (Answer: Impaired hepatic clearance leads to drug accumulation, and baseline up-regulated cerebral GABA receptors cause catastrophic coma).</li>
-<li>What is the role of Rifaximin in HE? (Answer: Eradicates ammoniagenic bacterial flora in the colon with negligible systemic absorption).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is protein NOT permanently restricted in hepatic encephalopathy today? (Answer: Protein-calorie malnutrition accelerates muscle wasting; skeletal muscle is crucial for peripheral ammonia detoxification. Provide 1.2–1.5 g/kg/day of protein once acute crisis stabilizes).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the difference between asterixis and tremors? (Answer: Asterixis is negative myoclonus—a sudden brief loss of postural tone followed by a rapid compensatory recovery flick—not a rhythmic oscillation).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why must sedatives and benzodiazepines be strictly avoided in patients with liver failure? (Answer: Impaired hepatic clearance leads to drug accumulation, and baseline up-regulated cerebral GABA receptors cause catastrophic coma).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the role of Rifaximin in HE? (Answer: Eradicates ammoniagenic bacterial flora in the colon with negligible systemic absorption).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap3_cirrhosis_portal_htn">
@@ -533,6 +545,10 @@ li {
             <strong>Clinical Pearl:</strong> The Serum-Ascites Albumin Gradient (SAAG) is calculated as: [Serum Albumin] - [Ascitic Fluid Albumin]. A SAAG ≥ 1.1 g/dL reliably indicates Portal Hypertension (hydrostatic transudate with > 97% accuracy), distinguishing cirrhosis or heart failure from peritoneal tuberculosis or peritoneal carcinomatosis (SAAG < 1.1 g/dL).
         </div>
         
+<div class="layman-box">
+                <strong style="color: #0369a1;">Layman's Intuition — The Sclerotic Dam and the Bursting Overflow Pipes:</strong><br>
+                Healthy liver tissue is soft and porous like a natural sponge. Cirrhosis turns that sponge into tough, scarred gristle. Blood arriving from the stomach and intestines through the portal vein hits this solid dam and cannot pass. The backed-up pressure forces blood into fragile, paper-thin detour veins around the esophagus and stomach. These veins swell like overstretched water balloons (varices) that can rupture catastrophically under ordinary coughing or food swallowing.
+            </div>
 <h3 class="section-title">1. Definition, Classification & Etiological Spectrum</h3>
 <p class="content-para"><strong>Definition</strong>: Cirrhosis is a chronic, diffuse, progressive pathological entity defined by a pathological triad:</p>
 <ol class="content-list-ordered" start="1">
@@ -679,11 +695,12 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>Why is Carvedilol preferred over Propranolol for portal hypertension? (Answer: Carvedilol combines non-selective beta-blockade (beta-1 and beta-2) with alpha-1 receptor blockade, reducing intrahepatic vascular resistance as well as splanchnic inflow, achieving greater HVPG reduction).</li>
-<li>Why does splenomegaly cause thrombocytopenia in cirrhosis? (Answer: Portal hypertension causes passive splenic venous congestion; the enlarged spleen sequesters up to 90% of circulating platelets (hypersplenism)).</li>
-<li>What is the mechanism of Spider Naevi? (Answer: Impaired hepatic metabolism of circulating estrogens leads to arteriolar dilation; pressing on the central arteriole blanches the radiating capillaries).</li>
-<li>What is the minimum platelet count required for routine dental extraction in a cirrhotic patient? (Answer: 50,000 /mm³, accompanied by local hemostatic measures).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is Carvedilol preferred over Propranolol for portal hypertension? (Answer: Carvedilol combines non-selective beta-blockade (beta-1 and beta-2) with alpha-1 receptor blockade, reducing intrahepatic vascular resistance as well as splanchnic inflow, achieving greater HVPG reduction).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why does splenomegaly cause thrombocytopenia in cirrhosis? (Answer: Portal hypertension causes passive splenic venous congestion; the enlarged spleen sequesters up to 90% of circulating platelets (hypersplenism)).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the mechanism of Spider Naevi? (Answer: Impaired hepatic metabolism of circulating estrogens leads to arteriolar dilation; pressing on the central arteriole blanches the radiating capillaries).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the minimum platelet count required for routine dental extraction in a cirrhotic patient? (Answer: 50,000 /mm³, accompanied by local hemostatic measures).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap4_protein_energy_malnutrition">
@@ -841,11 +858,12 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>Why is iron contraindicated in Phase 1 of severe malnutrition management? (Answer: Free iron is a bacterial growth nutrient that precipitates overwhelming sepsis, and it generates toxic free radicals via the Fenton reaction in tissues lacking antioxidant proteins).</li>
-<li>What is ReSoMal and how does it differ from standard WHO ORS? (Answer: ReSoMal has lower sodium (45 vs 75 mmol/L) to prevent heart failure, higher potassium (40 vs 20 mmol/L) to treat hypokalemia, and added magnesium).</li>
-<li>What is the pathophysiology of fatty liver in Kwashiorkor? (Answer: Inability of the liver to synthesize Apolipoprotein B-100 prevents the export of triglycerides as VLDL, causing intracellular fat accumulation).</li>
-<li>What is Cancrum Oris (Noma)? (Answer: A severe gangrenous orofacial necrotizing infection seen in malnourished children driven by Fusobacterium necrophorum).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is iron contraindicated in Phase 1 of severe malnutrition management? (Answer: Free iron is a bacterial growth nutrient that precipitates overwhelming sepsis, and it generates toxic free radicals via the Fenton reaction in tissues lacking antioxidant proteins).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is ReSoMal and how does it differ from standard WHO ORS? (Answer: ReSoMal has lower sodium (45 vs 75 mmol/L) to prevent heart failure, higher potassium (40 vs 20 mmol/L) to treat hypokalemia, and added magnesium).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the pathophysiology of fatty liver in Kwashiorkor? (Answer: Inability of the liver to synthesize Apolipoprotein B-100 prevents the export of triglycerides as VLDL, causing intracellular fat accumulation).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is Cancrum Oris (Noma)? (Answer: A severe gangrenous orofacial necrotizing infection seen in malnourished children driven by Fusobacterium necrophorum).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap5_dysphagia_and_pud">
@@ -1002,11 +1020,12 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>What is the classical triad of Plummer-Vinson syndrome? (Answer: Middle-aged females, severe iron deficiency anemia, and post-cricoid esophageal web).</li>
-<li>Why must every gastric ulcer be biopsied while duodenal ulcers rarely require biopsy? (Answer: Gastric ulcers have a 2–5% risk of harboring malignancy (adenocarcinoma); duodenal ulcers are almost universally benign).</li>
-<li>What is the mechanism of the Urea Breath Test? (Answer: The patient drinks 13C or 14C labeled urea. If H. pylori is present, its urease splits the urea into ammonia and labeled CO2, which is absorbed, exhaled, and quantified in breath).</li>
-<li>Why do NSAIDs cause gastric ulceration? (Answer: Systemic inhibition of COX-1 enzymes halts mucosal prostaglandin synthesis (PGE2), impairing the bicarbonate-mucus barrier and mucosal blood supply).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the classical triad of Plummer-Vinson syndrome? (Answer: Middle-aged females, severe iron deficiency anemia, and post-cricoid esophageal web).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why must every gastric ulcer be biopsied while duodenal ulcers rarely require biopsy? (Answer: Gastric ulcers have a 2–5% risk of harboring malignancy (adenocarcinoma); duodenal ulcers are almost universally benign).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the mechanism of the Urea Breath Test? (Answer: The patient drinks 13C or 14C labeled urea. If H. pylori is present, its urease splits the urea into ammonia and labeled CO2, which is absorbed, exhaled, and quantified in breath).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why do NSAIDs cause gastric ulceration? (Answer: Systemic inhibition of COX-1 enzymes halts mucosal prostaglandin synthesis (PGE2), impairing the bicarbonate-mucus barrier and mucosal blood supply).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap6_rheumatic_fever">
@@ -1187,11 +1206,12 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>What is an Anitschkow cell? (Answer: A pathognomonic modified histiocyte seen in rheumatic Aschoff nodules with abundant cytoplasm and a central nucleus showing a characteristic wavy caterpillar-like chromatin ribbon).</li>
-<li>What is the Carey Coombs murmur? (Answer: A transient soft, low-pitched mid-diastolic apical murmur heard in acute rheumatic valvulitis due to turbulent flow across edematous mitral leaflets, distinguishing it from the opening snap and rumble of chronic mitral stenosis).</li>
-<li>Why is secondary penicillin prophylaxis required for decades in rheumatic fever? (Answer: Recurrent streptococcal pharyngeal infections trigger rapid reactivation of memory T-cells, progressively worsening valvular destruction with each attack).</li>
-<li>Which heart valve is most frequently damaged in Chronic Rheumatic Heart Disease? (Answer: Mitral valve (65–70%), followed by combined Mitral + Aortic valve (25%)).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is an Anitschkow cell? (Answer: A pathognomonic modified histiocyte seen in rheumatic Aschoff nodules with abundant cytoplasm and a central nucleus showing a characteristic wavy caterpillar-like chromatin ribbon).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the Carey Coombs murmur? (Answer: A transient soft, low-pitched mid-diastolic apical murmur heard in acute rheumatic valvulitis due to turbulent flow across edematous mitral leaflets, distinguishing it from the opening snap and rumble of chronic mitral stenosis).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is secondary penicillin prophylaxis required for decades in rheumatic fever? (Answer: Recurrent streptococcal pharyngeal infections trigger rapid reactivation of memory T-cells, progressively worsening valvular destruction with each attack).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Which heart valve is most frequently damaged in Chronic Rheumatic Heart Disease? (Answer: Mitral valve (65–70%), followed by combined Mitral + Aortic valve (25%)).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap7_infective_endocarditis">
@@ -1202,6 +1222,10 @@ li {
             <strong>Clinical Pearl:</strong> Janeway lesions are PAINLESS, erythematous macules on the palms and soles caused by septic emboli. In contrast, Osler's nodes are EXQUISITELY PAINFUL, tender, violaceous subcutaneous nodules on the pulps of fingers and toes caused by immune complex deposition (type III hypersensitivity). Remember: 'O' for Osler = 'O' for Ouch (Painful)! 'J' for Janeway = Just painless emboli.
         </div>
         
+<div class="layman-box">
+                <strong style="color: #0369a1;">Layman's Intuition — Barnacles on the Damaged Propeller:</strong><br>
+                Imagine a heart valve that is slightly roughened or artificial — like a pitted ship propeller. When a dental extraction releases oral bacteria (Viridans streptococci) into the bloodstream, they stick to the rough valve surface, forming slimy, infected vegetations like barnacles. These vegetations chew through valve leaflets and throw off septic emboli like shrapnel into the brain and kidneys.
+            </div>
 <h3 class="section-title">1. Definition, Classification & Microbiology</h3>
 <p class="content-para"><strong>Definition</strong>: Infective Endocarditis (IE) is an invasive microbial colonization of the cardiac endocardium—predominantly involving heart valves (native or prosthetic), chordae tendineae, or mural endocardium—characterized by the pathognomonic development of <strong>vegetations</strong> and associated with persistent bacteremia, valve destruction, septic embolization, and immune complex phenomena.</p>
 <h4 class="sub-heading">Classification: Acute vs Subacute Infective Endocarditis</h4>
@@ -1364,11 +1388,12 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>Why is Amoxicillin preferred over Penicillin V for dental endocarditis prophylaxis? (Answer: Amoxicillin has superior gastrointestinal absorption, higher bioavailability, and produces higher sustained bactericidal serum concentrations).</li>
-<li>What should you do if a patient forgot to take their antibiotic prophylaxis before an extraction? (Answer: The antibiotic may be administered up to 2 hours AFTER the procedure according to AHA guidelines without compromising prophylactic efficacy).</li>
-<li>What is the difference between Janeway lesions and Osler nodes? (Answer: Janeway lesions are painless embolic macules on palms/soles; Osler nodes are painful immune-complex nodules on finger/toe pulps).</li>
-<li>Does a patient with mitral valve prolapse with regurgitation require routine antibiotic prophylaxis today? (Answer: NO. Under the revised AHA/ADA guidelines, MVP is no longer classified as highest-risk; prophylaxis is restricted to prosthetic valves, prior IE, and cyanotic CHD).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is Amoxicillin preferred over Penicillin V for dental endocarditis prophylaxis? (Answer: Amoxicillin has superior gastrointestinal absorption, higher bioavailability, and produces higher sustained bactericidal serum concentrations).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What should you do if a patient forgot to take their antibiotic prophylaxis before an extraction? (Answer: The antibiotic may be administered up to 2 hours AFTER the procedure according to AHA guidelines without compromising prophylactic efficacy).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the difference between Janeway lesions and Osler nodes? (Answer: Janeway lesions are painless embolic macules on palms/soles; Osler nodes are painful immune-complex nodules on finger/toe pulps).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Does a patient with mitral valve prolapse with regurgitation require routine antibiotic prophylaxis today? (Answer: NO. Under the revised AHA/ADA guidelines, MVP is no longer classified as highest-risk; prophylaxis is restricted to prosthetic valves, prior IE, and cyanotic CHD).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap8_mi_and_ischemia">
@@ -1559,12 +1584,13 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>Why is Sublingual Nitroglycerin contraindicated in inferior wall myocardial infarction? (Answer: Inferior MI often involves the right ventricle, which is dependent on preload; nitrates induce venous pooling, collapsing RV stroke volume and precipitating fatal hypotension).</li>
-<li>What is the maximum safe dose of epinephrine in a dental patient with ischemic heart disease? (Answer: 0.04 mg of epinephrine, which equals 2 cartridges of 1:100,000 epinephrine).</li>
-<li>Why is Troponin preferred over CK-MB for diagnosing acute MI? (Answer: Troponins are cardio-specific with zero skeletal muscle cross-reactivity and remain elevated for 10–14 days, providing a wider diagnostic window).</li>
-<li>Should a patient stop taking Aspirin and Clopidogrel before a routine tooth extraction? (Answer: NO. Stopping DAPT dramatically increases the risk of fatal coronary stent thrombosis; minor oral bleeding can be readily controlled with local hemostatics).</li>
-<li>What is Dressler's syndrome? (Answer: A secondary autoimmune pericarditis occurring 2 to 10 weeks following a myocardial infarction, presenting with fever, pleuritic chest pain, and pericardial friction rub).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is Sublingual Nitroglycerin contraindicated in inferior wall myocardial infarction? (Answer: Inferior MI often involves the right ventricle, which is dependent on preload; nitrates induce venous pooling, collapsing RV stroke volume and precipitating fatal hypotension).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the maximum safe dose of epinephrine in a dental patient with ischemic heart disease? (Answer: 0.04 mg of epinephrine, which equals 2 cartridges of 1:100,000 epinephrine).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is Troponin preferred over CK-MB for diagnosing acute MI? (Answer: Troponins are cardio-specific with zero skeletal muscle cross-reactivity and remain elevated for 10–14 days, providing a wider diagnostic window).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Should a patient stop taking Aspirin and Clopidogrel before a routine tooth extraction? (Answer: NO. Stopping DAPT dramatically increases the risk of fatal coronary stent thrombosis; minor oral bleeding can be readily controlled with local hemostatics).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is Dressler's syndrome? (Answer: A secondary autoimmune pericarditis occurring 2 to 10 weeks following a myocardial infarction, presenting with fever, pleuritic chest pain, and pericardial friction rub).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap9_heart_failure_and_htn">
@@ -1712,11 +1738,12 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>Why is the semi-supine position mandatory when treating heart failure patients in the dental chair? (Answer: Placing the patient supine increases venous return, overloading the failing left ventricle and triggering acute pulmonary edema and severe orthopnea).</li>
-<li>Which class of antihypertensive medications classically produces drug-induced gingival hyperplasia? (Answer: Dihydropyridine Calcium Channel Blockers, most notably Nifedipine and Amlodipine).</li>
-<li>What is the difference between Hypertensive Urgency and Hypertensive Emergency? (Answer: Both feature severe BP elevation > 180/120 mmHg, but Hypertensive Emergency is defined by the presence of acute, progressive target organ damage like encephalopathy, dissection, or pulmonary edema).</li>
-<li>What is the significance of serum BNP in emergency dyspnea? (Answer: BNP is released by ventricular stretch; a normal level (< 100 pg/mL) reliably rules out heart failure with > 95% negative predictive value, pointing to pulmonary causes like COPD or asthma).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is the semi-supine position mandatory when treating heart failure patients in the dental chair? (Answer: Placing the patient supine increases venous return, overloading the failing left ventricle and triggering acute pulmonary edema and severe orthopnea).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Which class of antihypertensive medications classically produces drug-induced gingival hyperplasia? (Answer: Dihydropyridine Calcium Channel Blockers, most notably Nifedipine and Amlodipine).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the difference between Hypertensive Urgency and Hypertensive Emergency? (Answer: Both feature severe BP elevation > 180/120 mmHg, but Hypertensive Emergency is defined by the presence of acute, progressive target organ damage like encephalopathy, dissection, or pulmonary edema).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the significance of serum BNP in emergency dyspnea? (Answer: BNP is released by ventricular stretch; a normal level (< 100 pg/mL) reliably rules out heart failure with > 95% negative predictive value, pointing to pulmonary causes like COPD or asthma).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap10_congenital_heart_diseases">
@@ -1864,12 +1891,13 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>Why does a child with Tetralogy of Fallot squat during distress? (Answer: Squatting compresses the femoral arteries, increasing systemic vascular resistance (SVR), which forces more blood across the pulmonary artery to be oxygenated rather than shunting right-to-left).</li>
-<li>What is the characteristic murmur of Patent Ductus Arteriosus? (Answer: A continuous, rough, machinery-like murmur (Gibson murmur) heard in the left 1st and 2nd intercostal space, peaking at S2).</li>
-<li>What is Eisenmenger syndrome? (Answer: Reversal of an uncorrected long-standing left-to-right shunt into a right-to-left shunt secondary to irreversible pulmonary vascular remodeling and fixed pulmonary arterial hypertension).</li>
-<li>Why is the second heart sound (S2) fixed and widely split in Atrial Septal Defect? (Answer: The persistent left-to-right shunt continuously overloads the right ventricle, delaying pulmonic valve closure equally during both inspiration and expiration).</li>
-<li>What drug is used to medically close a PDA in premature infants? (Answer: Intravenous Indomethacin or Ibuprofen, which inhibit prostaglandin synthesis).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why does a child with Tetralogy of Fallot squat during distress? (Answer: Squatting compresses the femoral arteries, increasing systemic vascular resistance (SVR), which forces more blood across the pulmonary artery to be oxygenated rather than shunting right-to-left).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the characteristic murmur of Patent Ductus Arteriosus? (Answer: A continuous, rough, machinery-like murmur (Gibson murmur) heard in the left 1st and 2nd intercostal space, peaking at S2).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is Eisenmenger syndrome? (Answer: Reversal of an uncorrected long-standing left-to-right shunt into a right-to-left shunt secondary to irreversible pulmonary vascular remodeling and fixed pulmonary arterial hypertension).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is the second heart sound (S2) fixed and widely split in Atrial Septal Defect? (Answer: The persistent left-to-right shunt continuously overloads the right ventricle, delaying pulmonic valve closure equally during both inspiration and expiration).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What drug is used to medically close a PDA in premature infants? (Answer: Intravenous Indomethacin or Ibuprofen, which inhibit prostaglandin synthesis).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap11_typhoid_fever">
@@ -2034,11 +2062,12 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>What is Faget's sign and why does it occur in typhoid? (Answer: Relative bradycardia—an inappropriately normal or slow pulse rate in the presence of high fever, caused by bacterial endotoxins acting on the cardiac conduction system or vagal stimulation).</li>
-<li>What is the difference between O and H antigens in the Widal test? (Answer: O is somatic cell wall lipopolysaccharide whose IgM antibodies rise early in acute infection; H is flagellar protein whose IgG antibodies appear later and persist for months).</li>
-<li>Why is the third week of typhoid called the 'danger week'? (Answer: This is when necrotic Peyer's patches slough off, predisposing to fatal complications: severe lower GI hemorrhage and terminal ileal perforation).</li>
-<li>What is the anatomical site of carriage in chronic typhoid carriers? (Answer: The gallbladder, where bacteria survive in bile and colonize gallstones).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is Faget's sign and why does it occur in typhoid? (Answer: Relative bradycardia—an inappropriately normal or slow pulse rate in the presence of high fever, caused by bacterial endotoxins acting on the cardiac conduction system or vagal stimulation).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the difference between O and H antigens in the Widal test? (Answer: O is somatic cell wall lipopolysaccharide whose IgM antibodies rise early in acute infection; H is flagellar protein whose IgG antibodies appear later and persist for months).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is the third week of typhoid called the 'danger week'? (Answer: This is when necrotic Peyer's patches slough off, predisposing to fatal complications: severe lower GI hemorrhage and terminal ileal perforation).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the anatomical site of carriage in chronic typhoid carriers? (Answer: The gallbladder, where bacteria survive in bile and colonize gallstones).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap12_syphilis_and_stds">
@@ -2217,12 +2246,13 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>What is the classical Hutchinson's Triad of late congenital syphilis? (Answer: 1. Hutchinson's notched incisors, 2. Interstitial keratitis, 3. Eighth nerve deafness).</li>
-<li>What is a Mulberry molar? (Answer: A first permanent molar characterized by a constricted occlusal table with multiple poorly formed, dwarfed accessory cusps resembling a mulberry).</li>
-<li>What is the Jarisch-Herxheimer reaction? (Answer: An acute systemic febrile inflammatory reaction occurring within hours of starting penicillin therapy due to massive release of endotoxins from dying spirochetes).</li>
-<li>Why is darkfield microscopy unreliable for diagnosing oral primary chancres? (Answer: Non-pathogenic saprophytic oral spirochetes like Treponema denticola normally colonize the oral cavity, creating false-positive darkfield interpretations).</li>
-<li>What causes palatal perforation in tertiary syphilis? (Answer: Gummatous necrotizing granulomas invading the periosteum and palatine bones, resulting in avascular ischemic necrosis and perforation).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the classical Hutchinson's Triad of late congenital syphilis? (Answer: 1. Hutchinson's notched incisors, 2. Interstitial keratitis, 3. Eighth nerve deafness).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is a Mulberry molar? (Answer: A first permanent molar characterized by a constricted occlusal table with multiple poorly formed, dwarfed accessory cusps resembling a mulberry).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the Jarisch-Herxheimer reaction? (Answer: An acute systemic febrile inflammatory reaction occurring within hours of starting penicillin therapy due to massive release of endotoxins from dying spirochetes).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is darkfield microscopy unreliable for diagnosing oral primary chancres? (Answer: Non-pathogenic saprophytic oral spirochetes like Treponema denticola normally colonize the oral cavity, creating false-positive darkfield interpretations).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What causes palatal perforation in tertiary syphilis? (Answer: Gummatous necrotizing granulomas invading the periosteum and palatine bones, resulting in avascular ischemic necrosis and perforation).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap13_bacterial_infections_dip_tet">
@@ -2397,11 +2427,12 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>Why must diphtheria antitoxin (DAT) be given without waiting for laboratory confirmation? (Answer: DAT only neutralizes free, circulating toxin. Once the toxin enters cardiac and nervous cells, it binds irreversibly to EF-2, and antitoxin cannot reverse the damage).</li>
-<li>What is the difference between Tetanospasmin and Botulinum toxin? (Answer: Both are zinc endopeptidases cleaving SNARE proteins; but Tetanospasmin acts on central inhibitory Renshaw interneurons blocking GABA/glycine, producing spastic paralysis; Botulinum acts on peripheral neuromuscular junctions blocking acetylcholine, producing flaccid paralysis).</li>
-<li>What is the diagnostic significance of Albert's stain? (Answer: Identifies metachromatic volutin (polyphosphate) granules of Corynebacterium diphtheriae, which stain bluish-black/purple against a light green malachite green background).</li>
-<li>Why does a patient surviving tetanus still require full tetanus toxoid vaccination? (Answer: Tetanospasmin is so extraordinarily potent that a lethal dose is far below the threshold needed to trigger an adaptive antibody response, conferring zero natural immunity).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why must diphtheria antitoxin (DAT) be given without waiting for laboratory confirmation? (Answer: DAT only neutralizes free, circulating toxin. Once the toxin enters cardiac and nervous cells, it binds irreversibly to EF-2, and antitoxin cannot reverse the damage).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the difference between Tetanospasmin and Botulinum toxin? (Answer: Both are zinc endopeptidases cleaving SNARE proteins; but Tetanospasmin acts on central inhibitory Renshaw interneurons blocking GABA/glycine, producing spastic paralysis; Botulinum acts on peripheral neuromuscular junctions blocking acetylcholine, producing flaccid paralysis).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the diagnostic significance of Albert's stain? (Answer: Identifies metachromatic volutin (polyphosphate) granules of Corynebacterium diphtheriae, which stain bluish-black/purple against a light green malachite green background).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why does a patient surviving tetanus still require full tetanus toxoid vaccination? (Answer: Tetanospasmin is so extraordinarily potent that a lethal dose is far below the threshold needed to trigger an adaptive antibody response, conferring zero natural immunity).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap14_viral_exanthems_and_hiv">
@@ -2574,12 +2605,13 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>What are Koplik's spots? (Answer: Pathognomonic enanthem of Measles appearing as tiny, bluish-white spots resembling salt grains surrounded by an erythematous halo, located on the buccal mucosa opposite the lower molars).</li>
-<li>What is the Gregg Triad of Congenital Rubella Syndrome? (Answer: 1. Cataracts, 2. Sensorineural deafness, 3. Congenital cardiac defects, specifically Patent Ductus Arteriosus and Pulmonary Artery Stenosis).</li>
-<li>Which oral lesion is the most common presentation in advanced HIV/AIDS? (Answer: Oral Candidiasis, most commonly pseudomembranous thrush and erythematous candidiasis).</li>
-<li>What is the dental post-exposure prophylaxis (PEP) protocol following a contaminated needle-stick injury? (Answer: Wash wound immediately with soap and water; initiate a 28-day 3-drug ART regimen (TDF + 3TC + Dolutegravir) within 2 hours, maximum 72 hours).</li>
-<li>What virus causes Kaposi's Sarcoma? (Answer: Human Herpesvirus 8, also called Kaposi Sarcoma-associated Herpesvirus (KSHV)).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What are Koplik's spots? (Answer: Pathognomonic enanthem of Measles appearing as tiny, bluish-white spots resembling salt grains surrounded by an erythematous halo, located on the buccal mucosa opposite the lower molars).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the Gregg Triad of Congenital Rubella Syndrome? (Answer: 1. Cataracts, 2. Sensorineural deafness, 3. Congenital cardiac defects, specifically Patent Ductus Arteriosus and Pulmonary Artery Stenosis).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Which oral lesion is the most common presentation in advanced HIV/AIDS? (Answer: Oral Candidiasis, most commonly pseudomembranous thrush and erythematous candidiasis).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the dental post-exposure prophylaxis (PEP) protocol following a contaminated needle-stick injury? (Answer: Wash wound immediately with soap and water; initiate a 28-day 3-drug ART regimen (TDF + 3TC + Dolutegravir) within 2 hours, maximum 72 hours).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What virus causes Kaposi's Sarcoma? (Answer: Human Herpesvirus 8, also called Kaposi Sarcoma-associated Herpesvirus (KSHV)).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap15_diabetes_and_dka">
@@ -2763,12 +2795,13 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>What is the 'Rule of 15' in managing chairside hypoglycemia? (Answer: Administer 15 grams of fast-acting oral carbohydrates, wait 15 minutes, recheck blood glucose; repeat if still < 70 mg/dL).</li>
-<li>Why is Periodontitis called the 'Sixth Complication' of Diabetes? (Answer: Hyperglycemia induces advanced glycation end products (AGEs) and neutrophil dysfunction, heightening periodontal inflammation, while active periodontitis pours pro-inflammatory cytokines into the blood, worsening insulin resistance).</li>
-<li>What is the significance of the C-peptide level? (Answer: C-peptide is cleaved in equimolar amounts from proinsulin during insulin secretion; measuring C-peptide distinguishes Type 1 DM (undetectable) from Type 2 DM (normal or high)).</li>
-<li>Why is potassium replacement mandatory during DKA resuscitation even if initial blood potassium is normal? (Answer: Total body potassium is severely depleted due to osmotic diuresis; administering insulin and rehydrating fluids drives potassium into cells, triggering a sudden, fatal drop in serum potassium (cardiac arrest)).</li>
-<li>What is the maximum recommended dose of epinephrine in a diabetic dental patient? (Answer: 0.04 mg (2 cartridges of 1:100,000 epinephrine), as epinephrine antagonizes insulin action).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the 'Rule of 15' in managing chairside hypoglycemia? (Answer: Administer 15 grams of fast-acting oral carbohydrates, wait 15 minutes, recheck blood glucose; repeat if still < 70 mg/dL).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is Periodontitis called the 'Sixth Complication' of Diabetes? (Answer: Hyperglycemia induces advanced glycation end products (AGEs) and neutrophil dysfunction, heightening periodontal inflammation, while active periodontitis pours pro-inflammatory cytokines into the blood, worsening insulin resistance).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the significance of the C-peptide level? (Answer: C-peptide is cleaved in equimolar amounts from proinsulin during insulin secretion; measuring C-peptide distinguishes Type 1 DM (undetectable) from Type 2 DM (normal or high)).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is potassium replacement mandatory during DKA resuscitation even if initial blood potassium is normal? (Answer: Total body potassium is severely depleted due to osmotic diuresis; administering insulin and rehydrating fluids drives potassium into cells, triggering a sudden, fatal drop in serum potassium (cardiac arrest)).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the maximum recommended dose of epinephrine in a diabetic dental patient? (Answer: 0.04 mg (2 cartridges of 1:100,000 epinephrine), as epinephrine antagonizes insulin action).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap16_leukemias">
@@ -2953,12 +2986,13 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>What is an Auer rod? (Answer: A pathognomonic needle-shaped or cylindrical azurophilic inclusion in the cytoplasm of myeloblasts in AML, formed by the crystallization and fusion of lysosomal granules containing myeloperoxidase).</li>
-<li>What is the Philadelphia chromosome and which leukemia is it associated with? (Answer: A reciprocal translocation between chromosomes 9 and 22, t(9;22)(q34;q11), creating the BCR-ABL1 fusion oncogene; pathognomonic for Chronic Myelogenous Leukemia (CML)).</li>
-<li>Why is gingival enlargement so characteristically prominent in AML? (Answer: Myelomonocytic (M4) and monocytic (M5) leukemic cells possess intrinsic tissue-infiltrating properties, accumulating in the loose connective tissue of the gingiva in areas of chronic marginal plaque irritation).</li>
-<li>What is the minimum safe platelet count for routine dental extraction? (Answer: 50,000 /mm³, accompanied by local hemostatics such as Surgicel and tranexamic acid mouthwash).</li>
-<li>What is the Absolute Neutrophil Count (ANC) cutoff below which elective dental procedures are contraindicated? (Answer: ANC < 1,000 /mm³; severe infection risk if < 500 /mm³).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is an Auer rod? (Answer: A pathognomonic needle-shaped or cylindrical azurophilic inclusion in the cytoplasm of myeloblasts in AML, formed by the crystallization and fusion of lysosomal granules containing myeloperoxidase).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the Philadelphia chromosome and which leukemia is it associated with? (Answer: A reciprocal translocation between chromosomes 9 and 22, t(9;22)(q34;q11), creating the BCR-ABL1 fusion oncogene; pathognomonic for Chronic Myelogenous Leukemia (CML)).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is gingival enlargement so characteristically prominent in AML? (Answer: Myelomonocytic (M4) and monocytic (M5) leukemic cells possess intrinsic tissue-infiltrating properties, accumulating in the loose connective tissue of the gingiva in areas of chronic marginal plaque irritation).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the minimum safe platelet count for routine dental extraction? (Answer: 50,000 /mm³, accompanied by local hemostatics such as Surgicel and tranexamic acid mouthwash).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the Absolute Neutrophil Count (ANC) cutoff below which elective dental procedures are contraindicated? (Answer: ANC < 1,000 /mm³; severe infection risk if < 500 /mm³).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap17_renal_syndromes_and_ckd">
@@ -3087,11 +3121,12 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>Why is dental treatment performed on the day AFTER hemodialysis rather than the day of dialysis? (Answer: To avoid active systemic heparin anticoagulation used during dialysis, and to operate when the patient is in optimal metabolic, fluid, and electrolyte balance).</li>
-<li>What causes uremic stomatitis? (Answer: Uremic patients have high salivary urea levels; oral microbial urease enzymes split urea into caustic free ammonia, which burns and ulcerates the oral mucosa).</li>
-<li>What is the classical radiographic jaw finding in Renal Osteodystrophy? (Answer: Loss of the radiopaque lamina dura around the tooth roots and generalized 'ground glass' demineralization of the alveolar bone due to secondary hyperparathyroidism).</li>
-<li>Why are NSAIDs strictly contraindicated in patients with chronic renal failure? (Answer: NSAIDs inhibit renal prostaglandin synthesis, which is crucial for maintaining compensatory afferent arteriolar vasodilation, precipitating acute renal failure and worsening uremic bleeding).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is dental treatment performed on the day AFTER hemodialysis rather than the day of dialysis? (Answer: To avoid active systemic heparin anticoagulation used during dialysis, and to operate when the patient is in optimal metabolic, fluid, and electrolyte balance).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What causes uremic stomatitis? (Answer: Uremic patients have high salivary urea levels; oral microbial urease enzymes split urea into caustic free ammonia, which burns and ulcerates the oral mucosa).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the classical radiographic jaw finding in Renal Osteodystrophy? (Answer: Loss of the radiopaque lamina dura around the tooth roots and generalized 'ground glass' demineralization of the alveolar bone due to secondary hyperparathyroidism).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why are NSAIDs strictly contraindicated in patients with chronic renal failure? (Answer: NSAIDs inhibit renal prostaglandin synthesis, which is crucial for maintaining compensatory afferent arteriolar vasodilation, precipitating acute renal failure and worsening uremic bleeding).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap18_bells_palsy_and_headache">
@@ -3235,12 +3270,13 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>Why does an Upper Motor Neuron (UMN) stroke spare the forehead? (Answer: The motor neurons in the facial nucleus that supply the frontalis and orbicularis oculi muscles receive bilateral corticobulbar innervation from both cerebral hemispheres; if one cortex is damaged, the other cortex still supplies the forehead).</li>
-<li>What is Bell's phenomenon? (Answer: A physiological protective reflex: when a patient attempts to close the paralyzed eye, the eye cannot close and the globe rolls reflexively upward and outward, exposing the white sclera).</li>
-<li>Why is eye protection the most critical part of managing Bell's palsy? (Answer: Inability to close the eye (lagophthalmos) leads to continuous corneal exposure, desiccation, and abrasion, resulting in severe exposure keratitis, corneal ulceration, and permanent blindness).</li>
-<li>What is the first-line medical therapy for Bell's palsy? (Answer: Oral Prednisolone 60 mg daily for 5 days, followed by a 5-day taper, initiated within 72 hours of symptom onset).</li>
-<li>What is Ramsay Hunt syndrome? (Answer: Herpes Zoster reactivation in the geniculate ganglion causing severe LMN facial paralysis, painful vesicular eruptions in the external auditory meatus and palate, and vestibulocochlear dysfunction).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why does an Upper Motor Neuron (UMN) stroke spare the forehead? (Answer: The motor neurons in the facial nucleus that supply the frontalis and orbicularis oculi muscles receive bilateral corticobulbar innervation from both cerebral hemispheres; if one cortex is damaged, the other cortex still supplies the forehead).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is Bell's phenomenon? (Answer: A physiological protective reflex: when a patient attempts to close the paralyzed eye, the eye cannot close and the globe rolls reflexively upward and outward, exposing the white sclera).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is eye protection the most critical part of managing Bell's palsy? (Answer: Inability to close the eye (lagophthalmos) leads to continuous corneal exposure, desiccation, and abrasion, resulting in severe exposure keratitis, corneal ulceration, and permanent blindness).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the first-line medical therapy for Bell's palsy? (Answer: Oral Prednisolone 60 mg daily for 5 days, followed by a 5-day taper, initiated within 72 hours of symptom onset).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is Ramsay Hunt syndrome? (Answer: Herpes Zoster reactivation in the geniculate ganglion causing severe LMN facial paralysis, painful vesicular eruptions in the external auditory meatus and palate, and vestibulocochlear dysfunction).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap19_meningitis">
@@ -3375,11 +3411,12 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>Why must Dexamethasone be administered BEFORE or WITH the first antibiotic dose in bacterial meningitis? (Answer: Antibiotic-induced bacterial lysis releases an overwhelming surge of inflammatory cytokines; pre-treatment with dexamethasone dampens this inflammatory storm, significantly preventing hearing loss and neurological death).</li>
-<li>What is the difference between Kernig's and Brudzinski's signs? (Answer: Kernig's is resistance/pain upon passive knee extension with the hip flexed at 90°; Brudzinski's is spontaneous reflexive flexion of hips/knees upon passive flexion of the neck).</li>
-<li>Why is Ampicillin added to empiric meningitis regimens in patients over 50 years of age? (Answer: To cover Listeria monocytogenes, which has increased incidence in the elderly and is intrinsically resistant to all cephalosporins).</li>
-<li>What is the significance of a 'cobweb' coagulum in CSF? (Answer: Highly characteristic of Tuberculous Meningitis; caused by high protein and fibrinogen content precipitating upon standing).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why must Dexamethasone be administered BEFORE or WITH the first antibiotic dose in bacterial meningitis? (Answer: Antibiotic-induced bacterial lysis releases an overwhelming surge of inflammatory cytokines; pre-treatment with dexamethasone dampens this inflammatory storm, significantly preventing hearing loss and neurological death).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the difference between Kernig's and Brudzinski's signs? (Answer: Kernig's is resistance/pain upon passive knee extension with the hip flexed at 90°; Brudzinski's is spontaneous reflexive flexion of hips/knees upon passive flexion of the neck).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is Ampicillin added to empiric meningitis regimens in patients over 50 years of age? (Answer: To cover Listeria monocytogenes, which has increased incidence in the elderly and is intrinsically resistant to all cephalosporins).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the significance of a 'cobweb' coagulum in CSF? (Answer: Highly characteristic of Tuberculous Meningitis; caused by high protein and fibrinogen content precipitating upon standing).</li>
 </ul></div>
 </div>
 <div class="chapter-container" id="chap20_shock_and_cpr">
@@ -3541,12 +3578,13 @@ li {
 </tr>
 </tbody></table>
 <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 16px;">
-            <strong style="color: #0f172a; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em;">High-Yield Viva Pearls</strong><ul>
-<li>Why is Intramuscular Adrenaline preferred over Subcutaneous injection in Anaphylaxis? (Answer: The extensive vascularity of the anterolateral thigh muscle produces rapid, reliable peak therapeutic plasma levels within 8 minutes, compared to delayed, unpredictable absorption (> 30 min) subcutaneously).</li>
-<li>What is the first-line vasopressor in Septic Shock? (Answer: Noradrenaline (Norepinephrine) administered to achieve a target Mean Arterial Pressure (MAP) ≥ 65 mmHg).</li>
-<li>What are the two shockable rhythms in cardiac arrest? (Answer: Ventricular Fibrillation (VF) and Pulseless Ventricular Tachycardia (pVT)).</li>
-<li>What is the compression-to-ventilation ratio for adult CPR? (Answer: 30 chest compressions to 2 rescue breaths).</li>
-<li>What is the immediate chairside management of vasovagal syncope in a dental patient? (Answer: Place patient in flat supine position with legs elevated 45 degrees (Trendelenburg), loosen tight collar, maintain patent airway, and administer high-flow oxygen).</li>
+                <h4 style="margin: 0 0 8px 0; color: #047857; font-size: 9.5pt; text-transform: uppercase;">High-Yield Clinical &amp; Viva Voce Pearls</h4>
+                <ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 4px; font-size: 8.8pt;">Why is Intramuscular Adrenaline preferred over Subcutaneous injection in Anaphylaxis? (Answer: The extensive vascularity of the anterolateral thigh muscle produces rapid, reliable peak therapeutic plasma levels within 8 minutes, compared to delayed, unpredictable absorption (> 30 min) subcutaneously).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the first-line vasopressor in Septic Shock? (Answer: Noradrenaline (Norepinephrine) administered to achieve a target Mean Arterial Pressure (MAP) ≥ 65 mmHg).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What are the two shockable rhythms in cardiac arrest? (Answer: Ventricular Fibrillation (VF) and Pulseless Ventricular Tachycardia (pVT)).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the compression-to-ventilation ratio for adult CPR? (Answer: 30 chest compressions to 2 rescue breaths).</li>
+<li style="margin-bottom: 4px; font-size: 8.8pt;">What is the immediate chairside management of vasovagal syncope in a dental patient? (Answer: Place patient in flat supine position with legs elevated 45 degrees (Trendelenburg), loosen tight collar, maintain patent airway, and administer high-flow oxygen).</li>
 </ul></div>
 </div>
 </body></html>
