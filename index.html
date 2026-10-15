@@ -3,47 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='32' y2='32'%3E%3Cstop offset='0%25' stop-color='%238b5cf6'/%3E%3Cstop offset='100%25' stop-color='%236d28d9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 6v20M6 16h20' stroke='%23ffffff' stroke-width='3.5' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23e9d5ff'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='32' y2='32'%3E%3Cstop offset='0%25' stop-color='%230284c7'/%3E%3Cstop offset='100%25' stop-color='%230369a1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 6v20M6 16h20' stroke='%23ffffff' stroke-width='3.5' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23bae6fd'/%3E%3C/svg%3E">
     <title>General Medicine Master Portal — University Exam Companion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-base: #fbfbfa;
             --bg-surface: #ffffff;
             --bg-card: #ffffff;
-            --bg-card-hover: #f5f3ff;
+            --bg-card-hover: rgba(3, 105, 161, 0.04);
             --border-color: #e2e8f0;
-            --border-active: #6366f1;
+            --border-active: #0284c7;
+            --border-strong: #cbd5e1;
             --text-primary: #0f172a;
-            --text-secondary: #334155;
+            --text-secondary: #475569;
             --text-muted: #64748b;
-            --accent-primary: #6366f1;
-            --accent-primary-dark: #4f46e5;
-            --accent-light: #eef2ff;
-            --accent-glow: rgba(99, 102, 241, 0.18);
+            --accent-primary: #0369a1;
+            --accent-primary-dark: #075985;
+            --accent-light: rgba(3, 105, 161, 0.08);
+            --accent-glow: rgba(2, 132, 199, 0.2);
+            --accent-border: rgba(3, 105, 161, 0.22);
             --header-bg: rgba(251, 251, 250, 0.94);
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-            --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+            --accent-amber: #d97706;
+            --accent-amber-light: rgba(217, 119, 6, 0.1);
+            --accent-crimson: #be123c;
+            --success: #059669;
+            --success-light: rgba(5, 150, 105, 0.1);
+            --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+            --shadow-md: 0 4px 14px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 10px 30px rgba(15, 23, 42, 0.12);
         }
 
         body.dark {
             --bg-base: #090d16;
             --bg-surface: #0f172a;
-            --bg-card: #131b2e;
+            --bg-card: #0f172a;
             --bg-card-hover: #1e293b;
-            --border-color: rgba(255, 255, 255, 0.12);
-            --border-active: #818cf8;
+            --border-color: #1e293b;
+            --border-active: #38bdf8;
+            --border-strong: #334155;
             --text-primary: #f8fafc;
-            --text-secondary: #e2e8f0;
-            --text-muted: #94a3b8;
-            --accent-primary: #818cf8;
-            --accent-primary-dark: #6366f1;
-            --accent-light: rgba(99, 102, 241, 0.15);
-            --accent-glow: rgba(99, 102, 241, 0.3);
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-primary: #38bdf8;
+            --accent-primary-dark: #0284c7;
+            --accent-light: rgba(56, 189, 248, 0.12);
+            --accent-glow: rgba(56, 189, 248, 0.28);
+            --accent-border: rgba(56, 189, 248, 0.32);
             --header-bg: rgba(9, 13, 22, 0.94);
+            --accent-amber: #f59e0b;
+            --accent-amber-light: rgba(245, 158, 11, 0.15);
+            --accent-crimson: #fb7185;
+            --success: #10b981;
+            --success-light: rgba(16, 185, 129, 0.14);
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
             --shadow-md: 0 4px 14px rgba(0,0,0,0.55);
             --shadow-lg: 0 10px 30px rgba(0,0,0,0.7);
@@ -58,31 +72,44 @@
             background: transparent;
         }
         ::-webkit-scrollbar-thumb {
-            background: rgba(148, 163, 184, 0.35);
+            background: rgba(15, 23, 42, 0.16);
             border-radius: 999px;
             border: 1px solid transparent;
             background-clip: content-box;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(100, 116, 139, 0.6);
+            background: var(--accent-primary);
         }
         body.dark ::-webkit-scrollbar-thumb {
-            background: rgba(148, 163, 184, 0.25);
+            background: rgba(255, 255, 255, 0.2);
         }
         body.dark ::-webkit-scrollbar-thumb:hover {
-            background: rgba(148, 163, 184, 0.45);
+            background: var(--accent-primary);
         }
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             scrollbar-width: thin;
-            scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
+            scrollbar-color: rgba(15, 23, 42, 0.16) transparent;
+        }
+        body.dark * {
+            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
         }
 
         /* Tactile button feedback */
         .btn:active, .nav-btn:active, .speed-pill:active, .mobile-bottom-tab:active, .filter-chip:active {
             transform: scale(0.96) translateY(1px);
+        }
+
+        /* Editorial Medical Heading Typography */
+        h1, h2, h3, .brand-title, .dash-hero-title, .topic-title-display, .section-title, .card-title {
+            font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+            letter-spacing: -0.015em;
+            font-weight: 700;
+        }
+        code, pre, .stat-val, .table-cell-numeric, .audio-time-label, .score-badge, .formula-box, table.data-table td, table.data-table th, .exam-clock {
+            font-variant-numeric: tabular-nums;
         }
 
         body {
@@ -124,7 +151,7 @@
         .brand-badge {
             width: 36px;
             height: 36px;
-            background: linear-gradient(135deg, #059669, #047857);
+            background: linear-gradient(135deg, #0284c7, #0369a1);
             border-radius: 9px;
             display: flex;
             align-items: center;
@@ -132,7 +159,7 @@
             font-weight: 800;
             font-size: 1.15rem;
             color: #ffffff;
-            box-shadow: 0 4px 10px rgba(5, 150, 105, 0.25);
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
         }
 
         .brand-title h1 {
@@ -179,12 +206,13 @@
         }
 
         .nav-btn-primary {
-            background: var(--accent-primary);
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
             color: #ffffff !important;
             border-color: transparent;
+            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
         }
         .nav-btn-primary:hover {
-            background: #047857;
+            background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
         }
 
         /* Main App Grid Layout */
@@ -832,7 +860,7 @@
             box-shadow: 0 0 0 3px var(--accent-glow);
         }
 
-        /* Modern Floating Island Audio Player Dock */
+        /* Modern Floating Island Audio Player Dock (Surgery Pro Style) */
         .audio-dock {
             position: fixed;
             bottom: 20px;
@@ -844,7 +872,7 @@
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(28px) saturate(180%);
             -webkit-backdrop-filter: blur(28px) saturate(180%);
-            border: 1px solid rgba(5, 150, 105, 0.25);
+            border: 1px solid rgba(2, 132, 199, 0.25);
             border-radius: 22px;
             box-shadow: 0 16px 42px -6px rgba(15, 23, 42, 0.25), 0 4px 16px rgba(0, 0, 0, 0.05);
             padding: 12px 22px;
@@ -853,8 +881,8 @@
         }
         body.dark .audio-dock {
             background: rgba(15, 23, 42, 0.94);
-            border: 1px solid rgba(16, 185, 129, 0.25);
-            box-shadow: 0 20px 50px -8px rgba(0, 0, 0, 0.75), 0 0 24px rgba(5, 150, 105, 0.18);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            box-shadow: 0 20px 50px -8px rgba(0, 0, 0, 0.75), 0 0 24px rgba(2, 132, 199, 0.18);
         }
         .audio-dock.hidden {
             transform: translate(-50%, 150%);
@@ -880,20 +908,21 @@
             width: 42px;
             height: 42px;
             border-radius: 12px;
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+            transition: transform 0.2s ease;
         }
         .audio-dock.is-playing .audio-dock-track-icon {
             animation: pulseTrackIcon 2.4s ease-in-out infinite;
         }
         @keyframes pulseTrackIcon {
-            0%, 100% { transform: scale(1); box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3); }
-            50% { transform: scale(1.05); box-shadow: 0 6px 18px rgba(5, 150, 105, 0.45); }
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45); }
         }
         .audio-dock-track-title {
             font-size: 9pt;
@@ -902,6 +931,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            letter-spacing: -0.2px;
         }
         .audio-dock-chapter-title {
             font-size: 7.5pt;
@@ -922,14 +952,15 @@
         .audio-dock-buttons {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         .audio-control-btn {
             background: transparent;
             border: none;
             color: var(--text-primary);
             cursor: pointer;
-            padding: 6px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -937,27 +968,35 @@
             transition: all 0.2s ease;
         }
         .audio-control-btn:hover {
-            background: var(--bg-card-hover);
+            background: var(--accent-light);
             color: var(--accent-primary);
+            transform: scale(1.1);
         }
         .audio-btn-playpause {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
-            background: var(--accent-primary);
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
             color: #ffffff !important;
-            box-shadow: 0 4px 14px var(--accent-glow);
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .audio-btn-playpause:hover {
-            background: #047857;
-            transform: scale(1.04);
+            background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
         }
         .audio-dock-progress-wrap {
             display: flex;
             align-items: center;
             gap: 10px;
             width: 100%;
-            max-width: 440px;
+            max-width: 460px;
         }
         .audio-time-label {
             font-family: 'JetBrains Mono', monospace;
@@ -974,22 +1013,32 @@
             background: #cbd5e1;
             outline: none;
             cursor: pointer;
+            transition: height 0.15s ease;
+        }
+        .audio-scrubber:hover {
+            height: 6px;
         }
         body.dark .audio-scrubber {
             background: #334155;
         }
         .audio-scrubber::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 12px;
-            height: 12px;
+            width: 13px;
+            height: 13px;
             border-radius: 50%;
-            background: var(--accent-primary);
+            background: #ffffff;
+            border: 2px solid #0284c7;
+            box-shadow: 0 2px 6px rgba(2, 132, 199, 0.35);
             cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+        .audio-scrubber:hover::-webkit-slider-thumb {
+            transform: scale(1.25);
         }
         .audio-dock-options {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-shrink: 0;
         }
         .audio-voice-select {
@@ -1007,35 +1056,36 @@
         .audio-speed-selector {
             display: flex;
             align-items: center;
-            gap: 4px;
-            background: var(--bg-base);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 3px 6px;
+            gap: 2px;
+            background: rgba(2, 132, 199, 0.08);
+            border: 1px solid rgba(2, 132, 199, 0.18);
+            border-radius: 9999px;
+            padding: 3px;
         }
-        .speed-label {
-            font-size: 7.5pt;
-            color: var(--text-primary);
-            font-weight: 700;
-            margin-right: 2px;
+        body.dark .audio-speed-selector {
+            background: rgba(2, 132, 199, 0.12);
+            border: 1px solid rgba(2, 132, 199, 0.25);
         }
         .speed-pill {
             background: transparent;
             border: none;
-            color: var(--text-secondary);
+            color: var(--text-muted);
             font-size: 7.5pt;
-            font-weight: 700;
-            padding: 3px 6px;
-            border-radius: 4px;
+            font-weight: 600;
+            padding: 4px 9px;
+            border-radius: 9999px;
             cursor: pointer;
-            transition: all 0.15s ease;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            line-height: 1;
         }
         .speed-pill:hover {
             color: var(--accent-primary);
         }
         .speed-pill.active {
-            background: var(--accent-primary);
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
             color: #ffffff;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
         }
         .audio-dock-close {
             background: transparent;
@@ -1047,10 +1097,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.2s ease;
         }
         .audio-dock-close:hover {
             background: var(--bg-card-hover);
-            color: #ef4444;
+            color: var(--accent-crimson);
         }
 
         /* Mobile Bottom Floating Bar */
@@ -1262,9 +1313,9 @@
         }
 
         .callout-alert.alert-note {
-            background: rgba(99, 102, 241, 0.08);
-            border: 1px solid rgba(99, 102, 241, 0.25);
-            border-left: 4px solid #6366f1;
+            background: rgba(2, 132, 199, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-left: 4px solid #0284c7;
             color: var(--text-primary);
         }
 
@@ -1305,7 +1356,7 @@
         }
 
         .inline-code {
-            background: rgba(99, 102, 241, 0.1);
+            background: rgba(2, 132, 199, 0.1);
             color: var(--accent-primary);
             padding: 2px 6px;
             border-radius: 4px;
@@ -1313,9 +1364,9 @@
             font-size: 0.85em;
         }
 
-        /* Dashboard Specific Styles matching Screenshot 1 */
+        /* Dashboard Specific Styles matching Surgery Pro */
         .dash-hero-card {
-            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%);
+            background: linear-gradient(135deg, #090d16 0%, #0f172a 60%, #1e293b 100%);
             border-radius: 14px;
             padding: 26px 30px;
             margin-bottom: 22px;
@@ -1324,8 +1375,8 @@
             justify-content: space-between;
             gap: 24px;
             color: #ffffff;
-            box-shadow: 0 6px 24px rgba(30, 27, 75, 0.35);
-            border: 1px solid rgba(167, 139, 250, 0.35);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.25);
+            border: 1px solid rgba(56, 189, 248, 0.25);
         }
 
         .dash-hero-badge {
@@ -1334,16 +1385,17 @@
             font-weight: 700;
             letter-spacing: 1.2px;
             text-transform: uppercase;
-            background: rgba(255, 255, 255, 0.15);
-            color: #e0e7ff;
+            background: rgba(56, 189, 248, 0.2);
+            color: #7dd3fc;
             padding: 4px 12px;
             border-radius: 9999px;
             margin-bottom: 12px;
         }
 
         .dash-hero-title {
+            font-family: 'Cinzel', serif;
             font-size: 1.9rem;
-            font-weight: 800;
+            font-weight: 700;
             color: #ffffff;
             margin: 0 0 8px 0;
             letter-spacing: -0.02em;
@@ -1352,7 +1404,7 @@
 
         .dash-hero-sub {
             font-size: 0.95rem;
-            color: #c7d2fe;
+            color: #bae6fd;
             margin: 0 0 16px 0;
             line-height: 1.5;
         }
@@ -1386,7 +1438,7 @@
         }
 
         .dash-cheat-sheet-card {
-            background: linear-gradient(135deg, #2e1065 0%, #3b0764 100%);
+            background: linear-gradient(135deg, #042f2e 0%, #0f172a 100%);
             border-radius: 14px;
             padding: 20px 24px;
             margin-bottom: 24px;
@@ -1395,8 +1447,8 @@
             justify-content: space-between;
             gap: 20px;
             color: #ffffff;
-            box-shadow: 0 4px 20px rgba(46, 16, 101, 0.3);
-            border: 1px solid rgba(192, 132, 252, 0.35);
+            box-shadow: 0 4px 20px rgba(4, 47, 46, 0.25);
+            border: 1px solid rgba(20, 184, 166, 0.35);
             flex-wrap: wrap;
         }
 
@@ -1566,14 +1618,14 @@
     <!-- Top Header -->
     <header class="navbar">
         <div class="brand" onclick="showDashboard()">
-            <div class="brand-badge" style="background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);">
+            <div class="brand-badge" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
                     <path d="M12 5v14"/>
                 </svg>
             </div>
             <div class="brand-title">
-                <h1>MEDICINE PRO</h1>
+                <h1><span style="font-family: 'Cinzel', serif; color: var(--accent-primary); font-weight: 800;">MEDICINE</span> PRO</h1>
                 <span>BDS &amp; MBBS Clinical Monograph</span>
             </div>
         </div>
