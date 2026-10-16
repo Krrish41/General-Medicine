@@ -165,6 +165,13 @@ pre {
     overflow-x: auto;
     white-space: pre-wrap;
     line-height: 1.4;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.clinical-flowchart-card, .formula-card, .pearl-box, .layman-box, table, tr, pre, code {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
 }
 
 ul, ol {
@@ -214,27 +221,25 @@ li {
 </ul>
 <h3 class="section-title">2. Etiopathogenesis & Immunopathology</h3>
 <p class="content-para">The hepatitis B and C viruses are <strong>non-cytopathic</strong>. Hepatocellular destruction is mediated entirely by the host's cellular immune response.</p>
-<p class="content-para">```</p>
-<p class="content-para">HBV Virion enters hepatocyte via NTCP receptor</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Uncoating & transport of relaxed circular DNA to nucleus</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Conversion to Covalently Closed Circular DNA (cccDNA) — persistent nuclear reservoir</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Transcription of pre-genomic RNA & viral translation</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Viral peptides (HBcAg, HBeAg) presented on MHC Class I molecules</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Host Cytotoxic CD8+ T-Lymphocytes recognize viral epitopes</p>
-<p class="content-para">│</p>
-<p class="content-para">├── Robust Immune Response (Adults) ──► Rapid viral clearance + Acute Self-limiting Hepatitis</p>
-<p class="content-para">└── Impaired Immune Response (Neonates/Immunocompromised) ──► Incomplete clearance + Chronic Persistent Inflammation + Fibrogenesis</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>HBV Virion enters hepatocyte via NTCP receptor
+ │
+ ▼
+Uncoating &amp; transport of relaxed circular DNA to nucleus
+ │
+ ▼
+Conversion to Covalently Closed Circular DNA (cccDNA) — persistent nuclear reservoir
+ │
+ ▼
+Transcription of pre-genomic RNA &amp; viral translation
+ │
+ ▼
+Viral peptides (HBcAg, HBeAg) presented on MHC Class I molecules
+ │
+ ▼
+Host Cytotoxic CD8+ T-Lymphocytes recognize viral epitopes
+ │
+ ├── Robust Immune Response (Adults) ──► Rapid viral clearance + Acute Self-limiting Hepatitis
+ └── Impaired Immune Response (Neonates/Immunocompromised) ──► Incomplete clearance + Chronic Persistent Inflammation + Fibrogenesis</code></pre></div>
 <p class="content-para"><strong>Layman's Explanation</strong>: The Hepatitis B virus itself does not poison the liver cell. Instead, it hides inside the liver cells to make copies of itself. The body's immune police (T-cells) spot the viral fingerprints on the outside of the cell and fire upon the infected liver cells to destroy the viral hideouts. If the immune response is strong, the virus is wiped out, but the liver takes temporary damage (acute hepatitis). If the immune system is weak or tolerates the virus, low-grade fighting continues for decades, eventually causing scar tissue (cirrhosis) and cancer.</p>
 <h3 class="section-title">3. Clinical Presentation & Phases of Illness</h3>
 <p class="content-para">Acute viral hepatitis evolves through four distinct clinical stages:</p>
@@ -390,30 +395,28 @@ li {
 </ol>
 <h3 class="section-title">2. Pathophysiology of Hepatic Encephalopathy & Cerebral Edema</h3>
 <p class="content-para">Hepatic encephalopathy (HE) is a neuropsychiatric syndrome caused by biochemical failure of the liver to clear gut-derived neurotoxins:</p>
-<p class="content-para">```</p>
-<p class="content-para">Gut microbiota deaminate proteins & urea</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Production of Ammonia (NH3) absorbed into portal circulation</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Failing liver cannot detoxify NH3 via Urea Cycle (Krebs-Henseleit)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Systemic Hyperammonemia crosses Blood-Brain Barrier (BBB)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Astrocyte Glutamine Synthetase converts Ammonia + Glutamate ──► Glutamine</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Excessive intracellular Glutamine exerts potent Osmotic Effect</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Astrocyte Swelling & Cytotoxic Cerebral Edema</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Increased Intracranial Pressure (ICP) ──► Brainstem Herniation (Leading cause of death!)</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Gut microbiota deaminate proteins &amp; urea
+ │
+ ▼
+Production of Ammonia (NH3) absorbed into portal circulation
+ │
+ ▼
+Failing liver cannot detoxify NH3 via Urea Cycle (Krebs-Henseleit)
+ │
+ ▼
+Systemic Hyperammonemia crosses Blood-Brain Barrier (BBB)
+ │
+ ▼
+Astrocyte Glutamine Synthetase converts Ammonia + Glutamate ──► Glutamine
+ │
+ ▼
+Excessive intracellular Glutamine exerts potent Osmotic Effect
+ │
+ ▼
+Astrocyte Swelling &amp; Cytotoxic Cerebral Edema
+ │
+ ▼
+Increased Intracranial Pressure (ICP) ──► Brainstem Herniation (Leading cause of death!)</code></pre></div>
 <p class="content-para"><strong>Additional Pathophysiological Contributors</strong>:</p>
 <ul class="content-list">
 <li><strong>GABA-Benzodiazepine Neurotransmission</strong>: Increased endogenous neurosteroids enhancing inhibitory GABAergic tone.</li>
@@ -573,30 +576,28 @@ li {
 </ol>
 <h3 class="section-title">2. Pathogenesis of Fibrogenesis & Portal Hypertension</h3>
 <p class="content-para">The central driver of hepatic fibrosis is the activation of <strong>Hepatic Stellate Cells (Ito cells)</strong> residing in the subendothelial space of Disse:</p>
-<p class="content-para">```</p>
-<p class="content-para">Chronic Hepatic Injury (Alcohol / Viral / Steatosis)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Damaged hepatocytes & activated Kupffer cells release TGF-beta1, PDGF, TNF-alpha</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Quiescent Stellate Cells (Vitamin A storing) transdifferentiate into Myofibroblasts</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Massive synthesis of Collagen Types I & III in Space of Disse</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Loss of sinusoidal endothelial fenestrations ('Capillarization of sinusoids')</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Marked Increase in Sinusoidal Resistance (Ohm's Law: Delta P = Q x R)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Splanchnic Arteriolar Vasodilation (Nitric Oxide overproduction) ──► Hyperdynamic Circulation</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">PORTAL HYPERTENSION (HVPG > 10 mmHg)</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Chronic Hepatic Injury (Alcohol / Viral / Steatosis)
+ │
+ ▼
+Damaged hepatocytes &amp; activated Kupffer cells release TGF-beta1, PDGF, TNF-alpha
+ │
+ ▼
+Quiescent Stellate Cells (Vitamin A storing) transdifferentiate into Myofibroblasts
+ │
+ ▼
+Massive synthesis of Collagen Types I &amp; III in Space of Disse
+ │
+ ▼
+Loss of sinusoidal endothelial fenestrations ('Capillarization of sinusoids')
+ │
+ ▼
+Marked Increase in Sinusoidal Resistance (Ohm's Law: Delta P = Q x R)
+ │
+ ▼
+Splanchnic Arteriolar Vasodilation (Nitric Oxide overproduction) ──► Hyperdynamic Circulation
+ │
+ ▼
+PORTAL HYPERTENSION (HVPG &gt; 10 mmHg)</code></pre></div>
 <p class="content-para"><strong>Portosystemic Collateral Pathways</strong>:</p>
 <ol class="content-list-ordered" start="1">
 <li value="1"><strong>Gastroesophageal Junction</strong>: Left gastric (coronary) vein anastomoses with azygos veins ──► <strong>Esophageal Varices</strong>.</li>
@@ -720,35 +721,33 @@ li {
 <li><strong>Waterlow Classification</strong>: Distinguishes <strong>Stunting</strong> (height-for-age: chronic malnutrition) from <strong>Wasting</strong> (weight-for-height: acute malnutrition).</li>
 </ul>
 <h3 class="section-title">2. Pathophysiological Mechanisms: Why Kwashiorkor Differs from Marasmus</h3>
-<p class="content-para">```</p>
-<p class="content-para">DIETARY DEPRIVATION</p>
-<p class="content-para">│</p>
-<p class="content-para">┌───────────────────────┴───────────────────────┐</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">SEVERE ENERGY (CALORIC) DEFICIT SELECTIVE PROTEIN DEFICIT</p>
-<p class="content-para">(Starvation) (Starchy carbohydrate diet)</p>
-<p class="content-para">│ │</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">Decreased Blood Glucose Preserved Blood Glucose</p>
-<p class="content-para">│ │</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">Low Insulin / High Glucagon & Cortisol Normal to High Insulin Levels</p>
-<p class="content-para">│ │</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">Maximal Lipolysis & Proteolysis Inhibition of Lipolysis & Proteolysis</p>
-<p class="content-para">│ │</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">Subcutaneous fat melted away Subcutaneous fat preserved</p>
-<p class="content-para">Gross muscle wasting Impaired hepatic protein synthesis</p>
-<p class="content-para">│ │</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">'Skin and Bone' Old Man Facies HYPOALBUMINEMIA (< 2.0 g/dL)</p>
-<p class="content-para">NO EDEMA (Marasmus) Marked reduction in oncotic pressure</p>
-<p class="content-para">Decreased apolipoprotein synthesis (Fatty Liver)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">GENERALIZED PITTING EDEMA (Kwashiorkor)</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>DIETARY DEPRIVATION
+ │
+ ┌───────────────────────┴───────────────────────┐
+ ▼ ▼
+SEVERE ENERGY (CALORIC) DEFICIT SELECTIVE PROTEIN DEFICIT
+ (Starvation) (Starchy carbohydrate diet)
+ │ │
+ ▼ ▼
+Decreased Blood Glucose Preserved Blood Glucose
+ │ │
+ ▼ ▼
+Low Insulin / High Glucagon &amp; Cortisol Normal to High Insulin Levels
+ │ │
+ ▼ ▼
+Maximal Lipolysis &amp; Proteolysis Inhibition of Lipolysis &amp; Proteolysis
+ │ │
+ ▼ ▼
+Subcutaneous fat melted away Subcutaneous fat preserved
+Gross muscle wasting Impaired hepatic protein synthesis
+ │ │
+ ▼ ▼
+'Skin and Bone' Old Man Facies HYPOALBUMINEMIA (&lt; 2.0 g/dL)
+NO EDEMA (Marasmus) Marked reduction in oncotic pressure
+ Decreased apolipoprotein synthesis (Fatty Liver)
+ │
+ ▼
+ GENERALIZED PITTING EDEMA (Kwashiorkor)</code></pre></div>
 <p class="content-para"><strong>Layman's Explanation</strong>: Imagine your body as a car. In <strong>Marasmus</strong>, there is no fuel of any kind coming in (total starvation). The engine has to burn whatever it has—first the fat stored in the gas tank, then the metal parts of the frame (muscles)—until only the skeletal chassis remains. In <strong>Kwashiorkor</strong>, you are pouring sugar water into the tank (carbohydrates) but no engine oil (protein). The engine gets fooled by the sugar into thinking everything is fine, so it does not burn fat, but the liver cannot build the vital blood proteins needed to keep fluid inside the pipes. The fluid leaks out into the body tissues, swelling the child with water like a balloon (edema).</p>
 <h3 class="section-title">3. Clinical Features & Diagnostic Contrasts</h3>
 <h4 class="sub-heading">Clinical Signs of Kwashiorkor</h4>
@@ -883,27 +882,25 @@ li {
 <li><strong>Globus Hystericus</strong>: Sensation of a lump in the throat unrelated to swallowing, without organic esophageal pathology.</li>
 </ul>
 <h4 class="sub-heading">Etiological Classification of Dysphagia</h4>
-<p class="content-para">```</p>
-<p class="content-para">DYSPHAGIA</p>
-<p class="content-para">│</p>
-<p class="content-para">┌───────────────────────────┴───────────────────────────┐</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">MECHANICAL DYSPHAGIA MOTOR (NEUROMUSCULAR)</p>
-<p class="content-para">(Structural Luminal Obstruction) (Incoordinate / Weak Peristalsis)</p>
-<p class="content-para">(Solids >> Liquids initially) (Liquids & Solids equally from onset)</p>
-<p class="content-para">│ │</p>
-<p class="content-para">┌─────┴─────┐ ┌─────┴─────┐</p>
-<p class="content-para">▼ ▼ ▼ ▼</p>
-<p class="content-para">INTRINSIC EXTRINSIC OROPHARYNGEAL ESOPHAGEAL</p>
-<p class="content-para">LUMINAL COMPRESSION (Transfer) (Transit)</p>
-<p class="content-para">│ │ │ │</p>
-<p class="content-para">• Carcinoma • Retropharyngeal abscess • Bulbar / • Achalasia cardia</p>
-<p class="content-para">• Stricture • Retrovisceral Goitre pseudobulbar • Diffuse spasm</p>
-<p class="content-para">• Rings/Webs• Left Atrial Enlargement palsy • Scleroderma</p>
-<p class="content-para">• Atresia (Mitral Stenosis / Ortner sign) • Myasthenia• Chagas disease</p>
-<p class="content-para">• Bronchial Carcinoma gravis</p>
-<p class="content-para">• Aortic Aneurysm</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>DYSPHAGIA
+ │
+ ┌───────────────────────────┴───────────────────────────┐
+ ▼ ▼
+MECHANICAL DYSPHAGIA MOTOR (NEUROMUSCULAR)
+(Structural Luminal Obstruction) (Incoordinate / Weak Peristalsis)
+(Solids &gt;&gt; Liquids initially) (Liquids &amp; Solids equally from onset)
+ │ │
+ ┌─────┴─────┐ ┌─────┴─────┐
+ ▼ ▼ ▼ ▼
+INTRINSIC EXTRINSIC OROPHARYNGEAL ESOPHAGEAL
+LUMINAL COMPRESSION (Transfer) (Transit)
+ │ │ │ │
+ • Carcinoma • Retropharyngeal abscess • Bulbar / • Achalasia cardia
+ • Stricture • Retrovisceral Goitre pseudobulbar • Diffuse spasm
+ • Rings/Webs• Left Atrial Enlargement palsy • Scleroderma
+ • Atresia (Mitral Stenosis / Ortner sign) • Myasthenia• Chagas disease
+ • Bronchial Carcinoma gravis
+ • Aortic Aneurysm</code></pre></div>
 <p class="content-para"><strong>Plummer-Vinson (Paterson-Kelly) Syndrome</strong>:</p>
 <ul class="content-list">
 <li>Classical triad: <strong>Middle-aged females + Severe Iron Deficiency Anemia + Post-cricoid Upper Esophageal Web</strong>.</li>
@@ -1045,28 +1042,26 @@ li {
 <li>Geographically endemic in developing countries (sub-Saharan Africa, South Asia, indigenous populations of Australasia).</li>
 </ul>
 <h4 class="sub-heading">Pathogenesis: The Concept of Molecular Mimicry</h4>
-<p class="content-para">```</p>
-<p class="content-para">Pharyngeal infection with Streptococcus pyogenes (GABHS)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Bacterial cell wall contains highly antigenic M-Proteins & N-acetylglucosamine</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Host Antigen-Presenting Cells present epitopes to CD4+ T-Lymphocytes</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Cross-Reactivity (Antigenic Homology / Molecular Mimicry):</p>
-<p class="content-para">Streptococcal M-protein mimics Cardiac Myosin, Tropomyosin & Valve Endothelium</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Host B-cells produce cross-reactive autoantibodies & Cytotoxic T-cells infiltrate heart</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Endothelial VCAM-1 upregulation ──► Extravasation of CD4+ T-cells into Valvular Stroma</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">PANCARDITIS (Endocarditis + Myocarditis + Pericarditis)</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Pharyngeal infection with Streptococcus pyogenes (GABHS)
+ │
+ ▼
+Bacterial cell wall contains highly antigenic M-Proteins &amp; N-acetylglucosamine
+ │
+ ▼
+Host Antigen-Presenting Cells present epitopes to CD4+ T-Lymphocytes
+ │
+ ▼
+Cross-Reactivity (Antigenic Homology / Molecular Mimicry):
+Streptococcal M-protein mimics Cardiac Myosin, Tropomyosin &amp; Valve Endothelium
+ │
+ ▼
+Host B-cells produce cross-reactive autoantibodies &amp; Cytotoxic T-cells infiltrate heart
+ │
+ ▼
+Endothelial VCAM-1 upregulation ──► Extravasation of CD4+ T-cells into Valvular Stroma
+ │
+ ▼
+PANCARDITIS (Endocarditis + Myocarditis + Pericarditis)</code></pre></div>
 <p class="content-para"><strong>Layman's Explanation</strong>: The body's immune soldiers get trained to attack a bad bacterial throat bug (<em>Streptococcus</em>). Unfortunately, the uniform worn by the bacteria (M-protein) looks almost identical to the uniform worn by your heart valve cells and joint cartilage. After defeating the throat bug, the confused immune soldiers mistakenly turn around and fire upon your own heart valves and joints, causing scarring and irreversible damage.</p>
 <h3 class="section-title">2. Diagnostic Criteria: The Revised Jones Criteria (2015 AHA)</h3>
 <p class="content-para">Diagnosis requires evidence of <strong>preceding Group A Streptococcal infection</strong> PLUS:</p>
@@ -1114,24 +1109,22 @@ li {
 </ol>
 <h3 class="section-title">4. Pathology: The Aschoff Nodule</h3>
 <p class="content-para">The <strong>Aschoff Nodule</strong> is the pathognomonic granulomatous lesion of rheumatic carditis located in the myocardial interstitium and perivascular subendocardial tissues.</p>
-<p class="content-para">```</p>
-<p class="content-para">Fibrinoid Collagen Necrosis (Central zone)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Surrounded by inflammatory infiltrate: T-Lymphocytes, Plasma Cells, Macrophages</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">ANITSCHKOW CELLS ('Caterpillar Cells')</p>
-<p class="content-para">(Enlarged modified histiocytes with abundant amphophilic cytoplasm &</p>
-<p class="content-para">central vesicular nucleus containing a wavy ribbon of chromatin)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">ASCHOFF GIANT CELLS</p>
-<p class="content-para">(Multinucleated giant cells with 1 to 4 nuclei formed by coalescence of Anitschkow cells)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Healing by Fibrotic Scarring ──► Chronic Valvular Deformity</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Fibrinoid Collagen Necrosis (Central zone)
+ │
+ ▼
+Surrounded by inflammatory infiltrate: T-Lymphocytes, Plasma Cells, Macrophages
+ │
+ ▼
+ANITSCHKOW CELLS ('Caterpillar Cells')
+(Enlarged modified histiocytes with abundant amphophilic cytoplasm &amp;
+central vesicular nucleus containing a wavy ribbon of chromatin)
+ │
+ ▼
+ASCHOFF GIANT CELLS
+(Multinucleated giant cells with 1 to 4 nuclei formed by coalescence of Anitschkow cells)
+ │
+ ▼
+Healing by Fibrotic Scarring ──► Chronic Valvular Deformity</code></pre></div>
 <h4 class="sub-heading">Rheumatic Heart Disease (Chronic Sequelae)</h4>
 <p class="content-para">Decades of recurrent low-grade inflammation cause progressive valvular fibrosis:</p>
 <ul class="content-list">
@@ -1240,38 +1233,28 @@ li {
 <li><strong>Culture-Negative IE (5–10%)</strong>: <em>Coxiella burnetii</em> (Q fever), <em>Bartonella</em>, <em>Chlamydia</em>, <em>Tropheryma whipplei</em>, or prior antibiotic suppression.</li>
 </ul>
 <h3 class="section-title">2. Pathogenesis: The Four Sequential Steps</h3>
-<p class="content-para">```</p>
-<p class="content-para">Turbulent Blood Flow (Valvular Stenosis / Regurgitation / VSD)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<ol class="content-list-ordered" start="1">
-<li value="1">ENDOTHELIAL INJURY & DENUDATION</li>
-</ol>
-<p class="content-para">Loss of protective anti-thrombotic endothelium exposes subendothelial collagen</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<ol class="content-list-ordered" start="2">
-<li value="2">NON-BACTERIAL THROMBOTIC ENDOCARDITIS (NBTE)</li>
-</ol>
-<p class="content-para">Deposition of platelets and fibrin creates a sterile microscopic nidus / clot</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<ol class="content-list-ordered" start="3">
-<li value="3">TRANSIENT BACTEREMIA</li>
-</ol>
-<p class="content-para">Mucosal trauma (dental extraction, periodontal scaling, toothbrushing)</p>
-<p class="content-para">allows oral bacteria (S. viridans) to invade bloodstream</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<ol class="content-list-ordered" start="4">
-<li value="4">BACTERIAL ADHERENCE & VEGETATION PROPAGATION</li>
-</ol>
-<p class="content-para">Bacteria bind via surface adhesins (dextran, fibronectin-binding proteins) to NBTE clot</p>
-<p class="content-para">Microorganisms replicate rapidly, encased in fresh layers of fibrin & platelets</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Avascular sanctuary shields bacteria from host neutrophils, antibodies & antibiotics</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Turbulent Blood Flow (Valvular Stenosis / Regurgitation / VSD)
+ │
+ ▼
+1. ENDOTHELIAL INJURY &amp; DENUDATION
+Loss of protective anti-thrombotic endothelium exposes subendothelial collagen
+ │
+ ▼
+2. NON-BACTERIAL THROMBOTIC ENDOCARDITIS (NBTE)
+Deposition of platelets and fibrin creates a sterile microscopic nidus / clot
+ │
+ ▼
+3. TRANSIENT BACTEREMIA
+Mucosal trauma (dental extraction, periodontal scaling, toothbrushing)
+allows oral bacteria (S. viridans) to invade bloodstream
+ │
+ ▼
+4. BACTERIAL ADHERENCE &amp; VEGETATION PROPAGATION
+Bacteria bind via surface adhesins (dextran, fibronectin-binding proteins) to NBTE clot
+Microorganisms replicate rapidly, encased in fresh layers of fibrin &amp; platelets
+ │
+ ▼
+Avascular sanctuary shields bacteria from host neutrophils, antibodies &amp; antibiotics</code></pre></div>
 <p class="content-para"><strong>Layman's Explanation</strong>: Think of a heart valve as a smooth, Teflon-coated swing door. When blood rushes through too fast or awkwardly, it scuffs and scratches the Teflon coating (endothelial injury). The body tries to patch the scratch with a sticky band-aid made of platelets and fibrin. When you have a tooth pulled or bleed from your gums, bacteria from your mouth enter the bloodstream and go on a ride through the heart. If they bump into that sticky band-aid, they stick, hide inside the clot, and multiply into bacterial colonies called vegetations, chewing away at the heart valve.</p>
 <h3 class="section-title">3. Clinical Presentation: Physical Examination & Peripheral Stigmata</h3>
 <h4 class="sub-heading">Cardinal Manifestations</h4>
@@ -1415,27 +1398,25 @@ li {
 <li><strong>Type 5 MI</strong>: MI associated with Coronary Artery Bypass Graft (CABG) surgery.</li>
 </ul>
 <h4 class="sub-heading">Plaque Rupture & Thrombosis Cascade</h4>
-<p class="content-para">```</p>
-<p class="content-para">Atheromatous Plaque with thin fibrous cap & lipid core</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Hemodynamic shear stress or macrophage metalloproteinases rupture fibrous cap</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Subendothelial von Willebrand Factor (vWF) & tissue factor exposed to blood</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Platelet Adhesion (via GP Ib-IX-V) & Platelet Activation (release of TXA2, ADP)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Platelet Aggregation via conformational activation of Glycoprotein IIb/IIIa receptors</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Activation of extrinsic coagulation cascade ──► Thrombin burst ──► Fibrin Meshwork</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">COMPLETE CORONARY OCCLUSION ──► Transmural Ischemia (ST-Elevation MI)</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Atheromatous Plaque with thin fibrous cap &amp; lipid core
+ │
+ ▼
+Hemodynamic shear stress or macrophage metalloproteinases rupture fibrous cap
+ │
+ ▼
+Subendothelial von Willebrand Factor (vWF) &amp; tissue factor exposed to blood
+ │
+ ▼
+Platelet Adhesion (via GP Ib-IX-V) &amp; Platelet Activation (release of TXA2, ADP)
+ │
+ ▼
+Platelet Aggregation via conformational activation of Glycoprotein IIb/IIIa receptors
+ │
+ ▼
+Activation of extrinsic coagulation cascade ──► Thrombin burst ──► Fibrin Meshwork
+ │
+ ▼
+COMPLETE CORONARY OCCLUSION ──► Transmural Ischemia (ST-Elevation MI)</code></pre></div>
 <p class="content-para"><strong>Temporal Progression of Ischemic Cell Death</strong>:</p>
 <ul class="content-list">
 <li>Reversible injury: 0 to 20 minutes (depletion of ATP, switch to anaerobic glycolysis, lactic acidosis).</li>
@@ -1487,25 +1468,23 @@ li {
 <li value="7"><strong>High-Intensity Statin</strong>: <strong>Atorvastatin 80 mg orally OD</strong> immediately.</li>
 </ol>
 <h4 class="sub-heading">Definitive Coronary Reperfusion Therapy</h4>
-<p class="content-para">```</p>
-<p class="content-para">STEMI CONFIRMED ON ECG</p>
-<p class="content-para">│</p>
-<p class="content-para">┌────────────────────────────────┴────────────────────────────────┐</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">PCI-Capable Center Available? Non-PCI Capable Center</p>
-<p class="content-para">(Can achieve Door-to-Balloon in < 90-120 min) │</p>
-<p class="content-para">│ ▼</p>
-<p class="content-para">▼ Can transfer to PCI center < 120 min?</p>
-<p class="content-para">PRIMARY PERCUTANEOUS CORONARY │</p>
-<p class="content-para">INTERVENTION (Primary PCI) ┌───────────┴───────────┐</p>
-<p class="content-para">(Catheterization + Balloon + Stent) ▼ ▼</p>
-<p class="content-para">GOLD STANDARD YES NO</p>
-<p class="content-para">│ │</p>
-<p class="content-para">Transfer for PCI IMMEDIATE FIBRINOLYSIS</p>
-<p class="content-para">(Door-to-Needle < 30 min)</p>
-<p class="content-para">• Tenecteplase (TNK-tPA) IV</p>
-<p class="content-para">• IV Unfractionated Heparin</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>STEMI CONFIRMED ON ECG
+ │
+ ┌────────────────────────────────┴────────────────────────────────┐
+ ▼ ▼
+PCI-Capable Center Available? Non-PCI Capable Center
+(Can achieve Door-to-Balloon in &lt; 90-120 min) │
+ │ ▼
+ ▼ Can transfer to PCI center &lt; 120 min?
+PRIMARY PERCUTANEOUS CORONARY │
+INTERVENTION (Primary PCI) ┌───────────┴───────────┐
+(Catheterization + Balloon + Stent) ▼ ▼
+GOLD STANDARD YES NO
+ │ │
+ Transfer for PCI IMMEDIATE FIBRINOLYSIS
+ (Door-to-Needle &lt; 30 min)
+ • Tenecteplase (TNK-tPA) IV
+ • IV Unfractionated Heparin</code></pre></div>
 <h3 class="section-title">5. Complications of Myocardial Infarction</h3>
 <ol class="content-list-ordered" start="1">
 <li value="1"><strong>Arrhythmias (Most common cause of pre-hospital death)</strong>:</li>
@@ -1625,32 +1604,30 @@ li {
 </ul>
 </ol>
 <h3 class="section-title">2. Pathophysiological Cascades & Neurohormonal Compensation</h3>
-<p class="content-para">```</p>
-<p class="content-para">Myocardial Injury (MI / Longstanding Hypertension / Cardiomyopathy)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Impaired Ventricular Contractility ──► FALL IN CARDIAC OUTPUT (CO)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Baroreceptors & Renal Juxtaglomerular Apparatus detect hypoperfusion</p>
-<p class="content-para">│</p>
-<p class="content-para">┌──────┴────────────────────────────────┐</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">SYMPATHETIC NERVOUS SYSTEM (SNS) RENIN-ANGIOTENSIN-ALDOSTERONE (RAAS)</p>
-<p class="content-para">• Noradrenaline release • Renin cleaves Angiotensinogen ──► Angiotensin I</p>
-<p class="content-para">• Beta-1: Tachycardia, contractility • ACE converts Ang I ──► Angiotensin II</p>
-<p class="content-para">• Alpha-1: Peripheral vasoconstriction • AT1 Receptor activation: intense vasoconstriction</p>
-<p class="content-para">• Aldosterone release: Sodium & Water Retention</p>
-<p class="content-para">│ │</p>
-<p class="content-para">└───────────────────────┬───────────────┘</p>
-<p class="content-para">▼</p>
-<p class="content-para">SHORT-TERM: Restores blood pressure & preserves cerebral/coronary perfusion</p>
-<p class="content-para">LONG-TERM: Catastrophic Ventricular Maladaptation:</p>
-<p class="content-para">• Increased Afterload + Preload overload</p>
-<p class="content-para">• Myocyte hypertrophy, apoptosis, interstitial fibrosis</p>
-<p class="content-para">• Downregulation of Beta-1 receptors</p>
-<p class="content-para">• PROGRESSIVE PUMP FAILURE & DILATATION</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Myocardial Injury (MI / Longstanding Hypertension / Cardiomyopathy)
+ │
+ ▼
+Impaired Ventricular Contractility ──► FALL IN CARDIAC OUTPUT (CO)
+ │
+ ▼
+Baroreceptors &amp; Renal Juxtaglomerular Apparatus detect hypoperfusion
+ │
+ ┌──────┴────────────────────────────────┐
+ ▼ ▼
+SYMPATHETIC NERVOUS SYSTEM (SNS) RENIN-ANGIOTENSIN-ALDOSTERONE (RAAS)
+• Noradrenaline release • Renin cleaves Angiotensinogen ──► Angiotensin I
+• Beta-1: Tachycardia, contractility • ACE converts Ang I ──► Angiotensin II
+• Alpha-1: Peripheral vasoconstriction • AT1 Receptor activation: intense vasoconstriction
+ • Aldosterone release: Sodium &amp; Water Retention
+ │ │
+ └───────────────────────┬───────────────┘
+ ▼
+SHORT-TERM: Restores blood pressure &amp; preserves cerebral/coronary perfusion
+LONG-TERM: Catastrophic Ventricular Maladaptation:
+• Increased Afterload + Preload overload
+• Myocyte hypertrophy, apoptosis, interstitial fibrosis
+• Downregulation of Beta-1 receptors
+• PROGRESSIVE PUMP FAILURE &amp; DILATATION</code></pre></div>
 <p class="content-para"><strong>B-Type Natriuretic Peptide (BNP)</strong>:</p>
 <p class="content-para">Secreted by ventricular cardiomyocytes in response to excessive wall stretch and volume overload. Induces natriuresis, diuresis, and vasodilation, serving as a counter-regulatory brake on RAAS. Serum <strong>BNP > 100 pg/mL</strong> or <strong>NT-proBNP > 300 pg/mL</strong> has > 95% negative predictive value for diagnosing acute heart failure in emergency dyspnea.</p>
 <h3 class="section-title">3. Clinical Presentation: Left vs Right Heart Failure</h3>
@@ -1757,22 +1734,20 @@ li {
 <h3 class="section-title">1. Definition, Classifications & Hemodynamic Principles</h3>
 <p class="content-para"><strong>Definition</strong>: Congenital Heart Disease (CHD) refers to any structural abnormality of the heart or intrathoracic great vessels that develops during embryological cardiogenesis and is present at birth.</p>
 <h4 class="sub-heading">Major Hemodynamic Classification</h4>
-<p class="content-para">```</p>
-<p class="content-para">CONGENITAL HEART DISEASES</p>
-<p class="content-para">│</p>
-<p class="content-para">┌─────────────────────────────┴─────────────────────────────┐</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">ACYANOTIC CONGENITAL HEART DISEASE CYANOTIC CONGENITAL HEART DISEASE</p>
-<p class="content-para">(Left-to-Right Shunt: Pulmonary Plethora) (Right-to-Left Shunt: Systemic Desaturation)</p>
-<p class="content-para">(Acyanotic initially; late reversal) (Early Central Cyanosis, Clubbing, Polycythemia)</p>
-<p class="content-para">│ │</p>
-<p class="content-para">┌─────┴────────────────────────┐ ┌─────┴────────────────────────┐</p>
-<p class="content-para">▼ ▼ ▼ ▼</p>
-<p class="content-para">INCREASED PULMONARY FLOW OBSTRUCTIVE (No shunt) DECREASED PULMONARY FLOW INCREASED PULMONARY FLOW</p>
-<p class="content-para">• Ventricular Septal Defect • Coarctation of Aorta • Tetralogy of Fallot (TOF) • Transposition of Great</p>
-<p class="content-para">• Atrial Septal Defect • Aortic Stenosis • Tricuspid Atresia Arteries (TGA)</p>
-<p class="content-para">• Patent Ductus Arteriosus • Pulmonary Stenosis • Truncus Arteriosus</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>CONGENITAL HEART DISEASES
+ │
+ ┌─────────────────────────────┴─────────────────────────────┐
+ ▼ ▼
+ACYANOTIC CONGENITAL HEART DISEASE CYANOTIC CONGENITAL HEART DISEASE
+(Left-to-Right Shunt: Pulmonary Plethora) (Right-to-Left Shunt: Systemic Desaturation)
+(Acyanotic initially; late reversal) (Early Central Cyanosis, Clubbing, Polycythemia)
+ │ │
+ ┌─────┴────────────────────────┐ ┌─────┴────────────────────────┐
+ ▼ ▼ ▼ ▼
+INCREASED PULMONARY FLOW OBSTRUCTIVE (No shunt) DECREASED PULMONARY FLOW INCREASED PULMONARY FLOW
+• Ventricular Septal Defect • Coarctation of Aorta • Tetralogy of Fallot (TOF) • Transposition of Great
+• Atrial Septal Defect • Aortic Stenosis • Tricuspid Atresia Arteries (TGA)
+• Patent Ductus Arteriosus • Pulmonary Stenosis • Truncus Arteriosus</code></pre></div>
 <h4 class="sub-heading">The Eisenmenger Phenomenon</h4>
 <p class="content-para">When a large, uncorrected left-to-right shunt (VSD, PDA, ASD) persists, chronic hyperperfusion and high pressure induce irreversible remodeling of the pulmonary arterial bed (plexiform lesions, medial hypertrophy). Once Pulmonary Vascular Resistance (PVR) exceeds Systemic Vascular Resistance (SVR), <strong>the shunt reverses from Right-to-Left</strong>, causing intractable cyanosis, polycythemia, clubbing, and biventricular failure. At this stage, surgical closure of the defect is <strong>strictly contraindicated</strong> because the defect acts as a pressure-relief pop-off valve.</p>
 <h3 class="section-title">2. Atrial Septal Defect (ASD)</h3>
@@ -1823,24 +1798,22 @@ li {
 <li value="3"><strong>Overriding of the Aorta</strong>: Aorta straddles the VSD, receiving blood directly from both ventricles.</li>
 <li value="4"><strong>Right Ventricular Hypertrophy (RVH)</strong>: Develops secondary to the high resistance offered by the pulmonary infundibular stenosis.</li>
 </ol>
-<p class="content-para">```</p>
-<p class="content-para">Infundibular Spasm / Crying / Stress</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Increased Pulmonary Vascular Outflow Obstruction</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Massive Right-to-Left Shunting across VSD into Aorta</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">PROFOUND SYSTEMIC HYPOXEMIA ──► 'TET SPELL' (Hypercyanotic Paroxysm)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Squatting / Knee-Chest Position ──► Kinks Femoral Arteries ──► INCREASES SVR</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Reverses Shunt ──► Forces blood into Pulmonary Artery ──► RELIEF OF SPELL</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Infundibular Spasm / Crying / Stress
+ │
+ ▼
+Increased Pulmonary Vascular Outflow Obstruction
+ │
+ ▼
+Massive Right-to-Left Shunting across VSD into Aorta
+ │
+ ▼
+PROFOUND SYSTEMIC HYPOXEMIA ──► 'TET SPELL' (Hypercyanotic Paroxysm)
+ │
+ ▼
+Squatting / Knee-Chest Position ──► Kinks Femoral Arteries ──► INCREASES SVR
+ │
+ ▼
+Reverses Shunt ──► Forces blood into Pulmonary Artery ──► RELIEF OF SPELL</code></pre></div>
 <ul class="content-list">
 <li><strong>Physical Findings & Imaging</strong>:</li>
 <li>Central cyanosis of lips and tongue, digital clubbing (<em>drumstick fingers</em>), polycythemia.</li>
@@ -1925,39 +1898,37 @@ li {
 <li><strong>Chronic Carrier State</strong>: Approximately 2–5% of infected patients become chronic carriers (excreting <em>S. typhi</em> in stool for > 1 year). The <strong>gallbladder</strong> is the primary anatomical reservoir, where bacilli colonize gallstones and multiply in bile.</li>
 </ul>
 <h3 class="section-title">2. Pathogenesis & Clinical Course by Weeks</h3>
-<p class="content-para">```</p>
-<p class="content-para">Ingestion of Salmonella typhi in contaminated food/water (Infective dose: 10^3 - 10^5 bacilli)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Survives gastric acid barrier ──► Penetrates ileal mucosa via M-cells</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Phagocytosed by intestinal macrophages in Peyer's patches</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Survives intracellularly (inhibits phagolysosome fusion) & enters mesenteric lymph nodes</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Enters bloodstream via Thoracic Duct: TRANSIENT ASYMPTOMATIC PRIMARY BACTEREMIA</p>
-<p class="content-para">(Incubation period: 10 to 14 days)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Sequestration & replication inside Reticuloendothelial System (Liver, Spleen, Bone Marrow)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Re-emergence into bloodstream: SECONDARY SUSTAINED BACTEREMIA (First Week Symptoms)</p>
-<p class="content-para">Endotoxin release triggers high fever, bone marrow suppression (leukopenia)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Biliary excretion into small intestine ──► Massive hypersensitivity in Peyer's patches</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Hyperplasia ──► Necrosis ──► ULCERATION OF PEYER'S PATCHES (Second & Third Week)</p>
-<p class="content-para">│</p>
-<p class="content-para">┌──────┴──────────────────────┐</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">Severe Intestinal Hemorrhage Intestinal Perforation & Peritonitis</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Ingestion of Salmonella typhi in contaminated food/water (Infective dose: 10^3 - 10^5 bacilli)
+ │
+ ▼
+Survives gastric acid barrier ──► Penetrates ileal mucosa via M-cells
+ │
+ ▼
+Phagocytosed by intestinal macrophages in Peyer's patches
+ │
+ ▼
+Survives intracellularly (inhibits phagolysosome fusion) &amp; enters mesenteric lymph nodes
+ │
+ ▼
+Enters bloodstream via Thoracic Duct: TRANSIENT ASYMPTOMATIC PRIMARY BACTEREMIA
+(Incubation period: 10 to 14 days)
+ │
+ ▼
+Sequestration &amp; replication inside Reticuloendothelial System (Liver, Spleen, Bone Marrow)
+ │
+ ▼
+Re-emergence into bloodstream: SECONDARY SUSTAINED BACTEREMIA (First Week Symptoms)
+Endotoxin release triggers high fever, bone marrow suppression (leukopenia)
+ │
+ ▼
+Biliary excretion into small intestine ──► Massive hypersensitivity in Peyer's patches
+ │
+ ▼
+Hyperplasia ──► Necrosis ──► ULCERATION OF PEYER'S PATCHES (Second &amp; Third Week)
+ │
+ ┌──────┴──────────────────────┐
+ ▼ ▼
+Severe Intestinal Hemorrhage Intestinal Perforation &amp; Peritonitis</code></pre></div>
 <h4 class="sub-heading">Classical Week-by-Week Clinical Evolution</h4>
 <ul class="content-list">
 <li><strong>First Week (Bacteremic Onset)</strong>:</li>
@@ -2094,31 +2065,29 @@ li {
 <li value="3"><strong>Parenteral</strong>: Blood transfusion (rare today due to routine donor screening) or direct accidental inoculation (occupational risk for dentists/surgeons).</li>
 </ol>
 <h3 class="section-title">2. Natural History & Clinical Stages of Acquired Syphilis</h3>
-<p class="content-para">```</p>
-<p class="content-para">Inoculation of T. pallidum through microscopic mucosal or epidermal abrasion</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Rapid entry into lymphatic channels & bloodstream within hours</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">PRIMARY SYPHILIS (Incubation: 2 to 4 weeks, range 9-90 days)</p>
-<p class="content-para">Primary Chancre at site of inoculation + Shotty, painless lymphadenopathy</p>
-<p class="content-para">│</p>
-<p class="content-para">▼ (Heals spontaneously in 3 to 8 weeks)</p>
-<p class="content-para">SECONDARY SYPHILIS (6 to 8 weeks after chancre healing)</p>
-<p class="content-para">Massive systemic dissemination: Maculopapular rash, Mucous patches, Snail-track ulcers</p>
-<p class="content-para">│</p>
-<p class="content-para">▼ (Resolves spontaneously in 2 to 6 weeks)</p>
-<p class="content-para">LATENT SYPHILIS (Asymptomatic; Serology permanently positive)</p>
-<p class="content-para">Early Latent (< 1 year) vs Late Latent (> 1 year)</p>
-<p class="content-para">│</p>
-<p class="content-para">┌──────┴──────────────────────┐</p>
-<p class="content-para">▼ (65-70%) ▼ (30-35% of untreated cases)</p>
-<p class="content-para">Spontaneous resolution / TERTIARY SYPHILIS (Develops after 5 to 30 years)</p>
-<p class="content-para">Lifelong latent dormancy • Benign Gummatous Syphilis (Skin, Bone, Palate)</p>
-<p class="content-para">• Cardiovascular Syphilis (Aortic Aneurysm)</p>
-<p class="content-para">• Neurosyphilis (Tabes Dorsalis, General Paresis)</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Inoculation of T. pallidum through microscopic mucosal or epidermal abrasion
+ │
+ ▼
+Rapid entry into lymphatic channels &amp; bloodstream within hours
+ │
+ ▼
+PRIMARY SYPHILIS (Incubation: 2 to 4 weeks, range 9-90 days)
+Primary Chancre at site of inoculation + Shotty, painless lymphadenopathy
+ │
+ ▼ (Heals spontaneously in 3 to 8 weeks)
+SECONDARY SYPHILIS (6 to 8 weeks after chancre healing)
+Massive systemic dissemination: Maculopapular rash, Mucous patches, Snail-track ulcers
+ │
+ ▼ (Resolves spontaneously in 2 to 6 weeks)
+LATENT SYPHILIS (Asymptomatic; Serology permanently positive)
+Early Latent (&lt; 1 year) vs Late Latent (&gt; 1 year)
+ │
+ ┌──────┴──────────────────────┐
+ ▼ (65-70%) ▼ (30-35% of untreated cases)
+Spontaneous resolution / TERTIARY SYPHILIS (Develops after 5 to 30 years)
+Lifelong latent dormancy • Benign Gummatous Syphilis (Skin, Bone, Palate)
+ • Cardiovascular Syphilis (Aortic Aneurysm)
+ • Neurosyphilis (Tabes Dorsalis, General Paresis)</code></pre></div>
 <h4 class="sub-heading">Detailed Clinical Features by Stage</h4>
 <ol class="content-list-ordered" start="1">
 <li value="1"><strong>Primary Syphilis (Hard Chancre / Hunterian Chancre)</strong>:</li>
@@ -2324,37 +2293,33 @@ li {
 <li>Spores are ubiquitous in soil, animal/human feces, and street dust; highly resistant to boiling, drying, and standard chemical disinfectants; destroyed by autoclaving at 121°C for 15 minutes.</li>
 </ul>
 <h4 class="sub-heading">Molecular Mechanism of Tetanospasmin</h4>
-<p class="content-para">```</p>
-<p class="content-para">Contaminated necrotic, devitalized anaerobic wound (punctures, compound fractures, burns)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Germination of spores into vegetative bacilli releasing two exotoxins:</p>
-<ol class="content-list-ordered" start="1">
-<li value="1">Tetanolysin: Causes local tissue hemolysis and optimizes anaerobic milieu</li>
-<li value="2">TETANOSPASMIN: Potent neurotoxic zinc metalloproteinase (Lethal dose < 2.5 ng/kg)</li>
-</ol>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Enters motor nerve terminals at neuromuscular junction</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Retrograde Intra-Axonal Transport along motor axons (75-250 mm/day) to spinal cord</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Trans-synaptic migration into presynaptic terminals of INHIBITORY INTERNEURONS</p>
-<p class="content-para">(Renshaw cells in anterior horns & brainstem)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Tetanospasmin Light Chain cleaves SYNAPTOBREVIN (VAMP - SNARE complex protein)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">IRREVERSIBLE INHIBITION OF EXOCYTOSIS OF GABA & GLYCINE</p>
-<p class="content-para">(Blocks inhibitory neurotransmitter release)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">UNRESTRICTED ALPHA-MOTOR NEURON HYPERACTIVITY</p>
-<p class="content-para">Sustained Tonic Contractions & Agonist-Antagonist Co-Contraction Spasms</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Contaminated necrotic, devitalized anaerobic wound (punctures, compound fractures, burns)
+ │
+ ▼
+Germination of spores into vegetative bacilli releasing two exotoxins:
+1. Tetanolysin: Causes local tissue hemolysis and optimizes anaerobic milieu
+2. TETANOSPASMIN: Potent neurotoxic zinc metalloproteinase (Lethal dose &lt; 2.5 ng/kg)
+ │
+ ▼
+Enters motor nerve terminals at neuromuscular junction
+ │
+ ▼
+Retrograde Intra-Axonal Transport along motor axons (75-250 mm/day) to spinal cord
+ │
+ ▼
+Trans-synaptic migration into presynaptic terminals of INHIBITORY INTERNEURONS
+(Renshaw cells in anterior horns &amp; brainstem)
+ │
+ ▼
+Tetanospasmin Light Chain cleaves SYNAPTOBREVIN (VAMP - SNARE complex protein)
+ │
+ ▼
+IRREVERSIBLE INHIBITION OF EXOCYTOSIS OF GABA &amp; GLYCINE
+(Blocks inhibitory neurotransmitter release)
+ │
+ ▼
+UNRESTRICTED ALPHA-MOTOR NEURON HYPERACTIVITY
+Sustained Tonic Contractions &amp; Agonist-Antagonist Co-Contraction Spasms</code></pre></div>
 <h3 class="section-title">5. Clinical Presentation of Generalized Tetanus</h3>
 <p class="content-para">The incubation period ranges from 3 to 21 days (average 7 days). <strong>Rule: Shorter incubation period (< 7 days) indicates higher toxin burden and worse prognosis!</strong></p>
 <h4 class="sub-heading">Cardinal Clinical Manifestations</h4>
@@ -2458,30 +2423,28 @@ li {
 <li><strong>Viral Enzymes</strong>: Reverse Transcriptase, Integrase, and Protease.</li>
 <li><strong>Coreceptors</strong>: Chemokine receptors <strong>CCR5</strong> (on macrophages: R5 tropic strains, transmitted during primary sexual transmission) and <strong>CXCR4</strong> (on T-cells: X4 tropic strains, associated with rapid CD4 decline).</li>
 </ul>
-<p class="content-para">```</p>
-<p class="content-para">HIV gp120 binds host CD4 receptor + Chemokine coreceptor (CCR5 or CXCR4)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">gp41 conformation change ──► Viral envelope fuses with host cell membrane</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Viral genome & enzymes enter host cytoplasm</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">REVERSE TRANSCRIPTASE synthesizes double-stranded viral DNA from RNA</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">INTEGRASE inserts proviral DNA into host chromosomal DNA (Latent Provirus)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Host activation triggers viral transcription & translation of polyproteins</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">PROTEASE cleaves polyproteins into functional viral components</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Virion assembly & budding ──► Cytopathic lysis & CD4+ T-Lymphocyte Apoptosis</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>HIV gp120 binds host CD4 receptor + Chemokine coreceptor (CCR5 or CXCR4)
+ │
+ ▼
+gp41 conformation change ──► Viral envelope fuses with host cell membrane
+ │
+ ▼
+Viral genome &amp; enzymes enter host cytoplasm
+ │
+ ▼
+REVERSE TRANSCRIPTASE synthesizes double-stranded viral DNA from RNA
+ │
+ ▼
+INTEGRASE inserts proviral DNA into host chromosomal DNA (Latent Provirus)
+ │
+ ▼
+Host activation triggers viral transcription &amp; translation of polyproteins
+ │
+ ▼
+PROTEASE cleaves polyproteins into functional viral components
+ │
+ ▼
+Virion assembly &amp; budding ──► Cytopathic lysis &amp; CD4+ T-Lymphocyte Apoptosis</code></pre></div>
 <h3 class="section-title">3. Natural History & CDC Classification of HIV</h3>
 <ol class="content-list-ordered" start="1">
 <li value="1"><strong>Acute Retroviral Syndrome (Seroconversion Illness: 2 to 4 weeks post-exposure)</strong>:</li>
@@ -2648,56 +2611,52 @@ li {
 <li value="3"><strong>Protein Kinase C (PKC) Activation</strong>: Synthesizes VEGF and TGF-beta, thickening capillary basement membranes.</li>
 <li value="4"><strong>Hexosamine Pathway Shunt</strong>.</li>
 </ol>
-<p class="content-para">```</p>
-<p class="content-para">CHRONIC HYPERGLYCEMIA</p>
-<p class="content-para">│</p>
-<p class="content-para">┌─────┴─────────────────────────────────────────────────────────────┐</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">MICROVASCULAR COMPLICATIONS MACROVASCULAR COMPLICATIONS</p>
-<p class="content-para">(Capillary Basement Membrane Thickening) (Accelerated Atherosclerosis)</p>
-<p class="content-para">│ │</p>
-<p class="content-para">├── 1. DIABETIC RETINOPATHY ├── 1. CORONARY ARTERY DISEASE</p>
-<p class="content-para">│ • Non-proliferative: Microaneurysms, dot-blot hemorrhages │ • Silent Myocardial Infarction</p>
-<p class="content-para">│ • Proliferative: VEGF-induced Neovascularization │</p>
-<p class="content-para">│ ├── 2. CEREBROVASCULAR DISEASE</p>
-<p class="content-para">├── 2. DIABETIC NEPHROPATHY │ • Ischemic Stroke</p>
-<p class="content-para">│ • Hyperfiltration ──► Microalbuminuria (30-300 mg/day) │</p>
-<p class="content-para">│ • Kimmelstiel-Wilson nodular glomerulosclerosis ──► ESRD └── 3. PERIPHERAL ARTERIAL DISEASE</p>
-<p class="content-para">│ • Intermittent claudication</p>
-<p class="content-para">└── 3. DIABETIC NEUROPATHY • Diabetic foot gangrene</p>
-<p class="content-para">• Distal symmetrical 'glove-and-stocking' polyneuropathy</p>
-<p class="content-para">• Autonomic: Gastroparesis, postural hypotension, silent MI</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>CHRONIC HYPERGLYCEMIA
+ │
+ ┌─────┴─────────────────────────────────────────────────────────────┐
+ ▼ ▼
+MICROVASCULAR COMPLICATIONS MACROVASCULAR COMPLICATIONS
+(Capillary Basement Membrane Thickening) (Accelerated Atherosclerosis)
+ │ │
+ ├── 1. DIABETIC RETINOPATHY ├── 1. CORONARY ARTERY DISEASE
+ │ • Non-proliferative: Microaneurysms, dot-blot hemorrhages │ • Silent Myocardial Infarction
+ │ • Proliferative: VEGF-induced Neovascularization │
+ │ ├── 2. CEREBROVASCULAR DISEASE
+ ├── 2. DIABETIC NEPHROPATHY │ • Ischemic Stroke
+ │ • Hyperfiltration ──► Microalbuminuria (30-300 mg/day) │
+ │ • Kimmelstiel-Wilson nodular glomerulosclerosis ──► ESRD └── 3. PERIPHERAL ARTERIAL DISEASE
+ │ • Intermittent claudication
+ └── 3. DIABETIC NEUROPATHY • Diabetic foot gangrene
+ • Distal symmetrical 'glove-and-stocking' polyneuropathy
+ • Autonomic: Gastroparesis, postural hypotension, silent MI</code></pre></div>
 <h3 class="section-title">3. Diabetic Ketoacidosis (DKA): Pathogenesis & Management</h3>
 <p class="content-para"><strong>Definition</strong>: DKA is an acute, life-threatening emergency occurring predominantly in Type 1 DM, characterized by the triad of: <strong>Hyperglycemia + Metabolic Acidosis + Ketonemia</strong>.</p>
 <h4 class="sub-heading">Pathophysiological Cascade</h4>
-<p class="content-para">```</p>
-<p class="content-para">ABSOLUTE INSULIN DEFICIENCY + ELEVATED COUNTER-REGULATORY HORMONES</p>
-<p class="content-para">(Glucagon, Cortisol, Epinephrine, Growth Hormone)</p>
-<p class="content-para">(Triggered by infection, missed insulin doses, trauma)</p>
-<p class="content-para">│</p>
-<p class="content-para">┌──────┴────────────────────────────────┐</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">MARKET UNRESTRICTED LIPOLYSIS UNINHIBITED GLUCONEOGENESIS & GLYCOGENOLYSIS</p>
-<p class="content-para">Adipose tissue releases Free Fatty Acids Liver pours glucose into circulation</p>
-<p class="content-para">│ │</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">FFA enter hepatic mitochondria: SEVERE HYPERGLYCEMIA (> 300 mg/dL)</p>
-<p class="content-para">Beta-Oxidation to Acetoacetyl-CoA │</p>
-<p class="content-para">│ ▼</p>
-<p class="content-para">KETOGENESIS: Overproduction of Exceeds renal threshold (~180 mg/dL)</p>
-<p class="content-para">• Acetoacetate │</p>
-<p class="content-para">• Beta-Hydroxybutyrate (Predominant ketone) ▼</p>
-<p class="content-para">• Acetone (Exhaled: Fruity sweet breath odor) OSMOTIC GLUCOSURIC DIURESIS</p>
-<p class="content-para">│ Massive loss of water, Na+, K+, Mg2+</p>
-<p class="content-para">▼ │</p>
-<p class="content-para">HIGH ANION GAP METABOLIC ACIDOSIS ▼</p>
-<p class="content-para">(pH < 7.30, Bicarbonate < 18 mEq/L) SEVERE DEHYDRATION (5 to 8 Liters deficit!)</p>
-<p class="content-para">│ Hypovolemic Shock & Hyperosmolality</p>
-<p class="content-para">▼</p>
-<p class="content-para">Compensatory Kussmaul Respiration</p>
-<p class="content-para">(Rapid, deep sighing breathing to blow off CO<sub>2</sub>)</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>ABSOLUTE INSULIN DEFICIENCY + ELEVATED COUNTER-REGULATORY HORMONES
+(Glucagon, Cortisol, Epinephrine, Growth Hormone)
+(Triggered by infection, missed insulin doses, trauma)
+ │
+ ┌──────┴────────────────────────────────┐
+ ▼ ▼
+MARKET UNRESTRICTED LIPOLYSIS UNINHIBITED GLUCONEOGENESIS &amp; GLYCOGENOLYSIS
+Adipose tissue releases Free Fatty Acids Liver pours glucose into circulation
+ │ │
+ ▼ ▼
+FFA enter hepatic mitochondria: SEVERE HYPERGLYCEMIA (&gt; 300 mg/dL)
+Beta-Oxidation to Acetoacetyl-CoA │
+ │ ▼
+KETOGENESIS: Overproduction of Exceeds renal threshold (~180 mg/dL)
+• Acetoacetate │
+• Beta-Hydroxybutyrate (Predominant ketone) ▼
+• Acetone (Exhaled: Fruity sweet breath odor) OSMOTIC GLUCOSURIC DIURESIS
+ │ Massive loss of water, Na+, K+, Mg2+
+ ▼ │
+HIGH ANION GAP METABOLIC ACIDOSIS ▼
+(pH &lt; 7.30, Bicarbonate &lt; 18 mEq/L) SEVERE DEHYDRATION (5 to 8 Liters deficit!)
+ │ Hypovolemic Shock &amp; Hyperosmolality
+ ▼
+Compensatory Kussmaul Respiration
+(Rapid, deep sighing breathing to blow off CO2)</code></pre></div>
 <h4 class="sub-heading">Evidence-Based Management Protocol for DKA</h4>
 <ol class="content-list-ordered" start="1">
 <li value="1"><strong>Fluid Resuscitation (First Priority!)</strong>:</li>
@@ -2815,22 +2774,20 @@ li {
 <h3 class="section-title">1. Definition, Classification & Etiological Risk Factors</h3>
 <p class="content-para"><strong>Definition</strong>: Leukemias are a group of neoplastic diseases characterized by the unrestrained clonal proliferation of white blood cell precursors in the bone marrow, crowding out normal erythroid, megakaryocytic, and myeloid elements, with spillover of immature malignant cells into the peripheral bloodstream and widespread organ infiltration.</p>
 <h4 class="sub-heading">Broad Pathological Classification</h4>
-<p class="content-para">```</p>
-<p class="content-para">LEUKEMIAS</p>
-<p class="content-para">│</p>
-<p class="content-para">┌───────────────────────────────┴───────────────────────────────┐</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">MYELOID LINEAGE LYMPHOID LINEAGE</p>
-<p class="content-para">(Erythrocytes, Granulocytes, Monocytes, Platelets) (B-cells, T-cells, NK-cells)</p>
-<p class="content-para">│ │</p>
-<p class="content-para">┌─────┴────────────────────────┐ ┌─────┴────────────────────────┐</p>
-<p class="content-para">▼ ▼ ▼ ▼</p>
-<p class="content-para">ACUTE MYELOID LEUKEMIA CHRONIC MYELOGENOUS LEUKEMIA ACUTE LYMPHOBLASTIC LEUKEMIA CHRONIC LYMPHOCYTIC LEUKEMIA</p>
-<p class="content-para">(AML) (CML) (ALL) (CLL)</p>
-<p class="content-para">• Rapid progression • Insidious, slow onset • Peak in children (2-5 yrs) • Elderly predominance</p>
-<p class="content-para">• Immature myeloblasts ≥ 20% • Maturing granulocytes • Lymphoblasts in marrow • Clonal mature B-cells</p>
-<p class="content-para">• Auer rods present • Philadelphia chromosome t(9;22)• Responsive to chemotherapy • 'Smudge' / basket cells</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>LEUKEMIAS
+ │
+ ┌───────────────────────────────┴───────────────────────────────┐
+ ▼ ▼
+MYELOID LINEAGE LYMPHOID LINEAGE
+(Erythrocytes, Granulocytes, Monocytes, Platelets) (B-cells, T-cells, NK-cells)
+ │ │
+ ┌─────┴────────────────────────┐ ┌─────┴────────────────────────┐
+ ▼ ▼ ▼ ▼
+ACUTE MYELOID LEUKEMIA CHRONIC MYELOGENOUS LEUKEMIA ACUTE LYMPHOBLASTIC LEUKEMIA CHRONIC LYMPHOCYTIC LEUKEMIA
+(AML) (CML) (ALL) (CLL)
+• Rapid progression • Insidious, slow onset • Peak in children (2-5 yrs) • Elderly predominance
+• Immature myeloblasts ≥ 20% • Maturing granulocytes • Lymphoblasts in marrow • Clonal mature B-cells
+• Auer rods present • Philadelphia chromosome t(9;22)• Responsive to chemotherapy • 'Smudge' / basket cells</code></pre></div>
 <h4 class="sub-heading">Etiological Factors</h4>
 <ol class="content-list-ordered" start="1">
 <li value="1"><strong>Ionizing Radiation</strong>: High-dose radiation exposure (survivors of atomic blasts, prior radiotherapy); strongly associated with AML, CML, and ALL (NOT CLL).</li>
@@ -3025,21 +2982,19 @@ li {
 </ol>
 <h3 class="section-title">3. Uremic Stomatitis & Oral Manifestations of Renal Disease</h3>
 <p class="content-para">Uremic stomatitis is an intraoral manifestation appearing in advanced renal failure (Blood Urea Nitrogen > 100 mg/dL):</p>
-<p class="content-para">```</p>
-<p class="content-para">High circulating systemic blood urea concentrations</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Urea diffuses into salivary secretions (Salivary Urea markedly elevated)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Oral microbial Urease-producing bacteria split Urea into FREE AMMONIA (NH3)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Chemical mucosal burning & caustic destruction of oral epithelium</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">UREMIC STOMATITIS</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>High circulating systemic blood urea concentrations
+ │
+ ▼
+Urea diffuses into salivary secretions (Salivary Urea markedly elevated)
+ │
+ ▼
+Oral microbial Urease-producing bacteria split Urea into FREE AMMONIA (NH3)
+ │
+ ▼
+Chemical mucosal burning &amp; caustic destruction of oral epithelium
+ │
+ ▼
+UREMIC STOMATITIS</code></pre></div>
 <h4 class="sub-heading">Clinical Forms of Uremic Stomatitis</h4>
 <ul class="content-list">
 <li><strong>Erythematopultaceous Type</strong>: Oral mucosa is fiery red, swollen, and covered with a thick, pasty, yellowish-white gelatinous exudate.</li>
@@ -3161,15 +3116,13 @@ li {
 </ul>
 <h3 class="section-title">2. Upper vs Lower Motor Neuron Facial Paralysis</h3>
 <p class="content-para">The frontalis and orbicularis oculi muscles of the upper face receive <strong>Bilateral Corticobulbar Innervation</strong> from both cerebral motor cortices. The muscles of the lower face receive <strong>Unilateral Contralateral Innervation</strong> only!</p>
-<p class="content-para">```</p>
-<p class="content-para">Left Motor Cortex Right Motor Cortex</p>
-<p class="content-para">│ \ / │</p>
-<p class="content-para">│ \ / │</p>
-<p class="content-para">│ ──────┐ ┌────── │</p>
-<p class="content-para">▼ ▼ ▼ ▼</p>
-<p class="content-para">Left Facial Nucleus (Upper) Right Facial Nucleus (Upper)</p>
-<p class="content-para">Left Facial Nucleus (Lower) Right Facial Nucleus (Lower)</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Left Motor Cortex Right Motor Cortex
+ │ \ / │
+ │ \ / │
+ │ ──────┐ ┌────── │
+ ▼ ▼ ▼ ▼
+Left Facial Nucleus (Upper) Right Facial Nucleus (Upper)
+Left Facial Nucleus (Lower) Right Facial Nucleus (Lower)</code></pre></div>
 <h4 class="sub-heading">Comparative Table: UMN vs LMN Lesion</h4>
 <div class="table-responsive"><table class="data-table"><thead><tr><th>Diagnostic Feature</th><th>Upper Motor Neuron (UMN) Lesion</th><th>Lower Motor Neuron (LMN) Lesion (Bell's Palsy)</th></tr></thead><tbody><tr><td><strong>Site of Lesion</strong></td><td>Above the facial nucleus (Motor cortex, Internal capsule, Stroke, Brain tumor)</td><td>Facial nucleus in pons or peripheral CN VII nerve trunk (Bell's palsy, trauma)</td></tr><tr><td><strong>Forehead Wrinkling</strong></td><td><strong>Spared & Preserved</strong> (Patient CAN wrinkle forehead symmetrically)</td><td><strong>Paralyzed & Absent</strong> (Forehead is flat, smooth, cannot wrinkle on affected side)</td></tr><tr><td><strong>Eye Closure</strong></td><td><strong>Preserved / Intact</strong> (Can blink and close eye completely)</td><td><strong>Impaired / Incomplete</strong> (Lagophthalmos; cannot close eye)</td></tr><tr><td><strong>Bell's Phenomenon</strong></td><td>Absent</td><td><strong>Prominently Present</strong> (Eyeball rolls upward/outward)</td></tr><tr><td><strong>Lower Facial Muscles</strong></td><td>Paralyzed on <strong>Opposite (Contralateral)</strong> side</td><td>Paralyzed on <strong>Same (Ipsilateral)</strong> side</td></tr><tr><td><strong>Emotional Facial Expression</strong></td><td>Often preserved (involuntary smile intact)</td><td>Completely paralyzed for both voluntary and emotional movements</td></tr><tr><td><strong>Associated Signs</strong></td><td>Hemiplegia, hyperreflexia on paralyzed side</td><td>Loss of taste on ant 2/3 tongue, hyperacusis, dry eye (depending on site)</td></tr></tbody></table></div>
 <h3 class="section-title">3. Bell's Palsy: Etiopathogenesis & Topodiagnostic Signs</h3>
@@ -3298,34 +3251,32 @@ li {
 <li value="3"><strong>Direct Inoculation</strong>: Compound skull fractures (cribriform plate fracture with CSF rhinorrhea) or neurosurgical procedures.</li>
 </ol>
 <h3 class="section-title">2. Pathophysiological Cascade in the Subarachnoid Space</h3>
-<p class="content-para">```</p>
-<p class="content-para">Bacteria cross blood-brain barrier into CSF</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Subarachnoid space has deficient local host defenses (Scant complement, few antibodies)</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Uncontrolled, rapid bacterial multiplication</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Bacterial lysis releases Endotoxins, Lipoteichoic Acid & Peptidoglycans</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Microglia & Astrocytes release pro-inflammatory cytokines: TNF-alpha, IL-1beta</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Massive influx of Polymorphonuclear Neutrophils (PMNs) into Subarachnoid Space</p>
-<p class="content-para">│</p>
-<p class="content-para">▼</p>
-<p class="content-para">Thick, purulent fibrinous exudate coats base of brain & cerebral sulci</p>
-<p class="content-para">│</p>
-<p class="content-para">┌──────┴────────────────────────────────────────┐</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">VASCULITIS & THROMBOSIS OF CEREBRAL VESSELS OBSTRUCTION OF CSF OUTFLOW AT ARACHNOID VILLI</p>
-<p class="content-para">• Cortical venous thrombosis • Interstitial & communicating Hydrocephalus</p>
-<p class="content-para">• Focal ischemic brain infarction • MARKED INCREASE IN INTRACRANIAL PRESSURE</p>
-<p class="content-para">• Cytotoxic & Vasogenic Cerebral Edema • Transtentorial / Uncal Brainstem Herniation</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>Bacteria cross blood-brain barrier into CSF
+ │
+ ▼
+Subarachnoid space has deficient local host defenses (Scant complement, few antibodies)
+ │
+ ▼
+Uncontrolled, rapid bacterial multiplication
+ │
+ ▼
+Bacterial lysis releases Endotoxins, Lipoteichoic Acid &amp; Peptidoglycans
+ │
+ ▼
+Microglia &amp; Astrocytes release pro-inflammatory cytokines: TNF-alpha, IL-1beta
+ │
+ ▼
+Massive influx of Polymorphonuclear Neutrophils (PMNs) into Subarachnoid Space
+ │
+ ▼
+Thick, purulent fibrinous exudate coats base of brain &amp; cerebral sulci
+ │
+ ┌──────┴────────────────────────────────────────┐
+ ▼ ▼
+VASCULITIS &amp; THROMBOSIS OF CEREBRAL VESSELS OBSTRUCTION OF CSF OUTFLOW AT ARACHNOID VILLI
+• Cortical venous thrombosis • Interstitial &amp; communicating Hydrocephalus
+• Focal ischemic brain infarction • MARKED INCREASE IN INTRACRANIAL PRESSURE
+• Cytotoxic &amp; Vasogenic Cerebral Edema • Transtentorial / Uncal Brainstem Herniation</code></pre></div>
 <h3 class="section-title">3. Clinical Presentation: Physical Signs of Meningeal Irritation</h3>
 <h4 class="sub-heading">Classical Symptoms</h4>
 <ul class="content-list">
@@ -3482,33 +3433,31 @@ li {
 </ol>
 <h3 class="section-title">4. Cardiopulmonary Resuscitation (BLS & ACLS Guidelines)</h3>
 <p class="content-para">The AHA / Resuscitation Council guidelines emphasize the <strong>'C-A-B' (Compressions - Airway - Breathing)</strong> sequence:</p>
-<p class="content-para">```</p>
-<p class="content-para">UNRESPONSIVE VICTIM</p>
-<p class="content-para">│</p>
-<p class="content-para">Shout for nearby help & activate EMS / Code Blue</p>
-<p class="content-para">Check Carotid Pulse (< 10 seconds)</p>
-<p class="content-para">│</p>
-<p class="content-para">┌────────────────────────────┴────────────────────────────┐</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">PULSE PRESENT PULSE ABSENT / UNCERTAIN</p>
-<p class="content-para">Provide rescue breathing (1 breath every 6 sec) START HIGH-QUALITY CPR IMMEDIATELY</p>
-<p class="content-para">Re-check pulse every 2 minutes (30 Compressions : 2 Breaths)</p>
-<p class="content-para">│</p>
-<p class="content-para">ATTACH AED / DEFIBRILLATOR</p>
-<p class="content-para">│</p>
-<p class="content-para">┌───────────────────────────┴───────────────────────────┐</p>
-<p class="content-para">▼ ▼</p>
-<p class="content-para">SHOCKABLE RHYTHM NON-SHOCKABLE RHYTHM</p>
-<p class="content-para">(Ventricular Fibrillation / Pulseless VT) (Asystole / PEA)</p>
-<p class="content-para">│ │</p>
-<p class="content-para">DELIVER 1 SHOCK CONTINUE CPR (30:2)</p>
-<p class="content-para">(150-200 J Biphasic) IV ADRENALINE (1 mg IV)</p>
-<p class="content-para">RESUME CPR IMMEDIATELY as soon as possible</p>
-<p class="content-para">for 2 minutes Repeat every 3-5 min</p>
-<p class="content-para">│</p>
-<p class="content-para">IV ADRENALINE 1 mg after 2nd shock</p>
-<p class="content-para">IV AMIODARONE 300 mg after 3rd shock</p>
-<p class="content-para">```</p>
+<div class="clinical-flowchart-card" style="margin: 16px 0; border: 1.5px solid #c4b5fd; border-left: 5px solid #7c3aed; border-radius: 10px; background: #fdf4ff; padding: 14px 18px; break-inside: avoid; page-break-inside: avoid;"><div class="flowchart-header" style="font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #6d28d9; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20"/></svg>CLINICAL ALGORITHM / SCHEMATIC FLOWCHART</div><pre class="flowchart-pre" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 8pt; line-height: 1.45; overflow-x: auto; color: #1e1b4b; white-space: pre; background: transparent; border: none; padding: 0;"><code>UNRESPONSIVE VICTIM
+ │
+ Shout for nearby help &amp; activate EMS / Code Blue
+ Check Carotid Pulse (&lt; 10 seconds)
+ │
+ ┌────────────────────────────┴────────────────────────────┐
+ ▼ ▼
+PULSE PRESENT PULSE ABSENT / UNCERTAIN
+Provide rescue breathing (1 breath every 6 sec) START HIGH-QUALITY CPR IMMEDIATELY
+Re-check pulse every 2 minutes (30 Compressions : 2 Breaths)
+ │
+ ATTACH AED / DEFIBRILLATOR
+ │
+ ┌───────────────────────────┴───────────────────────────┐
+ ▼ ▼
+ SHOCKABLE RHYTHM NON-SHOCKABLE RHYTHM
+ (Ventricular Fibrillation / Pulseless VT) (Asystole / PEA)
+ │ │
+ DELIVER 1 SHOCK CONTINUE CPR (30:2)
+ (150-200 J Biphasic) IV ADRENALINE (1 mg IV)
+ RESUME CPR IMMEDIATELY as soon as possible
+ for 2 minutes Repeat every 3-5 min
+ │
+ IV ADRENALINE 1 mg after 2nd shock
+ IV AMIODARONE 300 mg after 3rd shock</code></pre></div>
 <h4 class="sub-heading">High-Quality CPR Performance Metrics</h4>
 <ul class="content-list">
 <li><strong>Compression Rate</strong>: <strong>100 to 120 compressions per minute</strong>.</li>

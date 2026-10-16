@@ -249,6 +249,13 @@ pre {{
     overflow-x: auto;
     white-space: pre-wrap;
     line-height: 1.4;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}}
+
+.clinical-flowchart-card, .formula-card, .pearl-box, .layman-box, table, tr, pre, code {{
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
 }}
 
 ul, ol {{
@@ -343,11 +350,17 @@ def generate_interactive_dashboard(chapters):
             # Fallback types based on sections
             type_list = []
             for sec in ch["sections"][:4]:
+                clean_lines = [l.strip() for l in clean_latex(sec["content"]).split('\n') if not l.strip().startswith('|') and not l.strip().startswith('#') and l.strip()]
+                clean_text = ' '.join(clean_lines)
+                if len(clean_text) > 220:
+                    clean_text = clean_text[:220].rsplit(' ', 1)[0] + '...'
+                if clean_text.count('**') % 2 != 0:
+                    clean_text = clean_text.rsplit('**', 1)[0] + '...'
                 type_list.append({
                     "name": sec["title"],
                     "badge": "Core Monograph Section",
                     "hemodynamics": "High-Yield Clinical Standard",
-                    "summary": clean_latex(sec["content"][:220].strip()) + "..."
+                    "summary": clean_text
                 })
             custom_types = {
                 "title": f"Classification & Subtypes: {ch['title']}",
@@ -388,40 +401,40 @@ def generate_interactive_dashboard(chapters):
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
     <style>
         :root {{
-            --bg-base: #fbfbfa;
+            --bg-base: #fbfbfe;
             --bg-surface: #ffffff;
             --bg-card: #ffffff;
             --bg-card-hover: #f5f3ff;
-            --border-color: #e2e8f0;
-            --border-active: #6366f1;
-            --text-primary: #0f172a;
-            --text-secondary: #334155;
-            --text-muted: #64748b;
-            --accent-primary: #6366f1;
-            --accent-primary-dark: #4f46e5;
-            --accent-light: #eef2ff;
-            --accent-glow: rgba(99, 102, 241, 0.18);
-            --header-bg: rgba(251, 251, 250, 0.94);
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-            --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+            --border-color: #e9d5ff;
+            --border-active: #7c3aed;
+            --text-primary: #1e1b4b;
+            --text-secondary: #475569;
+            --text-muted: #6b7280;
+            --accent-primary: #7c3aed;
+            --accent-primary-dark: #6d28d9;
+            --accent-light: #f5f3ff;
+            --accent-glow: rgba(124, 58, 237, 0.18);
+            --header-bg: rgba(251, 251, 254, 0.94);
+            --shadow-sm: 0 1px 3px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 14px rgba(124, 58, 237, 0.12);
+            --shadow-lg: 0 10px 30px rgba(124, 58, 237, 0.18);
         }}
 
         body.dark {{
-            --bg-base: #090d16;
-            --bg-surface: #0f172a;
-            --bg-card: #131b2e;
-            --bg-card-hover: #1e293b;
-            --border-color: rgba(255, 255, 255, 0.12);
-            --border-active: #818cf8;
-            --text-primary: #f8fafc;
+            --bg-base: #0c071e;
+            --bg-surface: #160d33;
+            --bg-card: #160d33;
+            --bg-card-hover: #1e1345;
+            --border-color: #2e1b5b;
+            --border-active: #8b5cf6;
+            --text-primary: #f5f3ff;
             --text-secondary: #e2e8f0;
-            --text-muted: #94a3b8;
-            --accent-primary: #818cf8;
-            --accent-primary-dark: #6366f1;
-            --accent-light: rgba(99, 102, 241, 0.15);
-            --accent-glow: rgba(99, 102, 241, 0.3);
-            --header-bg: rgba(9, 13, 22, 0.94);
+            --text-muted: #c4b5fd;
+            --accent-primary: #8b5cf6;
+            --accent-primary-dark: #7c3aed;
+            --accent-light: rgba(139, 92, 246, 0.16);
+            --accent-glow: rgba(139, 92, 246, 0.32);
+            --header-bg: rgba(12, 7, 30, 0.94);
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
             --shadow-md: 0 4px 14px rgba(0,0,0,0.55);
             --shadow-lg: 0 10px 30px rgba(0,0,0,0.7);
@@ -2740,10 +2753,12 @@ def generate_interactive_dashboard(chapters):
                         <div class="types-grid">
                             ${{cls.types.map(t => `
                                 <div class="type-card">
-                                    <span class="type-card-badge">${{t.badge}}</span>
+                                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                                        <span class="type-card-badge">${{t.badge || 'Diagnostic Criteria'}}</span>
+                                        ${{t.hemodynamics && t.hemodynamics !== 'Pathognomonic Microscopic Sign' ? `<span class="type-card-stat">${{t.hemodynamics}}</span>` : ''}}
+                                    </div>
                                     <div class="type-card-title">${{t.name}}</div>
-                                    <div class="type-card-stat">${{t.hemodynamics}}</div>
-                                    <div class="type-card-summary">${{t.summary}}</div>
+                                    <div class="type-card-summary">${{parseMarkdown(t.summary)}}</div>
                                 </div>
                             `).join('')}}
                         </div>
@@ -2896,7 +2911,13 @@ def generate_interactive_dashboard(chapters):
             }}
 
             function formatInline(str) {{
-                return str
+                let s = str;
+                const count = (s.match(/\*\*/g) || []).length;
+                if (count % 2 !== 0) {{
+                    const lastIdx = s.lastIndexOf('**');
+                    s = s.substring(0, lastIdx) + s.substring(lastIdx + 2);
+                }}
+                return s
                     .replace(/\*\*(.*?)\*\*/g, '<strong style="color:var(--text-primary); font-weight:700;">$1</strong>')
                     .replace(/(?<!\*)\*([^*]+?)\*(?!\*)/g, '<em>$1</em>')
                     .replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>')
@@ -3035,6 +3056,11 @@ def generate_interactive_dashboard(chapters):
             else completedTopics[chId] = true;
             localStorage.setItem('medicine_completed_topics', JSON.stringify(completedTopics));
             renderSidebar();
+            if (currentChapterIdx === -1) {{
+                renderDashboard();
+            }} else {{
+                renderChapterView();
+            }}
         }}
 
         function onSearchInput() {{
@@ -3229,6 +3255,7 @@ def main():
             "--headless",
             "--disable-gpu",
             "--run-all-compositor-stages-before-draw",
+            "--no-pdf-header-footer",
             f"--print-to-pdf={pdf_path}",
             f"file:///{print_html_path.replace(os.sep, '/')}"
         ]
