@@ -394,49 +394,98 @@ def generate_interactive_dashboard(chapters):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="{FAVICON_SVG}">
-    <title>General Medicine Master Portal — University Exam Companion</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+    <link rel="alternate icon" href="favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+    <link rel="manifest" href="manifest.json?v=2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Medicine Pro">
+    <meta name="theme-color" content="#090a12">
+    <title>Medicine Pro — University Exam Monograph | BDS Clinical Vault</title>
+    <script>
+    (function() {{
+        try {{
+            var t = localStorage.getItem('bds.medicine.theme') || localStorage.getItem('medicine_theme');
+            if (t === 'light') {{
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.documentElement.classList.remove('dark');
+            }} else {{
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.documentElement.classList.add('dark');
+            }}
+        }} catch(e) {{}}
+    }})();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
     <style>
         :root {{
-            --bg-base: #fbfbfe;
+            /* Per-portal Accent: Medicine Diagnostic Indigo */
+            --accent-primary: #6366f1;
+            --accent-primary-dark: #4f46e5;
+            --accent-light: rgba(99, 102, 241, 0.14);
+            --accent-glow: rgba(99, 102, 241, 0.18);
+            --border-accent: rgba(99, 102, 241, 0.28);
+            --accent-text: #c7d2fe;
+            --accent-contrast: #1e1b4b;
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+
+            /* Shared Neutral Tokens (Obsidian Dark Default) */
+            --bg-base: #090a12;
+            --bg-surface: #101322;
+            --bg-card: #101322;
+            --bg-card-hover: #171b30;
+            --border-color: rgba(255, 255, 255, 0.09);
+            --border-strong: rgba(255, 255, 255, 0.18);
+            --border-active: #6366f1;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --header-bg: rgba(9, 10, 18, 0.94);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }}
+
+        html[data-theme="light"], body.light {{
+            --bg-base: #f8fafc;
             --bg-surface: #ffffff;
             --bg-card: #ffffff;
-            --bg-card-hover: #f5f3ff;
-            --border-color: #e9d5ff;
-            --border-active: #7c3aed;
-            --text-primary: #1e1b4b;
-            --text-secondary: #475569;
-            --text-muted: #6b7280;
-            --accent-primary: #7c3aed;
-            --accent-primary-dark: #6d28d9;
-            --accent-light: #f5f3ff;
-            --accent-glow: rgba(124, 58, 237, 0.18);
-            --header-bg: rgba(251, 251, 254, 0.94);
-            --shadow-sm: 0 1px 3px rgba(124, 58, 237, 0.08);
-            --shadow-md: 0 4px 14px rgba(124, 58, 237, 0.12);
-            --shadow-lg: 0 10px 30px rgba(124, 58, 237, 0.18);
+            --bg-card-hover: #f1f5f9;
+            --border-color: #e2e8f0;
+            --border-strong: #cbd5e1;
+            --border-active: #6366f1;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --header-bg: rgba(255, 255, 255, 0.94);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
         }}
 
         body.dark {{
-            --bg-base: #0c071e;
-            --bg-surface: #160d33;
-            --bg-card: #160d33;
-            --bg-card-hover: #1e1345;
-            --border-color: #2e1b5b;
-            --border-active: #8b5cf6;
-            --text-primary: #f5f3ff;
-            --text-secondary: #e2e8f0;
-            --text-muted: #c4b5fd;
-            --accent-primary: #8b5cf6;
-            --accent-primary-dark: #7c3aed;
-            --accent-light: rgba(139, 92, 246, 0.16);
-            --accent-glow: rgba(139, 92, 246, 0.32);
-            --header-bg: rgba(12, 7, 30, 0.94);
+            --bg-base: #090a12;
+            --bg-surface: #101322;
+            --bg-card: #101322;
+            --bg-card-hover: #171b30;
+            --border-color: rgba(255, 255, 255, 0.09);
+            --border-strong: rgba(255, 255, 255, 0.18);
+            --border-active: #6366f1;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent-primary: #6366f1;
+            --accent-primary-dark: #4f46e5;
+            --accent-light: rgba(99, 102, 241, 0.14);
+            --accent-glow: rgba(99, 102, 241, 0.18);
+            --header-bg: rgba(9, 10, 18, 0.94);
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
-            --shadow-md: 0 4px 14px rgba(0,0,0,0.55);
+            --shadow-md: 0 4px 14px rgba(0,0,0,0.5);
             --shadow-lg: 0 10px 30px rgba(0,0,0,0.7);
         }}
 
@@ -1854,7 +1903,7 @@ def generate_interactive_dashboard(chapters):
 
         .progress-bar-fill-dash {{
             height: 100%;
-            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%);
+            background: linear-gradient(90deg, #6366f1 0%, #4f46e5 50%, #10b981 100%);
             border-radius: 999px;
             width: 0%;
             transition: width 0.4s ease;
@@ -1951,33 +2000,96 @@ def generate_interactive_dashboard(chapters):
             border-color: #10b981;
             color: #10b981;
         }}
+
+        /* Back to BDS Clinical Vault Link */
+        .back-to-vault-link {{
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }}
+        .back-to-vault-link:hover {{
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            background: var(--accent-light);
+        }}
+
+        /* Focus Timer Pill */
+        .focus-timer-pill {{
+            display: inline-flex;
+            align-items: center;
+        }}
+        .btn-focus-timer {{
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }}
+        .btn-focus-timer.running {{
+            border-color: var(--accent-primary) !important;
+            color: var(--accent-primary) !important;
+            box-shadow: 0 0 10px var(--accent-glow) !important;
+        }}
+
+        .search-kbd-btn {{
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.72rem;
+            display: flex;
+            align-items: center;
+            padding: 0 6px;
+        }}
     </style>
 </head>
-<body>
+<body class="dark">
     <!-- Top Header -->
     <header class="navbar">
-        <div class="brand" onclick="showDashboard()">
-            <div class="brand-badge" style="background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                    <path d="M12 5v14"/>
-                </svg>
-            </div>
-            <div class="brand-title">
-                <h1>MEDICINE PRO</h1>
-                <span>BDS &amp; MBBS Clinical Monograph</span>
+        <div style="display: flex; align-items: center; gap: 14px;">
+            <a href="https://krrish41.github.io/bds-vault/" class="back-to-vault-link" data-testid="back-to-vault" title="Back to BDS Clinical Vault Hub">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                <span>BDS Clinical Vault</span>
+            </a>
+            <div class="brand" onclick="showDashboard()">
+                <div class="brand-badge" style="background: transparent; display: flex; align-items: center;">
+                    {ICONS["modern_logo"]}
+                </div>
+                <div class="brand-title">
+                    <h1>MEDICINE PRO</h1>
+                    <span>Clinical Monograph · Paper II</span>
+                </div>
             </div>
         </div>
         <div class="nav-actions">
-            <button class="nav-btn" onclick="togglePlayPauseAudio()" title="Continuous Audio Walk">
+            <button class="nav-btn" data-testid="voice-walk" onclick="togglePlayPauseAudio()" title="Continuous Audio Walk (1x-2x)">
                 {ICONS["headphones"]}
                 <span>Audio Walk</span>
             </button>
-            <button class="nav-btn" onclick="openPdfModal()" title="View Master PDF">
+            <div class="focus-timer-pill" data-testid="focus-timer">
+                <button class="nav-btn btn-focus-timer" id="btnFocusTimer" onclick="toggleStudyFocusTimer()" title="25m Focus Study Timer" aria-label="Focus Study Timer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span id="focusTimerDisplay">25:00</span>
+                </button>
+            </div>
+            <button class="nav-btn" data-testid="open-pdf" onclick="openPdfModal()" title="View Master PDF">
                 {ICONS["pdf"]}
                 <span>Master PDF</span>
             </button>
-            <button class="nav-btn" onclick="toggleTheme()" id="themeToggleBtn" aria-label="Toggle dark/light mode">
+            <button class="nav-btn" data-testid="theme-toggle" onclick="toggleTheme()" id="themeToggleBtn" aria-label="Toggle dark/light mode">
                 {ICONS["moon"]}
             </button>
         </div>
@@ -1996,8 +2108,8 @@ def generate_interactive_dashboard(chapters):
                     </button>
                 </div>
                 <div class="search-box">
-                    <input type="text" id="searchInput" class="search-input" placeholder="Search conditions, signs, drugs..." oninput="onSearchInput()">
-                    <span class="search-kbd">/</span>
+                    <input type="text" id="searchInput" data-testid="search" class="search-input" placeholder="Search conditions, signs, drugs..." oninput="onSearchInput()">
+                    <button class="search-kbd-btn" data-testid="palette" onclick="document.getElementById('searchInput').focus()" title="Command palette (Ctrl+K)"><kbd>⌘K</kbd></button>
                 </div>
                 <div class="category-scroll" id="categoryPillBar">
                     <button class="filter-chip active" onclick="setCategoryFilter('All')">All Topics</button>
@@ -2007,7 +2119,10 @@ def generate_interactive_dashboard(chapters):
                     <button class="filter-chip" onclick="setCategoryFilter('Endocrinology')">Endocrine / DM</button>
                     <button class="filter-chip" onclick="setCategoryFilter('Hematology')">Hematology</button>
                     <button class="filter-chip" onclick="setCategoryFilter('Nephrology')">Nephrology</button>
-                    <button class="filter-chip" onclick="setCategoryFilter('Neurology')">Neurology</button>
+                    <button class="filter-chip" data-testid="schematics" onclick="openDiagramSpotterFromDashboard()">📐 Schematics</button>
+                    <button class="filter-chip" data-testid="flashcards" onclick="openFlashcardsFromDashboard()">🃏 Flashcards</button>
+                    <button class="filter-chip" data-testid="exam-simulator" onclick="launchExamSimFromDashboard()">⏱️ Exam Simulator</button>
+                    <button class="filter-chip" data-testid="spotters" onclick="openDiagramSpotterFromDashboard()">🎯 Spotters</button>
                 </div>
             </div>
             <div class="topic-list" id="sidebarTopicList" tabindex="0" aria-label="Curriculum topics list">
@@ -2570,7 +2685,7 @@ def generate_interactive_dashboard(chapters):
                         <span>University Syllabus Completion</span>
                         <span style="color: var(--accent-primary);">${{pct}}%</span>
                     </div>
-                    <div class="progress-bar-bg-dash">
+                    <div class="progress-bar-bg-dash" data-testid="progress">
                         <div class="progress-bar-fill-dash" style="width: ${{pct}}%;"></div>
                     </div>
                 </div>
@@ -2582,7 +2697,7 @@ def generate_interactive_dashboard(chapters):
                         <button class="filter-chip ${{currentDashFilter === 'pending' ? 'active' : ''}}" onclick="setDashFilter('pending')">Pending (${{remaining}})</button>
                         <button class="filter-chip ${{currentDashFilter === 'completed' ? 'active' : ''}}" onclick="setDashFilter('completed')">Completed (${{completed}})</button>
                         <button class="filter-chip ${{currentDashFilter === 'notes' ? 'active' : ''}}" onclick="setDashFilter('notes')">Has Notes (${{notesCount}})</button>
-                        <button class="filter-chip" onclick="selectChapter(19)" style="background: linear-gradient(135deg, #7c3aed, #4f46e5); color: #ffffff; border: none;">⚡ Cheat Sheet</button>
+                        <button class="filter-chip" onclick="selectChapter(19)" style="background: linear-gradient(135deg, #6366f1, #4f46e5); color: #ffffff; border: none;">⚡ Cheat Sheet</button>
                     </div>
                 </div>
 
@@ -2658,16 +2773,16 @@ def generate_interactive_dashboard(chapters):
                         <button class="tab-btn ${{activeTab === 'types' ? 'active' : ''}}" onclick="switchTab('types')">
                             {ICONS["dashboard"]} Types &amp; Classifications
                         </button>
-                        <button class="tab-btn ${{activeTab === 'diagrams' ? 'active' : ''}}" onclick="switchTab('diagrams')">
+                        <button class="tab-btn ${{activeTab === 'diagrams' ? 'active' : ''}}" data-testid="schematics" onclick="switchTab('diagrams')">
                             {ICONS["diagrams"]} Diagrams &amp; Spotters
                         </button>
                         <button class="tab-btn ${{activeTab === 'viva' ? 'active' : ''}}" onclick="switchTab('viva')">
                             {ICONS["viva"]} Examiner Viva Pearls
                         </button>
-                        <button class="tab-btn ${{activeTab === 'quiz' ? 'active' : ''}}" onclick="switchTab('quiz')">
+                        <button class="tab-btn ${{activeTab === 'quiz' ? 'active' : ''}}" data-testid="flashcards" onclick="switchTab('quiz')">
                             {ICONS["quiz"]} Active Recall Flashcards
                         </button>
-                        <button class="tab-btn ${{activeTab === 'exam' ? 'active' : ''}}" onclick="switchTab('exam')">
+                        <button class="tab-btn ${{activeTab === 'exam' ? 'active' : ''}}" data-testid="exam-simulator" onclick="switchTab('exam')">
                             {ICONS["cheat_sheet"]} Exam Rubric Simulator
                         </button>
                         <button class="tab-btn ${{activeTab === 'notes' ? 'active' : ''}}" onclick="switchTab('notes')">
@@ -3173,16 +3288,82 @@ def generate_interactive_dashboard(chapters):
             document.getElementById('modal').style.display = 'none';
         }}
 
+        let focusTimerSeconds = 25 * 60;
+        let focusTimerInterval = null;
+        let isFocusTimerRunning = false;
+
+        function toggleStudyFocusTimer() {{
+            const btn = document.getElementById('btnFocusTimer');
+            const disp = document.getElementById('focusTimerDisplay');
+            if (!btn || !disp) return;
+
+            if (isFocusTimerRunning) {{
+                clearInterval(focusTimerInterval);
+                isFocusTimerRunning = false;
+                btn.classList.remove('running');
+            }} else {{
+                if (focusTimerSeconds <= 0) focusTimerSeconds = 25 * 60;
+                isFocusTimerRunning = true;
+                btn.classList.add('running');
+                focusTimerInterval = setInterval(() => {{
+                    focusTimerSeconds--;
+                    if (focusTimerSeconds <= 0) {{
+                        clearInterval(focusTimerInterval);
+                        isFocusTimerRunning = false;
+                        btn.classList.remove('running');
+                        focusTimerSeconds = 25 * 60;
+                        alert('Focus session complete! Time for a short rest.');
+                    }}
+                    updateFocusTimerUI();
+                }}, 1000);
+            }}
+            updateFocusTimerUI();
+        }}
+
+        function updateFocusTimerUI() {{
+            const disp = document.getElementById('focusTimerDisplay');
+            if (!disp) return;
+            const m = Math.floor(focusTimerSeconds / 60);
+            const s = focusTimerSeconds % 60;
+            disp.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+        }}
+
+        function launchExamSimFromDashboard() {{
+            selectChapter(0);
+            setTimeout(() => {{
+                switchTab('exam');
+            }}, 120);
+        }}
+
+        function openDiagramSpotterFromDashboard() {{
+            selectChapter(0);
+            setTimeout(() => {{
+                switchTab('diagrams');
+            }}, 120);
+        }}
+
+        function openFlashcardsFromDashboard() {{
+            selectChapter(0);
+            setTimeout(() => {{
+                switchTab('quiz');
+            }}, 120);
+        }}
+
         function toggleTheme() {{
-            document.body.classList.toggle('dark');
-            const isDark = document.body.classList.contains('dark');
-            localStorage.setItem('medicine_theme', isDark ? 'dark' : 'light');
-            document.getElementById('themeToggleBtn').innerHTML = isDark ? '{ICONS["sun"]}' : '{ICONS["moon"]}';
+            const isDark = document.body.classList.toggle('dark');
+            document.body.classList.toggle('light', !isDark);
+            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            try {{
+                localStorage.setItem('medicine_theme', isDark ? 'dark' : 'light');
+                localStorage.setItem('bds.medicine.theme', isDark ? 'dark' : 'light');
+            }} catch(e) {{}}
+            const btn = document.getElementById('themeToggleBtn');
+            if (btn) btn.innerHTML = isDark ? '{ICONS["sun"]}' : '{ICONS["moon"]}';
         }}
 
         // Keyboard Shortcuts
         window.addEventListener('keydown', e => {{
-            if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {{
+            if ((e.key === '/' || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k')) && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {{
                 e.preventDefault();
                 const search = document.getElementById('searchInput');
                 if (search) search.focus();
@@ -3193,10 +3374,18 @@ def generate_interactive_dashboard(chapters):
             }}
         }});
 
-        // Initialization
-        if (localStorage.getItem('medicine_theme') === 'dark') {{
+        // Initialization: Dark by default
+        const savedTheme = localStorage.getItem('bds.medicine.theme') || localStorage.getItem('medicine_theme');
+        if (savedTheme === 'light') {{
+            document.body.classList.remove('dark');
+            document.body.classList.add('light');
+            const btn = document.getElementById('themeToggleBtn');
+            if (btn) btn.innerHTML = '{ICONS["moon"]}';
+        }} else {{
             document.body.classList.add('dark');
-            document.getElementById('themeToggleBtn').innerHTML = '{ICONS["sun"]}';
+            document.body.classList.remove('light');
+            const btn = document.getElementById('themeToggleBtn');
+            if (btn) btn.innerHTML = '{ICONS["sun"]}';
         }}
         initVoiceList();
         renderSidebar();
