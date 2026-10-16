@@ -1,0 +1,222 @@
+[
+  {
+    "id": "acute-viral-hepatitis-chronic-viral-hepatitis",
+    "title": "Acute Viral Hepatitis & Chronic Viral Hepatitis",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 1,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/acute-viral-hepatitis-chronic-viral-hepatitis",
+    "order": 1
+  },
+  {
+    "id": "acute-liver-failure-hepatic-encephalopathy",
+    "title": "Acute Liver Failure & Hepatic Encephalopathy",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 2,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/acute-liver-failure-hepatic-encephalopathy",
+    "order": 2
+  },
+  {
+    "id": "cirrhosis-of-the-liver-portal-hypertension",
+    "title": "Cirrhosis of the Liver & Portal Hypertension",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 3,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/cirrhosis-of-the-liver-portal-hypertension",
+    "order": 3
+  },
+  {
+    "id": "protein-energy-malnutrition-kwashiorkor-vs-marasmus",
+    "title": "Protein Energy Malnutrition: Kwashiorkor vs Marasmus",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 4,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/protein-energy-malnutrition-kwashiorkor-vs-marasmus",
+    "order": 4
+  },
+  {
+    "id": "dysphagia-peptic-ulcer-disease",
+    "title": "Dysphagia & Peptic Ulcer Disease",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 5,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/dysphagia-peptic-ulcer-disease",
+    "order": 5
+  },
+  {
+    "id": "acute-rheumatic-fever-rheumatic-heart-disease",
+    "title": "Acute Rheumatic Fever & Rheumatic Heart Disease",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 6,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/acute-rheumatic-fever-rheumatic-heart-disease",
+    "order": 6
+  },
+  {
+    "id": "infective-endocarditis-aha-dental-prophylaxis-guidelines",
+    "title": "Infective Endocarditis & AHA Dental Prophylaxis Guidelines",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 7,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/infective-endocarditis-aha-dental-prophylaxis-guidelines",
+    "order": 7
+  },
+  {
+    "id": "ischemic-heart-disease-acute-myocardial-infarction-stemi",
+    "title": "Ischemic Heart Disease & Acute Myocardial Infarction (STEMI)",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 8,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/ischemic-heart-disease-acute-myocardial-infarction-stemi",
+    "order": 8
+  },
+  {
+    "id": "heart-failure-systemic-hypertension",
+    "title": "Heart Failure & Systemic Hypertension",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 9,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/heart-failure-systemic-hypertension",
+    "order": 9
+  },
+  {
+    "id": "congenital-heart-diseases-asd-vsd-pda-tetralogy-of-fallot",
+    "title": "Congenital Heart Diseases: ASD, VSD, PDA & Tetralogy of Fallot",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 10,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/congenital-heart-diseases-asd-vsd-pda-tetralogy-of-fallot",
+    "order": 10
+  },
+  {
+    "id": "enteric-fever-typhoid-paratyphoid-fever",
+    "title": "Enteric Fever: Typhoid & Paratyphoid Fever",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 11,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/enteric-fever-typhoid-paratyphoid-fever",
+    "order": 11
+  },
+  {
+    "id": "syphilis-sexually-transmitted-orofacial-infections",
+    "title": "Syphilis & Sexually Transmitted Orofacial Infections",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 12,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/syphilis-sexually-transmitted-orofacial-infections",
+    "order": 12
+  },
+  {
+    "id": "systemic-bacterial-infections-diphtheria-tetanus",
+    "title": "Systemic Bacterial Infections: Diphtheria & Tetanus",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 13,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/systemic-bacterial-infections-diphtheria-tetanus",
+    "order": 13
+  },
+  {
+    "id": "systemic-viral-exanthems-hiv-aids",
+    "title": "Systemic Viral Exanthems & HIV/AIDS",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 14,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/systemic-viral-exanthems-hiv-aids",
+    "order": 14
+  },
+  {
+    "id": "diabetes-mellitus-diabetic-ketoacidosis-dka",
+    "title": "Diabetes Mellitus & Diabetic Ketoacidosis (DKA)",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 15,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/diabetes-mellitus-diabetic-ketoacidosis-dka",
+    "order": 15
+  },
+  {
+    "id": "the-leukemias-aml-all-cml-cll-oral-manifestations",
+    "title": "The Leukemias: AML, ALL, CML, CLL & Oral Manifestations",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 16,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/the-leukemias-aml-all-cml-cll-oral-manifestations",
+    "order": 16
+  },
+  {
+    "id": "nephrotic-vs-nephritic-syndrome-chronic-kidney-disease-ckd",
+    "title": "Nephrotic vs Nephritic Syndrome & Chronic Kidney Disease (CKD)",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 17,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/nephrotic-vs-nephritic-syndrome-chronic-kidney-disease-ckd",
+    "order": 17
+  },
+  {
+    "id": "facial-nerve-paralysis-bell-s-palsy-headaches",
+    "title": "Facial Nerve Paralysis (Bell's Palsy) & Headaches",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 18,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/facial-nerve-paralysis-bell-s-palsy-headaches",
+    "order": 18
+  },
+  {
+    "id": "acute-meningitis-neurological-infections",
+    "title": "Acute Meningitis & Neurological Infections",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 19,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/acute-meningitis-neurological-infections",
+    "order": 19
+  },
+  {
+    "id": "shock-syndromes-cardiopulmonary-resuscitation-bls-acls",
+    "title": "Shock Syndromes & Cardiopulmonary Resuscitation (BLS / ACLS)",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 20,
+    "type": "essay",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/shock-syndromes-cardiopulmonary-resuscitation-bls-acls",
+    "order": 20
+  }
+]
