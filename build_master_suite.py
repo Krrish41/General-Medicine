@@ -2075,6 +2075,10 @@ def generate_interactive_dashboard(chapters):
         }}
 
         .search-kbd-btn {{
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
             background: transparent;
             border: none;
             color: var(--text-muted);
@@ -2082,7 +2086,20 @@ def generate_interactive_dashboard(chapters):
             font-size: 0.72rem;
             display: flex;
             align-items: center;
-            padding: 0 6px;
+            padding: 0;
+            z-index: 2;
+        }}
+        .kbd-label {{
+            background: var(--bg-surface, rgba(255, 255, 255, 0.08));
+            border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+            border-radius: 4px;
+            padding: 2px 5px;
+            font-size: 0.68rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+            font-weight: 600;
+            line-height: 1;
+            pointer-events: none;
         }}
     </style>
 </head>
