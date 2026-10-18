@@ -13,6 +13,7 @@ import sys
 import base64
 import json
 import subprocess
+import re
 
 from content.gastrointestinal_and_hepato import CHAPTERS as c1
 from content.cardiovascular import CHAPTERS as c2
@@ -367,12 +368,22 @@ def generate_interactive_dashboard(chapters):
                 "types": type_list
             }
 
+        word_count = sum(len(sec["content"].split()) for sec in ch["sections"])
+        word_count += len(ch.get("clinical_pearl", "").split())
+        read_minutes = max(5, round(word_count / 180))
+
+        clean_title = re.sub(r'^(Chapter\s*\d+[:.]*|\d+[\.:\s]+)', '', ch["title"], flags=re.IGNORECASE).strip()
+        slug = re.sub(r'[^a-zA-Z0-9]+', '-', clean_title).strip('-').lower()
+
         enriched_chapters.append({
             "id": ch["id"],
+            "slug": slug,
             "title": ch["title"],
             "category": ch["category"],
             "badge": ch["badge"],
-            "reading_time": ch["reading_time"],
+            "readMinutes": read_minutes,
+            "readingTime": f"{read_minutes} min read",
+            "reading_time": f"{read_minutes} min read",
             "clinical_pearl": ch["clinical_pearl"],
             "key_points": ch.get("key_points", []),
             "sections": ch["sections"],
@@ -382,7 +393,8 @@ def generate_interactive_dashboard(chapters):
             "schematic_svg": svg_diagram,
             "analogy": analogy,
             "flashcards": cards,
-            "classification": custom_types
+            "classification": custom_types,
+            "tags": [ch["category"], "medicine", slug, ch["id"]]
         })
 
     chapters_json = json.dumps(enriched_chapters)
@@ -421,6 +433,7 @@ def generate_interactive_dashboard(chapters):
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="portal-core/core-shell.css">
+    <script src="portal-core/core-engine.js"></script>
     <style>
         :root {{
             /* Per-portal Accent: Medicine Diagnostic Sky Blue */
@@ -2104,87 +2117,12 @@ def generate_interactive_dashboard(chapters):
     </style>
 </head>
 <body class="dark">
-    <div id="sidebar-backdrop" onclick="toggleSidebar(false)"></div>
 
-    <!-- Docked Sidebar (Spec 2.6) -->
-    <aside class="sidebar" id="sidebar">
-        <div class="brand-block" onclick="showDashboard()">
-            <img src="favicon.svg" alt="Medicine Pro Logo" class="brand-logo-tile" width="40" height="40">
-            <div class="brand-text-stack">
-                <div class="brand-wordmark">MEDICINE PRO</div>
-                <div class="brand-subtitle">Clinical Monograph · Paper II</div>
-            </div>
-        </div>
-
-        <div class="sidebar-back-row">
-            <a href="https://krrish41.github.io/bds-vault/#medicine" class="back-to-vault-btn" data-testid="back-to-vault" aria-label="Back to BDS Clinical Vault">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-                <span>BDS Clinical Vault</span>
-            </a>
-        </div>
-
-        <div class="sidebar-header" style="border-bottom: none; padding-bottom: 0;">
-            <div style="display: flex; gap: 8px; margin-bottom: 12px;">
-                <button class="nav-btn nav-btn-primary" id="sidebarDashBtn" onclick="showDashboard()" style="flex: 1; justify-content: center; font-weight: 700;">
-                    {ICONS["dashboard"]} Dashboard
-                </button>
-            </div>
-            <div class="search-box">
-                <input type="text" id="searchInput" data-testid="search" class="search-input" placeholder="Search conditions, signs, drugs..." oninput="onSearchInput()">
-                <button class="search-kbd-btn" data-testid="palette" onclick="document.getElementById('searchInput').focus()" title="Command palette (Ctrl+K)"><kbd class="kbd-label">Ctrl K</kbd></button>
-            </div>
-            <div class="category-scroll" id="categoryPillBar">
-                <button class="filter-chip active" onclick="setCategoryFilter('All')">All Topics</button>
-                <button class="filter-chip" onclick="setCategoryFilter('Gastroenterology')">Gastro &amp; Hepato</button>
-                <button class="filter-chip" onclick="setCategoryFilter('Cardiovascular')">Cardio</button>
-                <button class="filter-chip" onclick="setCategoryFilter('Infectious')">Infections</button>
-                <button class="filter-chip" onclick="setCategoryFilter('Endocrinology')">Endocrine / DM</button>
-                <button class="filter-chip" onclick="setCategoryFilter('Hematology')">Hematology</button>
-                <button class="filter-chip" onclick="setCategoryFilter('Nephrology')">Nephrology</button>
-            </div>
-        </div>
-        <div class="topic-list" id="sidebarTopicList" tabindex="0" aria-label="Curriculum topics list">
-            <!-- Dynamically rendered -->
-        </div>
-    </aside>
+    <aside class="portal-sidebar" id="sidebar"></aside>
 
     <!-- Main View Column -->
     <div class="main-column" id="mainView">
-        <div class="top-bar" data-testid="topbar">
-            <div class="top-bar-left">
-                <button class="mobile-menu-btn" onclick="toggleSidebar(true)" aria-label="Open Topics Menu">{ICONS["menu"]}</button>
-                <div class="brand" onclick="showDashboard()" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                    <img src="favicon.svg" alt="Medicine Pro" class="brand-logo-tile" width="32" height="32" style="width: 32px; height: 32px; border-radius: 8px;">
-                    <div class="brand-title-group" style="display: flex; flex-direction: column;">
-                        <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); letter-spacing: 0.02em; line-height: 1.2;">MEDICINE PRO</div>
-                        <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">Clinical Monograph · Paper II</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="top-right-tools">
-                <button class="nav-btn" data-testid="audio-walkthrough" data-action="voice-walk" onclick="togglePlayPauseAudio()" title="Continuous Audio Walk (1x-2x)">
-                    {ICONS["headphones"]}
-                    <span class="btn-label">Audio Walk</span>
-                </button>
-                <div class="focus-timer-pill" data-testid="focus-timer">
-                    <button class="nav-btn btn-focus-timer" id="btnFocusTimer" onclick="toggleStudyFocusTimer()" title="25m Focus Study Timer" aria-label="Focus Study Timer">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        <span id="focusTimerDisplay">25:00</span>
-                    </button>
-                </div>
-                <button class="nav-btn" data-testid="palette" onclick="openCmdkFromDashboard()" title="Command Palette">
-                    <kbd class="kbd-label" style="font-family: monospace; font-size: 0.72rem; padding: 2px 6px; background: rgba(255,255,255,0.08); border-radius: 4px;">Ctrl K</kbd>
-                </button>
-                <button class="nav-btn" data-testid="open-pdf" onclick="openPdfModal()" title="View Master PDF">
-                    {ICONS["pdf"]}
-                    <span class="btn-label">Master PDF</span>
-                </button>
-                <button class="nav-btn" data-testid="theme-toggle" onclick="toggleTheme()" id="themeToggleBtn" aria-label="Toggle dark/light mode">
-                    {ICONS["moon"]}
-                </button>
-            </div>
-        </div>
+        <header class="portal-topbar" id="portalTopBar" data-testid="topbar"></header>
 
         <!-- Main Content Viewer -->
         <main class="content-area" id="mainContent">
@@ -2607,39 +2545,10 @@ def generate_interactive_dashboard(chapters):
         }}
 
         // --- View & Navigation Logic ---
-        function renderSidebar() {{
-            const query = (document.getElementById('searchInput').value || '').toLowerCase();
-            const listEl = document.getElementById('sidebarTopicList');
-            listEl.innerHTML = '';
-
-            const filtered = CHAPTERS.filter(ch => {{
-                const matchesCat = (currentCategory === 'All') || ch.category.toLowerCase().includes(currentCategory.toLowerCase());
-                const matchesQuery = !query || ch.title.toLowerCase().includes(query) || ch.sections.some(s => s.content.toLowerCase().includes(query));
-                return matchesCat && matchesQuery;
-            }});
-
-            if (filtered.length === 0) {{
-                listEl.innerHTML = '<div style="padding:20px; color:var(--text-muted); text-align:center;">No matching clinical topics found.</div>';
-                return;
+        function renderSidebar(filterText = '') {{
+            if (window.CoreEngine && CoreEngine.onSidebarSearch) {{
+                CoreEngine.onSidebarSearch(filterText);
             }}
-
-            filtered.forEach((ch, idx) => {{
-                const originalIdx = CHAPTERS.findIndex(c => c.id === ch.id);
-                const isCompleted = !!completedTopics[ch.id];
-                const item = document.createElement('div');
-                item.className = 'topic-item' + (originalIdx === currentChapterIdx ? ' active' : '');
-                item.onclick = () => selectChapter(originalIdx);
-                item.innerHTML = `
-                    <div class="topic-check ${{isCompleted ? 'completed' : ''}}" onclick="event.stopPropagation(); toggleTopicComplete('${{ch.id}}')">
-                        ${{isCompleted ? '{ICONS["check_circle"]}' : '{ICONS["circle"]}'}}
-                    </div>
-                    <div class="topic-info">
-                        <div class="topic-title">${{originalIdx + 1}}. ${{ch.title}}</div>
-                        <div class="topic-meta">${{ch.category}} • ${{ch.reading_time}}</div>
-                    </div>
-                `;
-                listEl.appendChild(item);
-            }});
         }}
 
         function getSlugForChapter(idx) {{
@@ -2684,9 +2593,15 @@ def generate_interactive_dashboard(chapters):
                     history.pushState(null, '', `#/topic/${{slug}}`);
                 }}
             }}
-            const dashBtn = document.getElementById('sidebarDashBtn');
-            if (dashBtn) dashBtn.classList.remove('nav-btn-primary');
-            renderSidebar();
+            if (window.CoreEngine) {{
+                CoreEngine.currentTopicIndex = idx;
+                CoreEngine.updateViewHeading(CHAPTERS[idx].title, CHAPTERS[idx].category, idx + 1);
+                const activeRow = document.querySelector(`.topic-row[data-topic-id="${{CHAPTERS[idx].id}}"]`);
+                if (activeRow) {{
+                    document.querySelectorAll('.topic-row').forEach(r => r.classList.remove('active'));
+                    activeRow.classList.add('active');
+                }}
+            }}
             renderChapterView();
             toggleMobileSidebar(false);
             window.scrollTo({{ top: 0, behavior: 'smooth' }});
@@ -2697,9 +2612,11 @@ def generate_interactive_dashboard(chapters):
             if (updateHash && window.location.hash && window.location.hash !== '#/' && window.location.hash !== '#') {{
                 history.pushState(null, '', '#/');
             }}
-            const dashBtn = document.getElementById('sidebarDashBtn');
-            if (dashBtn) dashBtn.classList.add('nav-btn-primary');
-            renderSidebar();
+            if (window.CoreEngine) {{
+                CoreEngine.currentTopicIndex = -1;
+                CoreEngine.updateViewHeading('Dashboard');
+                CoreEngine.toggleSidebar(false);
+            }}
             renderDashboard();
             toggleMobileSidebar(false);
             window.scrollTo({{ top: 0, behavior: 'smooth' }});
@@ -3283,9 +3200,13 @@ def generate_interactive_dashboard(chapters):
         function toggleTopicComplete(chId) {{
             if (completedTopics[chId]) delete completedTopics[chId];
             else completedTopics[chId] = true;
-            localStorage.setItem('bds.medicine.progress', JSON.stringify(completedTopics));
-            localStorage.setItem('medicine_completed_topics', JSON.stringify(completedTopics));
-            renderSidebar();
+            try {{
+                localStorage.setItem('bds.medicine.progress', JSON.stringify(completedTopics));
+                localStorage.setItem('medicine_completed_topics', JSON.stringify(completedTopics));
+            }} catch(e) {{}}
+            if (window.CoreEngine && CoreEngine.updateProgressDisplays) {{
+                CoreEngine.updateProgressDisplays();
+            }}
             if (currentChapterIdx === -1) {{
                 renderDashboard();
             }} else {{
@@ -3455,34 +3376,62 @@ def generate_interactive_dashboard(chapters):
             if (btn) btn.innerHTML = isDark ? '{ICONS["sun"]}' : '{ICONS["moon"]}';
         }}
 
-        // Keyboard Shortcuts
+        // Stethoscope Logo SVG for Medicine Pro
+        const MEDICINE_LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><linearGradient id="medBgCard" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#0f172a"/></linearGradient></defs><rect width="512" height="512" rx="112" fill="url(#medBgCard)" stroke="rgba(255,255,255,0.20)" stroke-width="16"/><g fill="none" stroke="#f8fafc" stroke-linecap="round" stroke-linejoin="round" stroke-width="26"><circle cx="180" cy="130" r="14" fill="#93c5fd" stroke="none"/><circle cx="332" cy="130" r="14" fill="#93c5fd" stroke="none"/><path d="M180 144 V180 C180 220 220 250 256 250 C292 250 332 220 332 180 V144"/><path d="M256 250 V290 C256 360 190 390 190 340 C190 290 290 300 290 370 C290 410 320 410 336 410"/><circle cx="356" cy="410" r="30" fill="#93c5fd" fill-opacity="0.25" stroke="#ffffff" stroke-width="24"/><circle cx="356" cy="410" r="12" fill="#38bdf8" stroke="none"/></g></svg>`;
+
+        // Keyboard Shortcuts (Esc to close modals)
         window.addEventListener('keydown', e => {{
-            if ((e.key === '/' || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k')) && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {{
-                e.preventDefault();
-                const search = document.getElementById('searchInput');
-                if (search) search.focus();
-            }} else if (e.key === 'Escape') {{
+            if (e.key === 'Escape') {{
                 closePdfModal();
                 closeDiagramModal();
                 toggleMobileSidebar(false);
             }}
         }});
 
-        // Initialization: Dark by default
-        const savedTheme = localStorage.getItem('bds.medicine.theme') || localStorage.getItem('medicine_theme');
-        if (savedTheme === 'light') {{
-            document.body.classList.remove('dark');
-            document.body.classList.add('light');
-            const btn = document.getElementById('themeToggleBtn');
-            if (btn) btn.innerHTML = '{ICONS["moon"]}';
-        }} else {{
-            document.body.classList.add('dark');
-            document.body.classList.remove('light');
-            const btn = document.getElementById('themeToggleBtn');
-            if (btn) btn.innerHTML = '{ICONS["sun"]}';
+        // Initialize Shared Core Engine
+        if (window.CoreEngine) {{
+            CoreEngine.init({{
+                portalKey: 'medicine',
+                name: 'MEDICINE PRO',
+                subtitle: 'Paper II · Clinical monograph',
+                logoSvg: MEDICINE_LOGO_SVG,
+                hubUrl: 'https://krrish41.github.io/bds-vault/#medicine',
+                pdfUrl: 'General_Medicine_Master_Notes.pdf',
+                searchPlaceholder: 'Search conditions, signs, drugs...',
+                topics: CHAPTERS,
+                currentTopicIndex: currentChapterIdx,
+                onOpenDashboard: () => {{
+                    showDashboard(true);
+                }},
+                onSelectTopic: (idx) => {{
+                    selectChapter(idx, true);
+                }},
+                onOpenSimulator: () => {{
+                    selectChapter(currentChapterIdx >= 0 ? currentChapterIdx : 0);
+                    setTimeout(() => switchTab('exam'), 120);
+                }},
+                onOpenSpotters: () => {{
+                    selectChapter(currentChapterIdx >= 0 ? currentChapterIdx : 0);
+                    setTimeout(() => switchTab('diagrams'), 120);
+                }},
+                onOpenFlashcards: () => {{
+                    selectChapter(currentChapterIdx >= 0 ? currentChapterIdx : 0);
+                    setTimeout(() => switchTab('quiz'), 120);
+                }},
+                onOpenCheatSheet: () => {{
+                    selectChapter(currentChapterIdx >= 0 ? currentChapterIdx : 0);
+                    setTimeout(() => switchTab('types'), 120);
+                }},
+                onToggleComplete: (id, isDone) => {{
+                    toggleTopicComplete(id);
+                }},
+                onResetStatusFilter: () => {{
+                    setCategoryFilter('All');
+                }}
+            }});
         }}
+
         initVoiceList();
-        renderSidebar();
         window.addEventListener('hashchange', handleHashRoute);
         if (window.location.hash && window.location.hash.startsWith('#/topic/')) {{
             handleHashRoute();
@@ -3490,7 +3439,6 @@ def generate_interactive_dashboard(chapters):
             renderDashboard();
         }}
     </script>
-    <script src="portal-core/core-engine.js"></script>
 </body>
 </html>
 """
@@ -3532,16 +3480,26 @@ def main():
         clean_title = re.sub(r'^(Chapter\s*\d+[:.]*|\d+[\.:\s]+)', '', title, flags=re.IGNORECASE).strip()
         slug = re.sub(r'[^a-zA-Z0-9]+', '-', clean_title).strip('-').lower()
         is_cheat_sheet = "cheat sheet" in title.lower() or "rapid revision" in title.lower()
+        category = ch.get("category", "General")
+
+        word_count = sum(len(sec["content"].split()) for sec in ch["sections"])
+        word_count += len(ch.get("clinical_pearl", "").split())
+        read_minutes = max(5, round(word_count / 180))
+
         topics_registry.append({
             "id": slug,
             "title": title,
+            "category": category,
+            "readMinutes": read_minutes,
+            "readingTime": f"{read_minutes} min read",
             "portal": "medicine",
             "portalName": "General Medicine Pro",
             "paper": "Paper II · Medicine",
             "chapter": idx + 1,
             "type": "cheat-sheet" if is_cheat_sheet else "essay",
             "url": f"https://krrish41.github.io/General-Medicine/#/topic/{slug}",
-            "order": idx + 1
+            "order": idx + 1,
+            "tags": [category, "medicine", slug]
         })
     with open(os.path.join(base_dir, "topics.json"), "w", encoding="utf-8") as f:
         json.dump(topics_registry, f, indent=2)
