@@ -439,7 +439,10 @@ def generate_interactive_dashboard(chapters):
         :root {{
             /* Per-portal Accent: Medicine Diagnostic Sky Blue */
             --accent-primary: #38bdf8;
-            --accent-primary-dark: #0284c7;
+            --accent-primary-dark: #0369a1;
+            --accent-btn-bg: #0369a1;
+            --accent-btn-hover: #0284c7;
+            --accent-btn-border: rgba(56, 189, 248, 0.55);
             --accent-light: rgba(56, 189, 248, 0.12);
             --accent-glow: rgba(56, 189, 248, 0.18);
             --border-accent: rgba(56, 189, 248, 0.28);
@@ -684,17 +687,17 @@ def generate_interactive_dashboard(chapters):
         }}
 
         .nav-btn-primary {{
-            background: #0369a1;
+            background: var(--accent-btn-bg);
             color: #ffffff !important;
-            border: 1px solid rgba(56, 189, 248, 0.45);
+            border: 1px solid var(--accent-btn-border);
             font-weight: 700;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
         }}
         .nav-btn-primary:hover {{
-            background: #0284c7;
-            border-color: #38bdf8;
+            background: var(--accent-btn-hover);
+            border-color: var(--accent-primary);
             color: #ffffff !important;
-            box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
+            box-shadow: 0 0 14px var(--accent-glow);
         }}
 
         .sidebar-header {{
@@ -757,10 +760,22 @@ def generate_interactive_dashboard(chapters):
             cursor: pointer;
             transition: all 0.2s ease;
         }}
-        .filter-chip:hover, .filter-chip.active {{
-            background: var(--accent-primary);
-            color: #ffffff;
+        .filter-chip:hover:not(.active) {{
+            background: var(--accent-light);
+            color: var(--text-primary);
+            border-color: var(--border-accent);
+        }}
+        .filter-chip.active {{
+            background: var(--accent-btn-bg);
+            color: #ffffff !important;
+            border-color: var(--accent-btn-border);
+            box-shadow: 0 0 10px var(--accent-glow);
+            font-weight: 700;
+        }}
+        .filter-chip.active:hover {{
+            background: var(--accent-btn-hover);
             border-color: var(--accent-primary);
+            color: #ffffff !important;
         }}
 
         .topic-list {{
@@ -950,10 +965,11 @@ def generate_interactive_dashboard(chapters):
             color: var(--text-primary);
         }}
         .tab-btn.active {{
-            background: var(--accent-primary);
-            color: #ffffff;
-            border-color: var(--accent-primary);
+            background: var(--accent-btn-bg);
+            color: #ffffff !important;
+            border-color: var(--accent-btn-border);
             box-shadow: 0 4px 12px var(--accent-glow);
+            font-weight: 700;
         }}
 
         /* 15-Mark Master Essay Reading Ergonomics */
@@ -1429,12 +1445,13 @@ def generate_interactive_dashboard(chapters):
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: var(--accent-primary);
+            background: var(--accent-btn-bg);
+            border: 1px solid var(--accent-btn-border);
             color: #ffffff !important;
             box-shadow: 0 4px 14px var(--accent-glow);
         }}
         .audio-btn-playpause:hover {{
-            background: #047857;
+            background: var(--accent-btn-hover);
             transform: scale(1.04);
         }}
         .audio-dock-progress-wrap {{
@@ -1519,8 +1536,10 @@ def generate_interactive_dashboard(chapters):
             color: var(--accent-primary);
         }}
         .speed-pill.active {{
-            background: var(--accent-primary);
-            color: #ffffff;
+            background: var(--accent-btn-bg);
+            color: #ffffff !important;
+            border: 1px solid var(--accent-btn-border);
+            font-weight: 700;
         }}
         .audio-dock-close {{
             background: transparent;
