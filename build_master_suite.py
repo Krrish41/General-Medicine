@@ -414,18 +414,23 @@ def generate_interactive_dashboard(chapters):
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Medicine Pro">
-    <meta name="theme-color" content="#090a12">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#090a12" id="metaThemeColor">
     <title>Medicine Pro — University Exam Monograph | BDS Clinical Vault</title>
     <script>
     (function() {{
         try {{
-            var t = localStorage.getItem('bds.medicine.theme') || localStorage.getItem('medicine_theme');
+            var t = localStorage.getItem('bds.theme') || localStorage.getItem('bds.medicine.theme') || localStorage.getItem('medicine_theme');
             if (t === 'light') {{
                 document.documentElement.setAttribute('data-theme', 'light');
                 document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                document.documentElement.style.colorScheme = 'light';
             }} else {{
                 document.documentElement.setAttribute('data-theme', 'dark');
+                document.documentElement.classList.remove('light');
                 document.documentElement.classList.add('dark');
+                document.documentElement.style.colorScheme = 'dark';
             }}
         }} catch(e) {{}}
     }})();
@@ -437,6 +442,8 @@ def generate_interactive_dashboard(chapters):
     <script src="portal-core/core-engine.js"></script>
     <style>
         :root {{
+            color-scheme: dark;
+
             /* Per-portal Accent: Medicine Diagnostic Sky Blue */
             --accent-primary: #38bdf8;
             --accent-primary-dark: #0369a1;
@@ -471,6 +478,7 @@ def generate_interactive_dashboard(chapters):
         }}
 
         html[data-theme="light"], body.light {{
+            color-scheme: light;
             --bg-base: #f8fafc;
             --bg-surface: #ffffff;
             --bg-card: #ffffff;
@@ -487,7 +495,8 @@ def generate_interactive_dashboard(chapters):
             --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
         }}
 
-        body.dark {{
+        html[data-theme="dark"], body.dark {{
+            color-scheme: dark;
             --bg-base: #090a12;
             --bg-surface: #101322;
             --bg-card: #101322;
@@ -915,10 +924,17 @@ def generate_interactive_dashboard(chapters):
             margin-bottom: 8px;
             border: 1px solid var(--accent-primary);
         }}
+        html[data-theme="light"] .chapter-top-badge,
+        body.light .chapter-top-badge {{
+            background: rgba(56, 189, 248, 0.12);
+            color: #0369a1;
+            border-color: rgba(56, 189, 248, 0.4);
+        }}
+        html[data-theme="dark"] .chapter-top-badge,
         body.dark .chapter-top-badge {{
-            background: rgba(16, 185, 129, 0.2);
-            color: #34d399;
-            border-color: #34d399;
+            background: rgba(56, 189, 248, 0.18);
+            color: #7dd3fc;
+            border-color: rgba(56, 189, 248, 0.6);
         }}
         .chapter-title-display {{
             font-family: 'Newsreader', serif;
@@ -2595,7 +2611,7 @@ def generate_interactive_dashboard(chapters):
             utterance.rate = audioPlaybackSpeed || 1.0;
             if (selectedVoice) utterance.voice = selectedVoice;
 
-            btn.style.color = '#10b981';
+            btn.style.color = 'var(--accent-primary, #38bdf8)';
             utterance.onend = () => {{ btn.style.color = ''; }};
             utterance.onerror = () => {{ btn.style.color = ''; }};
             window.speechSynthesis.speak(utterance);
@@ -3378,7 +3394,7 @@ def generate_interactive_dashboard(chapters):
             if (isFlashcardFlipped) {{
                 textEl.innerText = card.a;
                 tagEl.innerText = `ANSWER (CARD ${{currentFlashcardIdx + 1}} OF ${{ch.flashcards.length}})`;
-                tagEl.style.color = '#10b981';
+                tagEl.style.color = 'var(--accent-primary, #38bdf8)';
             }} else {{
                 textEl.innerText = card.q;
                 tagEl.innerText = `QUESTION (CARD ${{currentFlashcardIdx + 1}} OF ${{ch.flashcards.length}})`;
@@ -3509,13 +3525,28 @@ def generate_interactive_dashboard(chapters):
         }}
 
         function toggleTheme() {{
-            const isDark = document.body.classList.toggle('dark');
-            document.body.classList.toggle('light', !isDark);
-            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-            try {{
-                localStorage.setItem('medicine_theme', isDark ? 'dark' : 'light');
-                localStorage.setItem('bds.medicine.theme', isDark ? 'dark' : 'light');
-            }} catch(e) {{}}
+            if (window.CoreEngine && typeof window.CoreEngine.toggleTheme === 'function') {{
+                window.CoreEngine.toggleTheme();
+            }} else {{
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light' || document.body.classList.contains('light');
+                const next = isLight ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', next);
+                document.documentElement.classList.remove('dark', 'light');
+                document.documentElement.classList.add(next);
+                document.documentElement.style.colorScheme = next;
+                if (document.body) {{
+                    document.body.classList.remove('dark', 'light');
+                    document.body.classList.add(next);
+                }}
+                const metaTheme = document.getElementById('metaThemeColor') || document.querySelector('meta[name="theme-color"]');
+                if (metaTheme) metaTheme.setAttribute('content', next === 'light' ? '#f8fafc' : '#090a12');
+                try {{
+                    localStorage.setItem('medicine_theme', next);
+                    localStorage.setItem('bds.medicine.theme', next);
+                    localStorage.setItem('bds.theme', next);
+                }} catch(e) {{}}
+            }}
+            const isDark = document.documentElement.getAttribute('data-theme') !== 'light' && !document.body.classList.contains('light');
             const btn = document.getElementById('themeToggleBtn');
             if (btn) btn.innerHTML = isDark ? '{ICONS["sun"]}' : '{ICONS["moon"]}';
         }}
