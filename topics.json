@@ -378,5 +378,24 @@
       "medicine",
       "shock-syndromes-cardiopulmonary-resuscitation-bls-acls"
     ]
+  },
+  {
+    "id": "rapid-revision-master-cheat-sheet-high-yield-clinical-matrices-emergency-dosages-chairside-protocols",
+    "title": "Rapid Revision Master Cheat Sheet: High-Yield Clinical Matrices, Emergency Dosages & Chairside Protocols",
+    "category": "Rapid Revision & Cheat Sheet",
+    "readMinutes": 16,
+    "readingTime": "16 min read",
+    "portal": "medicine",
+    "portalName": "General Medicine Pro",
+    "paper": "Paper II \u00b7 Medicine",
+    "chapter": 21,
+    "type": "cheat-sheet",
+    "url": "https://krrish41.github.io/General-Medicine/#/topic/rapid-revision-master-cheat-sheet-high-yield-clinical-matrices-emergency-dosages-chairside-protocols",
+    "order": 21,
+    "tags": [
+      "Rapid Revision & Cheat Sheet",
+      "medicine",
+      "rapid-revision-master-cheat-sheet-high-yield-clinical-matrices-emergency-dosages-chairside-protocols"
+    ]
   }
 ]
